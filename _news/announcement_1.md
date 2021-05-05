@@ -1,7 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
-inline: true
+title: Welcome to my web page!
+date: 2015-11-07 16:11:00-0400
+inline: false
 ---
 
-A simple inline announcement.
+I am very happy to put my web page online!

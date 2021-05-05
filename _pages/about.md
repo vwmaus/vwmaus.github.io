@@ -2,23 +2,23 @@
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: Institute for Ecological Economics, Vienna University of Economics and Business, Austria
 
 profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p style="font-size:70%;"><a href="https://campus.wu.ac.at/de/?campus=1&q=D1.2.030#map">D1/D1.2.030</a></p>
+    <p style="font-size:70%;">Welthandelsplatz 1</p>
+    <p style="font-size:70%;">1020 Vienna, Austria</p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a researcher in Geoinformatics and GIScience interested in environmental modeling and monitoring to understand drivers of global environmental change. My research has contributed to new methods for analyzing large satellite image data sets and help better understand the interactions between environment and human activities. As an advocate of free software and open and reproducible science, I also contribute to science and society by publishing data and software under open licenses.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am experienced in IT, software development, management of servers and web services. To support my research, I have developed software and tools to visualize, handle and analyze large volumes of heterogeneous geodata, from statistical surveys to citizen science and satellite earth observations. These include R packages for satellite time series analysis [dtwSat](https://www.cran.r-project.org/package=dtwSat) as well as geodata [visualization tools](https://www.fineprint.global/visualisations).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I have built a strong international network, collaborating with scholars from different fields and universities. Many of these collaborations have resulted in scientific publications and project applications. With this experience and support, I am now pursuing my own independent research funding, including projects already under review that will help my to establish my own research group.
