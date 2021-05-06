@@ -3,7 +3,8 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Dr Victor
+fields: Geoinformatics, GIScience, Spatial Data Science
+first_name: Victor
 #middle_name: 
 last_name: Maus
 email: victor.maus@wu.ac.at
@@ -12,7 +13,8 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+  
+# Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 icon: ⏳ #🐭🔥🚀🛰️ # the emoji used as the favicon -- More options: https://emojipedia.org/
 url:  # the base hostname & protocol for your site

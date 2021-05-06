@@ -2,12 +2,14 @@
 layout: about
 title: About
 permalink: /
-description: Institute for Ecological Economics, Vienna University of Economics and Business, Austria
+#description: Institute for Ecological Economics, Vienna University of Economics and Business, Austria
 
 profile:
   align: right
   image: prof_pic.jpg
   address: >
+    <p style="font-size:70%;">Institute for Ecological Economics</p>
+    <p style="font-size:70%;">Vienna University of Economics and Business</p>
     <p style="font-size:70%;"><a href="https://campus.wu.ac.at/de/?campus=1&q=D1.2.030#map">D1/D1.2.030</a></p>
     <p style="font-size:70%;">Welthandelsplatz 1</p>
     <p style="font-size:70%;">1020 Vienna, Austria</p>
