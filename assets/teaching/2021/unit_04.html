@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Earth observation and Machine Learning for SDGs</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr Victor Maus .font80[Vienna University of Economics and Business] .font80[victor.maus@wu.ac.at ]" />
+    <link href="unit_04_files/remark-css/default.css" rel="stylesheet" />
+    <link href="unit_04_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="unit_04_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="libs/my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Earth observation and Machine Learning for SDGs
+## Unit 4: Temporal patterns and events
+### Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a> ]
+### .left[.font80[May 26, 2021]]
+
+---
+
+
+
+
+class: inverse, mline
+
+# Earth observation and Machine Learning for SDGs
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center[![:scale 100%](./img/course-EOML4SDGs.svg)]
+&lt;br&gt;&lt;br&gt;
+
+.font120[This lecture is an excerpt of the lecture: **Introduction to satellite image time series analysis**]
+.left[.footnote[May 26, 2021]]
+
+.font120[Satellite time series analysis is an important topic for SDGs because it provides means to monitor changes]
+
+???
+- Present the four units of the course
+- Explain what has been learned so far
+- Today is a part of the lecture
+
+---
+# Today's learning objectives
+
+## Understand what are satellite image time series
+
+## Identify applications of satellite image time series for SDGs
+
+## Manipulate and visualize time series in R
+
+---
+# Satellite Images Time Series
+
+![:scale 100%](./img/vienna-rgb/gif/rgb-images.png)
+
+&lt;div style="margin-top:-30px;"&gt;
+.font80[True color composites form Sentinel-2 images over Vienna. Source: Lorenz Wimmer]
+&lt;/div&gt;
+  
+???
+
+- Stacks satellite images 
+- Sequence of images from the same location acquired at different times
+- The images must be georeferenced so that pixel over time hold a single location
+- What can we learn from "SITS" analysis?
+
+---
+# Satellite Images Time Series
+
+.pull-left[
+![:scale 100%](./img/vienna-rgb/gif/rgb-images.png)
+]
+
+.pull-right[
+![:scale 100%](./img/rgb-time-series.jpg)
+]
+
+--
+
+.border-highlight[Changing from comparing snapshots to time series analysis improves information retrieval]
+
+.footnote[Further reading: [Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Vuolo et al (2018)](https://doi.org/10.1016/j.jag.2018.06.007) ]
+
+
+---
+# Satellite Images Time Series
+&lt;br&gt;
+
+.center[![:scale 100%](./img/sits.png)]
+
+.footnote[Figure source: [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
+
+Information about events, processes, patterns, and trajectories can be extracted from time series. 
+
+???
+
+# Explain the types informatio nin the time series 
+
+# Explain the gaps and types on methods: 
+
+- Pattern recognition 
+- Custering 
+- Phenological metrics
+
+---
+# Multi-band Satellite Images Time Series
+
+.center[![:scale 100%](./img/cube2.png)]
+
+.footnote[Figure source: [Pebesma (2021)](https://r-spatial.github.io/stars/)]
+
+???
+
+
+---
+# Satellite Images Time Series
+
+---
+class: inverse, mline, center, middle
+
+# Hands on! 
+
+---
+# Create images stack 
+
+???
+
+- **Note:** We assume the images are georeferenced 
+- The images ar eprovided with the package stars 
+- 
+
+---
+# Extracting and visualizing a time series
+
+ - SDG 15 - Live on land
+
+???
+
+- Extract and plot a time series for a pair of coordinates 
+
+---
+class: inverse, mline
+# Wrap-up of the first part of the lecture
+
+- ## Time series provide information on XXXXXXX
+
+- ## Multi-band time series XXXXXXX
+
+- ## The R package stars support time series manupulation 
+
+## In the second part
+
+
+???
+
+---
+# Structural breack analysis??? OR dtwSat ?????
+
+???
+
+&lt;!-- class: clear --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:10",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

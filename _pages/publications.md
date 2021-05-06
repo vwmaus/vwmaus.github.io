@@ -6,7 +6,8 @@ title: Publications
 years_articles: [2020, 2019, 2018, 2017, 2016, 2015, 2009]
 years_proceedings: [2017, 2016, 2015, 2011]
 years_software: [2020, 2019, 2018]
-years_other: [2020]
+years_other: [2016, 2014, 2011, 2009]
+years_outreach: [2020, 2019, 2018, 2017]
 nav: true
 ---
 
@@ -24,6 +25,9 @@ nav: true
   </li>
   <li class="nav-item">
     <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">Other publications</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="outreach-tab" data-toggle="tab" href="#outreach" role="tab" aria-controls="outreach" aria-selected="false">Science outreach</a>
   </li>
 </ul>
 
@@ -55,6 +59,16 @@ nav: true
   <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="contact-tab">
     <div class="publications">
       {% for y in page.years_other %}
+        <h5 class="year">{{y}}</h5>
+        {% bibliography -f papers -q @PhdThesis[year={{y}}]* %}
+        {% bibliography -f papers -q @Thesis[year={{y}}]* %}
+        {% bibliography -f papers -q @TechReport[year={{y}}]* %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="outreach" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="publications">
+      {% for y in page.years_outreach %}
         <h5 class="year">{{y}}</h5>
         {% bibliography -f papers -q @Misc[year={{y}}]* %}
       {% endfor %}

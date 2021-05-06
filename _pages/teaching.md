@@ -2,10 +2,20 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Here you find materials for courses I taught.
+#description: Here you find materials for courses I taught.
 nav: true
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+### Earth observation and Machine Learning for SDGs
 
-Organize your courses by years, topics, or universities, however you like!
+This course has been prepared for a lecture at the Bern University. 
+
+#### Unit 1: Geocomputation with R
+
+#### Unit 2: Unsupervised learning
+
+#### Unit 3: Supervised learning
+
+#### Unit 4: Temporal patterns and events
+
+- Introduction to satellite image time series analysis [slides](/assets/teaching/2021/unit_04.html)
