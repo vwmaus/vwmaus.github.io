@@ -76,11 +76,19 @@
       {% if entry.year %}
         {{entry.year}}.
       {% endif %}
+      {% if entry.file %}
+        <a href="{{ entry.file | prepend: '/assets/pdf/' | replace: ':PDF','' | replace: ':','' }}" target="_blank">📎</a>
+      {% endif %}
       {% if entry.doi %}
         <a href="{{ entry.doi | prepend: 'http://doi.org/' }}">DOI</a>
       {% endif %}
+      {% if entry.url %}
+        <a href="{{ entry.url }}">🔗</a>
+      {% endif %}
       </div>
     {% endif %}
+
+            <!-- entry.file | prepend: site.url | replace:'maus','asset/pdf' -->
 
     <div class="links">
     {% if entry.abstract %}
