@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Victor
+first_name: Dr Victor
 #middle_name: 
 last_name: Maus
 email: victor.maus@wu.ac.at
@@ -14,7 +14,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
-icon: 🔥 # the emoji used as the favicon
+icon: ⏳ #🐭🔥🚀🛰️ # the emoji used as the favicon -- More options: https://emojipedia.org/
 url:  # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
@@ -58,8 +58,8 @@ work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 
-contact_note: >    
-  Email is the best way to reach me
+#contact_note: >    
+#  Email is the best way to reach me
 
 google_analytics: UA-126225487-1 # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
@@ -68,8 +68,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: maus  # your blog must have a name for it to show up in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_name: Time  # your blog must have a name for it to show up in the nav bar
+blog_description: A simple whitespace theme for academics
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -143,8 +143,8 @@ github: [metadata]
 
 scholar:
 
-  last_name: Einstein
-  first_name: [Albert, A.]
+  last_name: Maus
+  first_name: [Victor]
 
   style: apa
   locale: en

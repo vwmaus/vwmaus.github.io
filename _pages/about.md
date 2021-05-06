@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 description: Institute for Ecological Economics, Vienna University of Economics and Business, Austria
 

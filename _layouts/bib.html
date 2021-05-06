@@ -74,7 +74,10 @@
         <em>In {{entry.booktitle}}</em>
       {% endif %}
       {% if entry.year %}
-        {{entry.year}}
+        {{entry.year}}.
+      {% endif %}
+      {% if entry.doi %}
+        <a href="{{ entry.doi | prepend: 'http://doi.org/' }}">DOI</a>
       {% endif %}
       </div>
     {% endif %}
