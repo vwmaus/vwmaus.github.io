@@ -6,6 +6,4 @@ title: Teaching
 nav: true
 ---
 
-### Earth observation and Machine Learning for SDGs
-
-- **Teaching sample:** Introduction to satellite image time series analysis [slides](/assets/teaching/2021/teaching-sample/unit_04.html)
+Under construction 
