@@ -181,7 +181,7 @@ a, table.table a {
 .social {
   text-align: center;
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
     a {
       i::before {
         color: var(--global-text-color);
@@ -202,6 +202,9 @@ a, table.table a {
 
 // Footer
 footer.fixed-bottom {
+  text-align: center;
+  margin-left: auto; 
+  margin-right: auto;
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
   .container {
