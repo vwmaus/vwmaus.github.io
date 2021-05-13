@@ -1,0 +1,165 @@
+---
+title: "From Earth Observation Time Series to Event-based Information for Land-use Change Analysis"
+subtitle: "<br>"
+author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at ]"
+date: ".left[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a></div>"
+output: 
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    self_contained: true
+    css: [default, metropolis, metropolis-fonts, libs/my.css]
+    nature:
+      beforeInit: "libs/my-macros.js"
+      ratio: '16:9'
+      highlightStyle: atom-one-light
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup, include=FALSE, echo=FALSE}
+library(magrittr)
+options(htmltools.dir.version = FALSE)
+```
+
+# Driver of environmental changes
+
+## Motivate: why is it important to understand drivers of global environmentla changes? To plan interventions to ensure sustainability (and fairness????)
+
+## What is needed for that -- 
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+- methods that can handle large heteregionous data EO + heterogeneous data sources. 
+]
+
+---
+class: inverse, middle, center, mline
+
+# Why global?
+
+--
+
+.left[Externalization of adverse impacts and supply chains]
+
+--
+
+.center[Reason 2]
+
+--
+
+.left[Reason 3]
+
+--
+
+.right[Reason 3]
+
+---
+layout: false
+
+# Soy supply chains in Brazil
+
+- Applied research I contribute to...
+
+- Explain in short the work with Boku. How does Satellite + surveis + other data source feed into reconstruct supply chains and why is it important. Close on how event-based information could improve this analysis (causal inference and indirect land-use).
+
+- Machine learning algorithms mapping... optimization for supply chains.... ???? 
+
+---
+layout: true
+
+# Global mining sector
+
+---
+
+A
+
+---
+
+<img src="one-more-thing.gif" width="60%" class="fl" />
+
+---
+
+- Application 2: Mineal extraction and regional developemtn
+
+- Automated Depp-learning mapping 
+
+- Volumetric changes using SAR data in collaboration with DLR
+
+- Event-based reprensetation of mining: 4D entity (t, x, y, z) in contrast to 3D (t, x, y) land-use changes.
+
+---
+class: inverse, middle, center, mline
+layout: false
+
+# What about accuracy uncertanty on maps? 
+
+---
+
+# Copernicus land cover data set 
+
+- I have contributed to global spatial accuracy analysis --- Copernicus global land cover data -- Refer to report. 
+
+- It is available from Google Earth Engine plantfor or XXXXX
+
+- Accuracy assessment and citizens science 
+
+---
+class: inverse, middle, center, mline
+layout: false
+
+# All previous applications heve something in commun, they link human activities to land **changes**
+
+--
+
+**How do we measure changes?**
+
+---
+
+# Land-use change analysis using earth observation data
+
+.footnote-left[.font80[The figure contains modified Compernicus Sentinel-2 images showing gold mining areas within the Indigenous Territory Kaiapó in Brazil]]
+
+.pull-left[.center[
+<img src="img/change-from-snapshots.svg" height="400"/>
+]]
+
+--
+
+.pull-left[.center[
+<img src="img/change-from-timeseries.svg" height="400"/>
+]]
+
+--
+
+**Current state-of-the-art methods to extract information from satellite image time series *violates* time**
+
+???
+
+- Changes based on two snapshots
+
+- Changes based on two time series
+
+---
+layout: false
+class: inverse, middle, center, mline
+
+# Event-based information
+
+--
+
+<img src="img/change-from-events.svg" height="400"/>
+
+--
+
+**Event-based approaches help to ....**
+
+---
+layout: false
+# Continue 
+
+
+
+
+
+

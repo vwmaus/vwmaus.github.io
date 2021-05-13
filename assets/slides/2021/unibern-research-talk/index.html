@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>From Earth Observation Time Series to Event-based Information for Land-use Change Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr Victor Maus .font80[Vienna University of Economics and Business] .font80[victor.maus@wu.ac.at ]" />
+    <link href="index_files/remark-css/default.css" rel="stylesheet" />
+    <link href="index_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="index_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="libs/my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# From Earth Observation Time Series to Event-based Information for Land-use Change Analysis
+## <br>
+### Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a> ]
+### .left[.font80[May 26, 2021]]
+<div class="footnote-right">
+Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>
+</div>
+
+---
+
+
+
+# Driver of environmental changes
+
+## Motivate: why is it important to understand drivers of global environmentla changes? To plan interventions to ensure sustainability (and fairness????)
+
+## What is needed for that -- 
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+- methods that can handle large heteregionous data EO + heterogeneous data sources. 
+]
+
+---
+class: inverse, middle, center, mline
+
+# Why global?
+
+--
+
+.left[Externalization of adverse impacts and supply chains]
+
+--
+
+.center[Reason 2]
+
+--
+
+.left[Reason 3]
+
+--
+
+.right[Reason 3]
+
+---
+layout: false
+
+# Soy supply chains in Brazil
+
+- Applied research I contribute to...
+
+- Explain in short the work with Boku. How does Satellite + surveis + other data source feed into reconstruct supply chains and why is it important. Close on how event-based information could improve this analysis (causal inference and indirect land-use).
+
+- Machine learning algorithms mapping... optimization for supply chains.... ???? 
+
+---
+layout: true
+
+# Global mining sector
+
+---
+
+A
+
+---
+
+&lt;img src="one-more-thing.gif" width="60%" class="fl" /&gt;
+
+---
+
+- Application 2: Mineal extraction and regional developemtn
+
+- Automated Depp-learning mapping 
+
+- Volumetric changes using SAR data in collaboration with DLR
+
+- Event-based reprensetation of mining: 4D entity (t, x, y, z) in contrast to 3D (t, x, y) land-use changes.
+
+---
+class: inverse, middle, center, mline
+layout: false
+
+# What about accuracy uncertanty on maps? 
+
+---
+
+# Copernicus land cover data set 
+
+- I have contributed to global spatial accuracy analysis --- Copernicus global land cover data -- Refer to report. 
+
+- It is available from Google Earth Engine plantfor or XXXXX
+
+- Accuracy assessment and citizens science 
+
+---
+class: inverse, middle, center, mline
+layout: false
+
+# All previous applications heve something in commun, they link human activities to land **changes**
+
+--
+
+**How do we measure changes?**
+
+---
+
+# Land-use change analysis using earth observation data
+
+.footnote-left[.font80[The figure contains modified Compernicus Sentinel-2 images showing gold mining areas within the Indigenous Territory Kaiapó in Brazil]]
+
+.pull-left[.center[
+&lt;img src="img/change-from-snapshots.svg" height="400"/&gt;
+]]
+
+--
+
+.pull-left[.center[
+&lt;img src="img/change-from-timeseries.svg" height="400"/&gt;
+]]
+
+--
+
+**Current state-of-the-art methods to extract information from satellite image time series *violates* time**
+
+???
+
+- Changes based on two snapshots
+
+- Changes based on two time series
+
+---
+layout: false
+class: inverse, middle, center, mline
+
+# Event-based information
+
+--
+
+&lt;img src="img/change-from-events.svg" height="400"/&gt;
+
+--
+
+**Event-based approaches help to ....**
+
+---
+layout: false
+# Continue
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script src="libs/my-macros.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "atom-one-light",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
