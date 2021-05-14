@@ -1,3 +1,7 @@
+.font300 {
+  font-size: 300%;
+}
+
 .footnote-left {
   opacity: 0.8;
   color: #1A292C;
@@ -16,7 +20,12 @@
   font-size: 80%;
 }
 
-.invert-font {
+.font-dark {
   color: #23373B;
+  text-shadow: none;
+}
+
+.font-light {
+  color: #FAFAFA;
   text-shadow: none;
 }

@@ -3,11 +3,12 @@
   <head>
     <title>From Earth Observation Time Series to Event-based Information for Land-use Change Analysis</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Dr Victor Maus .font80[Vienna University of Economics and Business] .font80[victor.maus@wu.ac.at ]" />
+    <meta name="author" content="Dr Victor Maus .font80[Vienna University of Economics and Business] .font80[victor.maus@wu.ac.at] .font80[www.victor-maus.com]" />
     <link href="index_files/remark-css/default.css" rel="stylesheet" />
     <link href="index_files/remark-css/metropolis.css" rel="stylesheet" />
     <link href="index_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="libs/my.css" type="text/css" />
+    <link rel="stylesheet" href="libs/tachyons-min.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -15,7 +16,7 @@ class: center, middle, inverse, title-slide
 
 # From Earth Observation Time Series to Event-based Information for Land-use Change Analysis
 ## <br>
-### Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a> ]
+### Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a>]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]
 ### .left[.font80[May 26, 2021]]
 <div class="footnote-right">
 Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>
@@ -68,17 +69,97 @@ layout: false
 - Machine learning algorithms mapping... optimization for supply chains.... ???? 
 
 ---
-layout: true
-
-# Global mining sector
-
----
-
-A
+layout: false
+class: clear
 
 ---
+class: 
 
-&lt;img src="one-more-thing.gif" width="60%" class="fl" /&gt;
+# Global mining land use
+
+.pull-left[.center[
+&lt;img src="img/carajas-misclassification.svg" height="350"/&gt;
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mh1.mt0.font100[
+**Mining is dismissed from the classification system of most land cover data products**
+]
+]]
+
+--
+
+.pull-right[.center[
+&lt;img src="img/land-cover-mapping-items.svg" height="350"/&gt;
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mh1.mt0.font100[
+**There is a lack of data on the mining sector at global scale**
+]
+]]
+
+.footnote-left[Land cover data source: [ESA CCI Land cover](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(img/global-mining-map.png)
+
+.footnote-right[.font-light[Data source: [Maus et al. (2020)](https://www.nature.com/articles/s41597-020-00624-w)]]
+
+.footnote-left[.font-light[Image source: [www.fineprint.global/viewer](www.fineprint.global/viewer)]]
+
+--
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph0.mt1.font120[
+**Version 1 \&gt;21,000 Polygons**
+]
+
+--
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph0.mt1.font120[
+**Version 2 (pre-release) \&gt;60,000 Polygons**
+]
+
+--
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph0.mt1.font120[
+**Overall accuracy ........ 88.4 %** (Agreement between experts)
+]
+
+--
+
+.pull-left[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph0.mt5.font100[
+**1. How to automatize mining monitoring on a large scale?**
+]]
+
+--
+
+.pull-right[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph0.mt5.font100[
+**2. How to monitor the volume of extracted materials?**
+]]
+
+--
+
+.pull-left[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph0.mt2.font100[
+**3. How to monitor the volume of extracted materials?**
+]]
+
+--
+
+.pull-right[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph0.mt2.font100[
+**3. What is the ....**
+]]
+
+--
+
+
+???
+
+# Ongoing research
+- Methodological development - Deep learning for mining mapping in collaboration with University of Münster
+- Methodological development - Measuring volumetric changes using SAR data in collaboration with the German Space Agancy (DLR)
+- Application - Heavy sand extraction in South Africa in collaboration with University of Copenhagen
+- Application - Coal mining mapping for unemployment assessment in the transition to renewable energy
 
 ---
 
@@ -156,9 +237,62 @@ class: clear, middle, center, mline
 
 **Event-based approaches help to ....**
 
+
 ---
 layout: false
-# Continue
+class: inverse, middle, center, mline
+
+# Research plan
+
+
+---
+layout: false
+class: inverse, middle, center, mline
+
+# Teaching plan
+
+---
+
+# Conclusions 
+
+---
+class: clear, inverse
+.center[![:scale 70%](img/from-ts-to-events-inverse.svg)]
+
+.pull-left[
+  Dr Victor Maus&lt;br&gt;.font80[Vienna University of Economics and Business]&lt;br&gt;.font80[victor.maus@wu.ac.at]&lt;br&gt;.font80[&lt;a href='https://www.victor-maus.com'&gt;www.victor-maus.com&lt;/a&gt;]
+]
+
+.pull-right[
+  **.right[.font300[Thank you!]]**
+]
+
+.footnote-right[.font-light[Except where otherwise noted, content on these slides is licensed under &lt;a href='https://creativecommons.org/licenses/by-sa/4.0'&gt;CC BY-SA 4.0 license&lt;/a&gt;]]
+
+---
+layout: false
+class: inverse, middle, center, mline
+
+# Extra slides 
+
+---
+class: center
+
+# Mine *vs.* Urban 
+
+.pull-left[.center[
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mh1.mt0.font100[
+**Carajás Iron Mine, Brazil**
+]
+&lt;img src="img/carajas-mine-satellite.png"  border="1px solid #ddd"/&gt;
+]]
+
+.pull-left[.center[
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mh1.mt0.font100[
+**Parauapebas, Brazil**
+]
+&lt;img src="img/parauapebas-city-satellite.png" border="1px solid #ddd"/&gt;
+]]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
