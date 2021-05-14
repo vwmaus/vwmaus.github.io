@@ -142,9 +142,9 @@ layout: false
 
 ---
 layout: false
-class: inverse, middle, center, mline
+class: clear, middle, center, mline
 
-# Event-based information
+# .invert-font[Event-based information]
 
 --
 

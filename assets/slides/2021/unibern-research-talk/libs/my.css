@@ -16,3 +16,7 @@
   font-size: 80%;
 }
 
+.invert-font {
+  color: #23373B;
+  text-shadow: none;
+}
