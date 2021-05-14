@@ -79,15 +79,18 @@
       {% if entry.file %}
         <a href="{{ entry.file | prepend: '/assets/pdf/' | replace: ':PDF','' | replace: ':','' }}" target="_blank">📎</a>
       {% endif %}
-      {% if entry.doi %}
-        <a href="{{ entry.doi | prepend: 'http://doi.org/' }}">DOI</a>
-      {% endif %}
+      {% assign shareurl={page.url | prepend: site.url} %}
       {% if entry.url %}
         <a href="{{ entry.url }}" target="_blank">🔗</a>
+        {% assign shareurl={entry.url} %}
       {% endif %}
-      </div>
+      {% if entry.doi %}
+        <a href="{{ entry.doi | prepend: 'http://doi.org/' }}">DOI</a>
+        {% assign shareurl={entry.doi | prepend: 'http://doi.org/'} %}
+      {% endif %}
+        <a href="https://twitter.com/intent/tweet?text={{entry.title}}&url={{ shareurl }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Tweet">Tweet</a>
     {% endif %}
-
+    </div>
             <!-- entry.file | prepend: site.url | replace:'maus','asset/pdf' -->
 
     <div class="links">
