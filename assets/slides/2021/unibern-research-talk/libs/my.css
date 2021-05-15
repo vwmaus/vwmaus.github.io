@@ -1,3 +1,68 @@
+
+.grid-4-1 {
+  display: grid;
+  height: 10em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  text-align: center;
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.grid-3-2 {
+  display: grid;
+  height: calc(100%);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.extension-tile {
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	font-family: 'Fira sans';
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.tileview {
+  background: #8380B6;
+  color: white;
+}
+
+.panelset-tile {
+  background-color: #F17F29;
+  color: white;
+}
+
+.webcam {
+  background-color: #79C7C5;
+  background-color: #1381B0;
+  color: white;
+}
+
+.editable {
+  background: #97D8C4;
+}
+
+.animate {
+  background-color: #795277;
+  color: white;
+}
+
+.slide {
+  background-color: #EE6D91;
+  color: white;
+  z-index: 100;
+}
+
 .font300 {
   font-size: 300%;
 }
