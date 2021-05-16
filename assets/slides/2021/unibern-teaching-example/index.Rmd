@@ -1,0 +1,206 @@
+---
+title: "Spatial Data Science for Sustainable Development I"
+subtitle: "Unit 2: Patterns in space and time"
+author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at ]"
+date: ".left[.font80[May 26, 2021]]"
+output: 
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    self_contained: true
+    css: [default, metropolis, metropolis-fonts, libs/my.css, libs/tachyons-min.css]
+    nature:
+      beforeInit: "libs/my-macros.js"
+      ratio: '16:9'
+      highlightStyle: atom-one-light
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+editor_options: 
+  chunk_output_type: console
+---
+class: inverse, mline
+
+```{r setup, include=FALSE}
+library(magrittr)
+options(htmltools.dir.version = FALSE)
+```
+
+# Earth observation and Machine Learning for SDGs
+
+.center[![:scale 100%](./img/course-EOML4SDGs.svg)]
+
+.font120[This lecture is an excerpt of the lecture: **Introduction to satellite image time series analysis**]
+.left[.footnote[May 26, 2021]]
+
+.font120[Satellite time series analysis is an important topic for SDGs because it provides means to monitor changes]
+
+???
+- Present the four units of the course
+- Explain what has been learned so far
+- Today is a part of the lecture
+
+---
+# Today's learning objectives
+
+## Understand what are satellite image time series
+
+## Identify applications of satellite image time series for SDGs
+
+## Manipulate and visualize time series in R
+
+---
+# Satellite Images Time Series
+
+![:scale 100%](./img/rgb-images.png)
+
+<div style="margin-top:-30px;">
+.font80[True color composites form Sentinel-2 images over Vienna. Source: Lorenz Wimmer]
+</div>
+  
+???
+
+- Stacks satellite images 
+- Sequence of images from the same location acquired at different times
+- The images must be georeferenced so that pixel over time hold a single location
+- What can we learn from "SITS" analysis?
+
+---
+# Satellite Images Time Series
+
+.pull-left[
+![:scale 100%](./img/rgb-images.png)
+]
+
+.pull-right[
+![:scale 100%](./img/rgb-time-series-arrow.svg)
+]
+
+--
+
+.border-highlight[Changing from comparing snapshots to time series analysis improves information retrieval]
+
+.footnote[Further reading: [Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Vuolo et al (2018)](https://doi.org/10.1016/j.jag.2018.06.007) ]
+
+---
+# Satellite Images Time Series: Data representation 
+
+.center[![:scale 100%](./img/cube2.png)]
+
+.footnote[Figure source: [Pebesma (2021)](https://r-spatial.github.io/stars/)]
+
+???
+
+- Generalized SITS representation 
+
+- For simplicity we will look into vegetation index time series 
+
+---
+# Satellite Images Time Series
+<br>
+
+.center[![:scale 100%](./img/sits.png)]
+
+.footnote[Figure source: [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
+
+Information about events, processes, patterns, and trajectories can be extracted from time series. 
+
+???
+
+# Explain the types informatio nin the time series 
+
+# Explain the gaps and types on methods: 
+
+- Pattern recognition 
+- Custering 
+- Phenological metrics
+
+---
+class: inverse, mline, center, middle
+
+# Let's look into a real world applciation! 
+
+Forest cover change detection due to economical drivers: the case of gold mining within the indigenous territory Kayapó, State of Pará, Brazil. 
+
+???
+
+# SDG Goal 15: Life on land 
+
+## The indicator 15.1.1 *Forest area as a proportion of total land area* 
+
+Measures the status of conservation or restoration of forests in a country, indirectly contributing to measuring to what extent they are sustainably managed. Changes in forest area may reflect changes in demand for other land uses due to economic activity and pressures. To this end, this indicator provides crucial information for policies
+
+---
+# Step 1: Create images stack 
+
+Images available from: [www.victor-maus.com/assets/data/mining-kaiapo](www.victor-maus.com/assets/data/mining-kaiapo)
+
+```{r, eval=FALSE}
+url <- "www.victor-maus.com/assets/data/mining-kaiapo"
+unzip("./data/evi.zip", exdir = "./data/mining-kaiapo")
+
+library(stars)
+# read time series 
+```
+
+???
+
+- **Note:** We assume the images are georeferenced 
+- The images ar eprovided with the package stars 
+- 
+
+---
+# Step 2: Visual inspect: use leaflet layers sat images  
+
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
+The only way to write good code is to write tons of bad code first. 
+Feeling shame about bad code stops you from getting to good code
+
+.tr[
+— Hadley Wickham
+]]
+
+---
+# Extracting and visualizing a time series
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+.panel[.panel-name[SDG]
+ - SDG 15 - Live on land
+ - Extract and plot a time series for two pairs of coordinates 
+]
+
+.panel[.panel-name[Plot]
+![:scale 70%](img/cube1.png)
+]
+]
+
+???
+
+---
+class: inverse, mline
+# Wrap-up of the first part of the lecture
+
+- ## Information on satellite images time series
+
+- ## Satellite time series data representation 
+
+- ## Handling and visualizing satellite images series 
+
+## In the second part of this lecture we will learn
+
+- ## Systematically detect change events
+
+- ## Quantify and analysis changes
+
+???
+
+---
+# In the remaining lecture of unit 4 we will lear how to detect patterns in satellite image time series 
+
+???
+
+<!-- class: clear -->
+

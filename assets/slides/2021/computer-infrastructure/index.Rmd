@@ -23,9 +23,6 @@ class: clear
 options(htmltools.dir.version = FALSE)
 ```
 
----
-class: clear
-
 .pull-left[
 
 .center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb1[**Hardware**]
@@ -43,13 +40,14 @@ class: clear
 .pull-right[
 
 .center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb1[**Software**]
+  - Linux operating system and set of open source software, R, Python, GDAL, PostgreSQL+PostGIS, etc.
 
-  - Linux operating system and set of open source software, R, Python, GDAL, PostgreSQL+PostGIS, QGIS, etc.
-
-  - Overleaf license for online collaborative Latex witting. According to <https://www.overleaf.com/edu/unibe> University of Bern already provides the license for staff and students. Is it correct?
+  - Overleaf license for online collaborative Latex witting.
 
 .center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb1[**Questions**]
-  
+
+  - According to <https://www.overleaf.com/edu/unibe> University of Bern already provides the license for staff and students. Is it correct?
+
   - Does GIUB has its own data infrastructure? 
   
   - UBELIX team charges for additional storage. Are there additional costs for processing in UBELIX?
