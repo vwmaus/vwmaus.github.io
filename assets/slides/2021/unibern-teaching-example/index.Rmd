@@ -1,5 +1,5 @@
 ---
-title: "Spatial Data Science for Sustainable Development I"
+title: "Spatial Data Science I"
 subtitle: "Unit 2: Patterns in space and time"
 author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at ]"
 date: ".left[.font80[May 26, 2021]]"
