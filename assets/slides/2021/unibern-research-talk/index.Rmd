@@ -11,7 +11,7 @@ output:
     nature:
       beforeInit: "libs/my-macros.js"
       ratio: '16:9'
-      highlightStyle: atom-one-light
+      highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       slideNumberFormat: "%current%"
