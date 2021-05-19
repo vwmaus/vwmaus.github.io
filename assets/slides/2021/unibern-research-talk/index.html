@@ -66,15 +66,32 @@ class: clear
 
 - In my research, in Geoinformatics and GIScience I investigate how to integrate and extract information from a variate of data sources
 
-- I develop new methods and tools to support real world applications and eventually also decision making and policy making 
+- I develop new methods and tools to support real world applications and eventually also decision making and policy making
 
 ---
-# The TWDTW slide
+# Time-Weighted Dynamic Time Warping
 
+--
+
+.pull-left.center[&lt;img src="img/twdtw.png" height="400"/&gt;]
+
+--
+
+.pull-right.center[&lt;img src="img/mt-map.png" height="400"/&gt;]
+
+--
+
+.pull-left.mt3[&lt;img src="img/dtwSat-light.png" height="100"/&gt;]
+
+.pull-right.pl2[
+CRAN: [cran.r-project.org/web/packages/dtwSat](https://cran.r-project.org/web/packages/dtwSat)
+&lt;br&gt;Development: [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)
+&lt;br&gt;References: [Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)
+]
 
 ???
 
-- My main contribution to that was the development of a novel method to extraction land-use and land-cover information from EO time series (EOTS)
+- My main contribution to that was the development of a novel method to extract land-use and land-cover information from EO time series (EOTS)
 
 - My motivation to develop the new method was that the current state-of-the-art machine learning algorithms require enormous amounts of labeled training data
 
@@ -85,6 +102,14 @@ class: clear
 - While investigating how to overcome this limitation 
 
 - I discovered that by adding a "temporal-weight" to a method called dynamic time warping (developed in the 70s in the field of speak recognition) I could produce accurate land-use and land-cover maps using as little as one sample per land-use or land-cover class -- while machine learning algorithms require the order of thousands samples per class. 
+
+- The main limitation of the method is its computational time. However, The method is proven to be robust to variations in the phelogical cycles, to noise and gaps in the EO satellite time series.
+
+- Dynamic Time Warping searches for similar temporal profiles by minimizing the difference between them
+
+- For example, in the top of the figure in the left hand side is a well known temporal profile (e.g. Vegetation Index)
+
+- TWDTW finds the matches of the profile to segments of an arbitrary vegetation time series
 
 - Besides the scientific publication, I also published the novel method as an open source R package called dtwSat. 
 
@@ -177,119 +202,57 @@ background-image: url(img/global-mining-map.png)
 
 .footnote-right[.font-light[Data source: [Maus et al. (2020)](https://www.nature.com/articles/s41597-020-00624-w)]]
 
-.footnote-left[.font-light[Image source: [www.fineprint.global/viewer](www.fineprint.global/viewer)]]
+.footnote-left[.font-light[Image source: [fineprint.global/viewer](https://www.fineprint.global/viewer)]]
 
---
+.left-column.pl1.mt0.font120.left.bottom.font-light[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**21,060 Polygons**
 
-.bg-washed-green.b--dark-green.ba.bw0.br3.shadow-5.pt1.pb1.mt0.font120[
-**\&gt;21,000 Polygons mapped -- 57,000 km² of mines covered -- 88 % Overall accuracy**
+**57,000 km²**
+
+**88 % Overall Acc.**
+
 ]
 
 --
 
-.pull-left[
-.bg-washed-red.b--dark-red.ba.bw0.br3.shadow-5.pb1.pt1.mt4.font100[
-**Mining and regional development**
+.right-column[
+.bg-washed-green.br3.pl3.left[
+  ## Ongoing research and collaborations on mining
+]
+
+.bg-washed-green.br3.pl3.left[
+- **Mining and regional development in Brazil**
+
+- **Unemployment in coal mining regions (World Bank)**
+
+- **Impact of heavy sand extraction in ecosystems (University of Copenhagen)**
+
+- **Modeling mining indirect land-use changes (University of Queensland and University of Melbourne, Australia)**
+
+- **Mining and tropical forest loss (WWF Germany)**
+
+- **Deep Learning for mining detection (University of Münster, Germany and Federal University of Pampa, Brazil)**
+
+- **Synthetic-aperture radar for measuring extraction volume (DLR Germany)**
+
 ]]
-
---
-
-.pull-right[
-.bg-washed-red.b--dark-red.ba.bw0.br3.shadow-5.pb1.pt1.mt4.font100[
-**Mapping coal mines for unemployment assessment**
-]]
-
-
---
-
-.pull-left[
-.bg-washed-red.b--dark-red.ba.bw0.br3.shadow-5.pb1.pt1.mt4.font100[
-**Impact of heavy sand extraction ecosystems**
-]]
-
-
---
-
-.pull-right[
-.bg-washed-red.b--dark-red.ba.bw0.br3.shadow-5.pb1.pt1.mt4.font100[
-**Mining and tropical forest loss**
-]]
-
---
-
-.pull-left[
-.bg-washed-red.b--dark-red.ba.bw0.br3.shadow-5.pb1.pt1.mt4.font100[
-**Deep Learning for mining detection**
-]]
-
---
-
-.pull-right[
-.bg-washed-red.b--dark-red.ba.bw0.br3.shadow-5.pb1.pt1.mt4.font100[
-**Synthetic-aperture radar for measuring extraction volume**
-]]
-
-## neeeds modification -- maybe using nerow column left and large column right 
 
 ???
 
 - This map shows the locations of more than 21,000 polyogns which my team produced to fill the mining data gap
 
-- This data has been produce via visual interpretation of satellite images from various sources and covers more than XXXXX different materials 
+- This data has been produce via visual interpretation of satellite images from various sources 
 
-- I am new finishing a second release of the data set which will include more than 50,000 polygons
+- I am now finishing a second release of the data set which will include more than 50,000 polygons
 
 - This data set is open and anyone can use it for research or other applications 
 
-
-# Ongoing research
-- Methodological development - Deep learning for mining mapping in collaboration with University of Münster
-- Methodological development - Measuring volumetric changes using SAR data in collaboration with the German Space Agancy (DLR)
-- Application - Heavy sand extraction in South Africa in collaboration with University of Copenhagen
-- Application - Coal mining mapping for unemployment assessment in the transition to renewable energy
-
----
-layout: false
-class: clear, middle, center
-background-image: url(img/global-mining-map.png)
-
-???
-
-- Because of the lack of spatial data on mining activities, this data product got broad visibility 
-
-- It has been featured in the "Mine Magazine"
-
-- And it also resulted in several follow up research and collaborations (examples in the slide) 
+- The new data set was well received and has generated several follow up research and collaboration (examples in the slide) 
 
 - As you can see there is a vast range of research topics are making use of the data and which I would never have imaged
 
-- Therefore, highlighting the importance of open data and open science
-
----
-# Mining and tropical forest loss
-
---
-
-.footnote-left[Source: Giljum &amp; Maus et al. (Manuscript under review)]
-
-.right-column.center[&lt;img src="img/tree_map-mining-forest-loss.png"/&gt;]
-
---
-
-.left-column.left.mt3[**Mining also causes tropical forest loss up to 50 km from the actual extraction sites due to indirect land-use changes.**]
-
-???
-
-- Just to bring an example of research unloked by the nove mining data 
-
-- We have quantified the direct tropical forest loss due to mining 
-
-- Not for example, Indonesia, where lots of coal mining has taken place over forests over the last two decades
-
-- Besides that, mining also attracts other economic activities and settlements, which can cause further forest loss, but this time indirectly
-
-- We found global mines can drive forest loss up to 50 km far from mining sites 
-
+- This also, highlights the importance of open data and open science
 
 ---
 layout: false
@@ -381,15 +344,13 @@ class:
 
 .center[&lt;img src="img/change-from-events.svg" height="450"/&gt;]
 
---
-
 ???
 
 - Here I argue for a methodological paradigm change on land change information 
 
 - Moving from comparing maps of states to analyzing spatiotemporal events 
 
-- Therefore, I propose this folowing research question
+- Therefore, I propose this following research question
 
 ---
 class: inverse, middle, center
@@ -415,7 +376,7 @@ class: inverse, middle, center, mline
 --
 
 .font200.font-dark.center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mb5[
-  **Spatial Data Science**
+  **Applied Spatial Data Science**
 ]
 
 --
@@ -448,7 +409,7 @@ class: inverse, middle, center, mline
 
 
 ---
-# Spatial Data Science I
+# Applied Spatial Data Science I
 ## BSc level course divided in three units
 
 --
@@ -476,7 +437,7 @@ class: inverse, middle, center, mline
 ]
 
 ---
-# Spatial Data Science I
+# Applied Spatial Data Science I
 ## BSc level
 
 &lt;div class="grid-3-1"&gt;
@@ -503,7 +464,7 @@ class: inverse, middle, center, mline
 ]
 
 ---
-# Spatial Data Science I
+# Applied Spatial Data Science I
 ## BSc level
 
 &lt;div class="grid-3-1"&gt;
@@ -529,7 +490,7 @@ class: inverse, middle, center, mline
 ]
 
 ---
-# Spatial Data Science II
+# Applied Spatial Data Science II
 ## MSc level course divided in three units
 
 --
@@ -557,7 +518,7 @@ class: inverse, middle, center, mline
 ]
 
 ---
-# Spatial Data Science I
+# Applied Spatial Data Science I
 ## MSc level course divided in three units
 
 &lt;div class="grid-3-1"&gt;
@@ -584,7 +545,7 @@ class: inverse, middle, center, mline
 ]
 
 ---
-# Spatial Data Science II
+# Applied Spatial Data Science II
 ## MSc level course divided in three units
 
 &lt;div class="grid-3-1"&gt;
@@ -652,25 +613,6 @@ class: inverse, middle, center, mline
 # Extra slides 
 
 ---
-class: center
-
-# Mine *vs.* Urban 
-
-.pull-left[.center[
-.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
-**Carajás Iron Mine, Brazil**
-]
-&lt;img src="img/carajas-mine-satellite.png"  border="1px solid #ddd"/&gt;
-]]
-
-.pull-left[.center[
-.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
-**Parauapebas, Brazil**
-]
-&lt;img src="img/parauapebas-city-satellite.png" border="1px solid #ddd"/&gt;
-]]
-
----
 layout: false
 
 # Soy supply chains in Brazil
@@ -729,6 +671,31 @@ harvested in 2004 (middle), and with tree mortality occurring in 2007 (bottom) (
 source: [Verbesselt et al. (2010)](https://doi.org/10.1016/j.rse.2009.08.014)).]
 
 .right-column.center[&lt;img src="img/bfast.png"/&gt;]
+
+---
+# Mining and tropical forest loss
+
+--
+
+.footnote-left[Source: Giljum &amp; Maus et al. (Manuscript under review)]
+
+.right-column.center[&lt;img src="img/tree_map-mining-forest-loss.png"/&gt;]
+
+--
+
+.left-column.left.mt3[**Mining also causes tropical forest loss up to 50 km from the actual extraction sites due to indirect land-use changes.**]
+
+???
+
+- Just to bring an example of research unloked by the nove mining data 
+
+- We have quantified the direct tropical forest loss due to mining 
+
+- Not for example, Indonesia, where lots of coal mining has taken place over forests over the last two decades
+
+- Besides that, mining also attracts other economic activities and settlements, which can cause further forest loss, but this time indirectly
+
+- We found global mines can drive forest loss up to 50 km far from mining sites
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
