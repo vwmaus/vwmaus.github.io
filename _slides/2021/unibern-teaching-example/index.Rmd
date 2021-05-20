@@ -1,6 +1,6 @@
 ---
 title: "Applied Spatial Data Science I"
-subtitle: "Unit 2: Patterns in space and time<br><br>.font70[This lecture is an excerpt of the lecture: **Introduction to data cubes and change detection]**"
+subtitle: "Unit 2: Detecting events and patterns<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
 author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
 date: ".left[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a></div>"
 output: 
@@ -39,13 +39,14 @@ xaringanExtra::use_extra_styles(
 # Applied Spatial Data Science I
 
 <div class="grid-3-1">
-<div class="extension-tile-course font150 bg1-grey">Unit 1<br> Introduction to Spatial Data Science</div>
-<div class="extension-tile-course bg1-orange">Unit 2<br>Patterns in space and time</div>
-<div class="extension-tile-course bg1-grey">Unit 3<br>Something with extracting information using ML/DM/DL???</div>
+<div class="extension-tile-course font150 bg1-grey">Unit 1<br>Introduction to Spatial Data Science</div>
+<div class="extension-tile-course maximum-red">Unit 2<br>Detecting events and patterns</div>
+<div class="extension-tile-course bg1-grey">Unit 3<br>Predictive analysis using machine learning</div>
 </div>
 
 --
-This lecture is an excerpt of the lecture: **Introduction to data cubes and change detection**
+
+This lecture is an excerpt of the lecture: **Earth observation time series and change detection**
 
 ## Today's learning objectives
 
@@ -53,7 +54,7 @@ This lecture is an excerpt of the lecture: **Introduction to data cubes and chan
 
 - Create satellite image data cubes using R
 
-- Extract and visualize single time series and maps
+- Extract and visualize image time series
 
 ???
 
@@ -174,35 +175,16 @@ class: inverse, mline, middle, center
 - higher-dimensional cubes -- The hypercubes
 
 ---
-# Higher-dimensional cubes (hypercubes)
-
-.center[![:scale 100%](./img/cube2.png)]
-
-.footnote-left[Figure source: [Pebesma (2021)](https://r-spatial.github.io/stars/)]
-
-???
-
-- As we can see in this illustration hypercubes can have several reflectance bands
-
-- A single hipercube can also include images from several satellite sensors (multi-sensor data cube)
-
-- In this illustration the dimensions are split for visualization propose, but in our computer system, they are all part of the same data hipercube
-
-- Until now we learned what satellite time series are and how they are represented in the computer systems as data cubes
-
----
 class: inverse, center, middle
 
-# Let's look into a application while learning how to construct our first data cube using R
+# Let's look into an application while learning how to construct our first data cube using R
 
 ???
 
 ---
-class: inverse, mline, center, middle
-
+class: inverse, mline, center
+background-image: url(img/kayapo.gif)
 # Mining within the Indigenous Territory Kayapó in Brazil
-
-![:scale 70%](./img/kayapo.gif)
 
 ???
 
@@ -221,12 +203,28 @@ class: inverse, mline, center, middle
 
 .panelset[
 
-.panel[.panel-name[Install dependencies]
+.panel[.panel-name[Visualization]
+
+.right-column.top[
+<img align="left" src="./index_files/figure-html/zoom-map-1.png" height="350"/>
+<img align="right" src="./index_files/figure-html/ts-plot-1.png" height="400"/>
+]
+
+.left-column[**Assignment:** Investigate temporal patterns from different pairs of coordinates within our area. For example, the pair of coordinates `476361.7, 9239393.0` is within an agricultural crop area. How does it differ from the time series in the mining area? Can you identify other interesting temporal patterns?]
+
+]
+
+.panel[.panel-name[Install]
+
+The software [Rstudio](https://www.rstudio.com/products/rstudio) is required to run the examples. Download it for free [here](https://www.rstudio.com/products/rstudio/download).
+
+Open Rstudio and install the package (stars)[https://r-spatial.github.io/stars/] by running the following command:
 ```{r eval=FALSE}
 # Install the library stars - Spatiotemporal Arrays, Raster and Vector Data Cubes
 install.packages("stars")
 ```
 ]
+
 .panel[.panel-name[Download data]
 ```{r eval=FALSE}
 # Create a folder to safe the data
@@ -241,7 +239,7 @@ unzip("./data/ndvi.zip", exdir = "./data")
 ```
 ]
 
-.panel[.panel-name[Build data cube]
+.panel[.panel-name[Build cube]
 ```{r eval=TRUE, warning=FALSE, message=FALSE, cache=TRUE}
 # Load the library stars - Spatiotemporal Arrays, Raster and Vector Data Cubes
 library(stars)
@@ -260,7 +258,7 @@ kaiapo_cube <- st_set_dimensions(kaiapo_cube, which = "time", values = dates$dat
 ```
 ]
 
-.panel[.panel-name[Subset data cube]
+.panel[.panel-name[Subset cube]
 ```{r zoom-map, eval=TRUE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
 # Create a point 
 pto <- st_point(c(489604.1,9231193.3))
@@ -277,8 +275,8 @@ zoom_cube <- kaiapo_cube[pto_buffer]
 # Load the sub cube to memory
 zoom_cube <- st_as_stars(zoom_cube)
 
-# Plot cube subset
-plot(zoom_cube, breaks = "equal", col = rev(hcl.colors(20, "viridis")), key.pos = 4)
+# Plot cube subset -- not that we selecting a few date 
+plot(zoom_cube[,,,seq(2,40,5)], breaks = "equal", col = rev(hcl.colors(20, "viridis")), key.pos = 4)
 ```
 ]
 
@@ -298,24 +296,14 @@ points(ts$time, ts$attr)
 ```
 ]
 
-.panel[.panel-name[Results]
-
-.right-column.top[
-<img align="left" src="./index_files/figure-html/zoom-map-1.png" height="350"/>
-<img align="right" src="./index_files/figure-html/ts-plot-1.png" height="400"/>
-]
-
-.left-column[**Assignment:** Investigate temporal patterns from different pairs of coordinates within our area. For example, the pair of coordinates `476361.7, 9239393.0` is within an agricultural crop area. How does it differ from the time series in the mining area? Can you identify other interesting temporal patterns?]
-
-]
 ]
 
 ???
 
 ---
-# The next lecture
+# What next? 
 
-## Automatic change detection 
+- .font150[In the second part of this lecture we will learn how automatically detect changes events in time series]
 
 ## Producing maps of events 
 
@@ -324,11 +312,15 @@ points(ts$time, ts$attr)
 ---
 # Online resources
 
-## Data cubes and geocomputation in R
+## Data cubes 
+
+- Pebesma, E., Bivand, R. (2021) Spatial Data Science with applications in R. Chapter 6 Data Cubes [Online](https://keen-swartz-3146c4.netlify.app/datacube.html#datacube).
 
 - Dorman, M. (2021) Introduction to Spatial Data Programming with R. Chapter 6 Raster processing [Online](https://geobgu.xyz/r/raster-processing.html)
 
 - Pebesma, E. (2021) R package stars vignettes. [Online](https://r-spatial.github.io/stars/articles/stars1.html)
+
+## Geocomputation
 
 - Lovelace, R., Nowosad, J., Muenchow, J. (2021) Geocomputation with R. [Online](https://geocompr.robinlovelace.net/#)
 
@@ -343,3 +335,20 @@ points(ts$time, ts$attr)
 .pull-right[
   **.right[.font300.font-dark[Thank you!]]**
 ]
+
+<!-- --- -->
+<!-- # Higher-dimensional cubes (hypercubes) -->
+
+<!-- .center[![:scale 100%](./img/cube2.png)] -->
+
+<!-- .footnote-left[Figure source: [Pebesma (2021)](https://r-spatial.github.io/stars/)] -->
+
+<!-- ??? -->
+
+<!-- - As we can see in this illustration hypercubes can have several reflectance bands -->
+
+<!-- - A single hipercube can also include images from several satellite sensors (multi-sensor data cube) -->
+
+<!-- - In this illustration the dimensions are split for visualization propose, but in our computer system, they are all part of the same data hipercube -->
+
+<!-- - Until now we learned what satellite time series are and how they are represented in the computer systems as data cubes -->
