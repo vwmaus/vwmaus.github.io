@@ -36,6 +36,37 @@ xaringanExtra::use_extra_styles(
 )
 ```
 
+```{r eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+# Create a folder to safe the data
+if (!file.exists("./data/ndvi.zip")){
+  dir.create("./data")
+  download.file("https://cheesebox.crabdance.com/s/sTGyHGxiTFGd2aD/download", destfile = "./data/ndvi.zip")
+}
+unzip("./data/ndvi.zip", exdir = "./data")
+
+library(stars)
+
+files <- dir("./data/NDVI", pattern = ".tif$", full.names = TRUE)
+dates <- readr::read_csv("data/NDVI/dates.csv")
+kaiapo_cube <- read_stars(files, along = "time", proxy = TRUE)
+kaiapo_cube <- st_set_dimensions(kaiapo_cube, which = "time", values = dates$date)
+
+pto <- st_point(c(489604.1,9231193.3))
+pto <- st_sfc(pto, crs = st_crs(kaiapo_cube))
+pto_buffer <- st_buffer(pto, 2000)
+
+zoom_cube <- kaiapo_cube[pto_buffer]
+zoom_cube <- st_as_stars(zoom_cube)
+
+ts1 <- tibble::as_tibble(st_extract(kaiapo_cube, pts = pto))
+ts1 <- dplyr::transmute(ts1, Time = time, NDVI = attr / 10000)
+
+pto <- st_point(c(476361.7, 9239393.0))
+pto <- st_sfc(pto, crs = st_crs(kaiapo_cube))
+ts2 <- tibble::as_tibble(st_extract(kaiapo_cube, pts = pto))
+ts2 <- dplyr::transmute(ts2, Time = time, NDVI = attr / 10000)
+```
+
 # Applied Spatial Data Science I
 
 <div class="grid-3-1">
@@ -124,7 +155,9 @@ xaringanExtra::use_extra_styles(
 
 .footnote[Figure source: [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
 
-```{r ts3-mt-plot, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+```{r ts3-mt-plot, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+library(plotly)
+library(magrittr)
 ts <- readr::read_csv("./img/ts3-mt.csv") 
 ts <- dplyr::filter(ts, (NDVI > 0.7 & Time < lubridate::ymd(20060531)) | Time >= lubridate::ymd(20060531), Time < lubridate::ymd(20121031))
 ts <- dplyr::select(ts, Time, NDVI)
@@ -142,8 +175,7 @@ plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time
             showarrow=TRUE,
             arrowhead=1,
             ax = -30,
-            ay = -40) %>% 
-  htmlwidgets::saveWidget("./img/ndvi-ts3-mt.html", selfcontained = F, libdir = "lib")
+            ay = -40)
 ```
 
 
@@ -319,13 +351,38 @@ leaflet(bb) %>%
 .panel[.panel-name[Visualization]
 
 .pull-left[<img align="center" src="./index_files/figure-html/zoom-map-1.png" height="400"/>]
-.pull-right[<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="./img/ndvi-ts.html" height="400" width="100%"></iframe>]
+.pull-right[
+```{r ts-gold-mine, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=6, fig.width=7}
+library(plotly)
+plot_ly(ts1, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
+  add_markers() %>% 
+  layout(showlegend = FALSE) %>% 
+  add_annotations(x = lubridate::ymd(20190110), y=0.7457, angle = 45,
+            text="NDVI before deforestation event",
+            showarrow=TRUE,
+            arrowhead=1,
+            ax = 80,
+            ay = -30) %>% 
+  add_annotations(x = lubridate::ymd(20190602), y=0.0897, angle = 45,
+            text="NDVI after deforestation event",
+            showarrow=TRUE,
+            arrowhead=1,
+            ax = 100,
+            ay = -80)
+```
+]
 ]
 
 <!-- <img align="left" src="./img/ndvi-ts.html" height="450"/>  -->
 .panel[.panel-name[Assignment]
 .left-column[Visually investigate temporal patterns in different locations within our area. For example, the time series in the right hand side is within an agricultural crop area. How does it differ from the time series in the mining area? Can you identify other interesting patterns?]
-.right-column[<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="./img/ndvi-ts2.html" height="400" width="100%"></iframe>]
+.right-column[
+```{r ts-crop, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=5, fig.width=10}
+plot_ly(ts2, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
+  add_markers() %>% 
+  layout(showlegend = FALSE, title = "longitude: -51.21396, latitude: -6.881071")
+```
+]
 ]
 
 .panel[.panel-name[Install]
@@ -357,7 +414,7 @@ unzip("./data/ndvi.zip", exdir = "./data")
 ]
 
 .panel[.panel-name[Build cube]
-```{r eval=TRUE, warning=FALSE, message=FALSE, cache=TRUE}
+```{r eval=FALSE, warning=FALSE, message=FALSE, cache=TRUE}
 # Load the library stars - Spatiotemporal Arrays, Raster and Vector Data Cubes
 library(stars)
 
@@ -376,7 +433,7 @@ kaiapo_cube <- st_set_dimensions(kaiapo_cube, which = "time", values = dates$dat
 ]
 
 .panel[.panel-name[Subset cube]
-```{r zoom-map, eval=TRUE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+```{r zoom-map, eval=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
 # Create a point 
 pto <- st_point(c(489604.1,9231193.3))
 
@@ -398,7 +455,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 ]
 
 .panel[.panel-name[Extract time series]
-```{r ts-plot, eval=TRUE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+```{r ts-plot, eval=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
 # load plotly library
 library(plotly)
 
@@ -418,37 +475,7 @@ ts$NDVI <- ts$NDVI / 10000
 plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
   add_markers() 
 ```
-```{r ts-save-plot, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
-plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
-  add_markers() %>% 
-  layout(showlegend = FALSE) %>% 
-  add_annotations(x = lubridate::ymd(20190109), y=0.7457, angle = 45,
-            text="NDVI before deforestation event",
-            showarrow=TRUE,
-            arrowhead=1,
-            ax = 80,
-            ay = -30) %>% 
-  add_annotations(x = lubridate::ymd(20190529), y=0.0897, angle = 45,
-            text="NDVI after deforestation event",
-            showarrow=TRUE,
-            arrowhead=1,
-            ax = 100,
-            ay = -80) %>% 
-  htmlwidgets::saveWidget("./img/ndvi-ts.html", selfcontained = F, libdir = "lib")
-
-pto <- st_point(c(476361.7, 9239393.0))
-pto <- st_sfc(pto, crs = st_crs(kaiapo_cube))
-ts <- st_extract(kaiapo_cube, pts = pto)
-ts <- tibble::as_tibble(ts)
-ts <- rename(ts, c("Time" = "time", "NDVI" = "attr"))
-ts$NDVI <- ts$NDVI / 10000
-plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
-  add_markers() %>% 
-  layout(showlegend = FALSE, title = "longitude: -51.21396, latitude: -6.881071") %>% 
-  htmlwidgets::saveWidget("./img/ndvi-ts2.html", selfcontained = F, libdir = "lib")
-```
 ]
-
 ]
 
 ???
