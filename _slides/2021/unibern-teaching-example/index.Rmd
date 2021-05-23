@@ -67,6 +67,10 @@ ts2 <- tibble::as_tibble(st_extract(kaiapo_cube, pts = pto))
 ts2 <- dplyr::transmute(ts2, Time = time, NDVI = attr / 10000)
 ```
 
+```{r cube-subset, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(20, "viridis")), key.pos = 4)
+```
+
 # Applied Spatial Data Science I
 
 <div class="grid-3-1">
@@ -155,30 +159,6 @@ ts2 <- dplyr::transmute(ts2, Time = time, NDVI = attr / 10000)
 
 .footnote[Figure source: [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
 
-```{r ts3-mt-plot, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
-library(plotly)
-library(magrittr)
-ts <- readr::read_csv("./img/ts3-mt.csv") 
-ts <- dplyr::filter(ts, (NDVI > 0.7 & Time < lubridate::ymd(20060531)) | Time >= lubridate::ymd(20060531), Time < lubridate::ymd(20121031))
-ts <- dplyr::select(ts, Time, NDVI)
-
-plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
-  layout(showlegend = FALSE) %>% 
-  add_annotations(x = lubridate::ymd(20070420), y=0.8,
-            text="Deforestation event",
-            showarrow=TRUE,
-            arrowhead=1,
-            ax = 30,
-            ay = -60) %>% 
-  add_annotations(x = lubridate::ymd(20090301), y=0.45,
-            text="Low vegetation (grass)",
-            showarrow=TRUE,
-            arrowhead=1,
-            ax = -30,
-            ay = -40)
-```
-
-
 ???
 
 - Note that we move from comparing image snapshots to analysis complete time series 
@@ -255,6 +235,7 @@ pto_buffer <- st_transform(pto_buffer, crs = st_crs(bb))
 
 
 leaflet(bb) %>%
+  leaflet::setView(lng = st_coordinates(pto)[1], lat = st_coordinates(pto)[2], zoom = 4) %>% 
   leaflet::addWMSTiles(
     "https://tiles.maps.eox.at/wms?",
     layers = "s2cloudless-2020_3857",
@@ -350,13 +331,13 @@ leaflet(bb) %>%
 
 .panel[.panel-name[Visualization]
 
-.pull-left[<img align="center" src="./index_files/figure-html/zoom-map-1.png" height="400"/>]
+.pull-left[<img align="center" src="./index_files/figure-html/cube-subset-1.png" height="400"/>]
 .pull-right[
 ```{r ts-gold-mine, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=6, fig.width=7}
 library(plotly)
 plot_ly(ts1, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
   add_markers() %>% 
-  layout(showlegend = FALSE) %>% 
+  layout(showlegend = FALSE, font = list(family = 'Fira Sans')) %>%
   add_annotations(x = lubridate::ymd(20190110), y=0.7457, angle = 45,
             text="NDVI before deforestation event",
             showarrow=TRUE,
@@ -380,7 +361,7 @@ plot_ly(ts1, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Tim
 ```{r ts-crop, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=5, fig.width=10}
 plot_ly(ts2, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
   add_markers() %>% 
-  layout(showlegend = FALSE, title = "longitude: -51.21396, latitude: -6.881071")
+  layout(showlegend = FALSE, title = "longitude: -51.21396, latitude: -6.881071", font = list(family = 'Fira Sans'))
 ```
 ]
 ]
@@ -406,7 +387,10 @@ dir.create("./data")
 
 # Download images to data folder
 # 40 Sentinel-2 images from the Indigenous Territory Kayapó (~800 MB)
+timeout <- getOption('timeout')
+options(timeout=300)
 download.file("https://cheesebox.crabdance.com/s/sTGyHGxiTFGd2aD/download", destfile = "./data/ndvi.zip")
+options(timeout=timeout)
 
 # Unzip the files in the data folder - A folder called NDVI will be created 
 unzip("./data/ndvi.zip", exdir = "./data")

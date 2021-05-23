@@ -1,3 +1,16 @@
+.copyright-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.copyright-bottom-right {
+  font-size: 80%;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
 .grid-3-1 {
   display: grid;
   height: 10em;
@@ -83,7 +96,7 @@
 
 .prussian-blue { background-color: #003049ff;}
 .maximum-red { background-color: #d62828ff;}
-.orange { background-color:  #f77f00ff;}
+.prussian-orange { background-color:  #f77f00ff;}
 .maximum-yellow-red { background-color: #fcbf49ff;}
 .lemon-meringue { background-color: #eae2b7ff;}
 
@@ -91,7 +104,6 @@
   background-color: #F17F29;
   color: white;
 }
-
 
 .bg1-orange-opac {
   opacity: 0.5;

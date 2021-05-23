@@ -25,17 +25,17 @@ options(htmltools.dir.version = FALSE)
 
 .pull-left[
 
-.center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb1[**Hardware**]
+.center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb0[**Hardware**]
   
-  - **Access to HPC CPU and GPU clusters:**. The cluster will be used for large scale applied research. UBELIX would proved sufficient processing resources, besides having a pretty cool name. 
+  - **Access to HPC CPU and GPU clusters:**. The cluster will be used for large scale applied research. UBELIX would proved sufficient processing resources, besides having a pretty cool name.
 
-  - **A data server minimum 24 cores, 64GB RAM, 20TB storage capacity:** The server will host Geoserver and Rstudio server. It will be used for development and test of algorithms, small scale analysis, geodata storage persistent storage and share.
+  - **A data server minimum 24 cores, 64GB RAM, 50TB:** Host Geoserver+PostGIS, Rstudio server. Usage: development and test of algorithms, small scale analysis, geodata persistent storage and sharing.
 
-  - **Infrastructure for teaching:** Computer lab (hardware 4-8 Cores 20GB RAM) and access to cluster for students' asignments.
+  - **Infrastructure for teaching:** Computer lab (hardware 4-8 Cores 20GB RAM) and access to cluster for students' assignments.
 
-.center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb1[**Software**]
+.center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb0[**Software**]
 
-  - Linux operating system and set of open source software, R, Python, GDAL, PostgreSQL+PostGIS, etc.
+  - Linux operating system and set of open source software, e.g. R, Python, GDAL, PostgreSQL+PostGIS, etc.
 
   - Overleaf license for online collaborative Latex witting.
 
@@ -45,9 +45,7 @@ options(htmltools.dir.version = FALSE)
 
 .center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb1[**Questions**]
 
-  - According to <https://www.overleaf.com/edu/unibe> University of Bern already provides a Overleaf license for staff and students. Is it correct?
-
-  - What hardware is available in the IT infrastructure of the climatology unit? I would be interested in joining. Is it possible to run Docker containers and Rstudio and/or Jupter Notbooks?
+  - What hardware is available in the IT infrastructure of the climatology unit? I would be interested in joining. Is it possible to run Docker containers, e.g. Rstudio and/or Jupyter Notebooks?
   
   - UBELIX team charges for additional storage. Are there any additional costs for processing in UBELIX using CPU/GPU?
   
