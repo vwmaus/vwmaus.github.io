@@ -36,6 +36,7 @@ class:
 # Big-Data supporting interdisciplinary research
 
 <div class="grid-4-1">
+--
 <div class="extension-tile lemon-meringue"><div>Earth observation</div></div>
 --
 <div class="extension-tile maximum-yellow-red"><div>In situ sensors</div></div>
@@ -79,6 +80,8 @@ class:
 #### TWDTW matches well known temporal profiles to segments of satellite image time series to produce land-use/land-cover information.
 ]
 
+--
+
 .pull-right.center[<img src="img/mt-map.png" height="400"/>]
 
 --
@@ -87,11 +90,9 @@ class:
 .pull-left.mt3[<img src="img/dtwSat-light.png" height="100"/>]
 
 .pull-right.pl2[
-**CRAN:** [cran.r-project.org/web/packages/dtwSat](https://cran.r-project.org/web/packages/dtwSat)
-<br>
+- More than 30K downloads from [CRAN](https://cran.r-project.org/web/packages/dtwSat) with known applications in research and business
 `install.package("dtwSat")`
-<br>
-**Development:** [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
+- Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
 
 ???
 
@@ -127,7 +128,7 @@ class:
 .footnote-left[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
 
 .center[
-<img src="img/carajas-misclassification.svg" height="450"/>
+<img src="img/carajas-misclassification.png" height="450"/>
 .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font120[
 **Mining is dismissed from the classification system of most land cover data products**
 ]]
@@ -264,7 +265,7 @@ class:
 
 .right-column[
  <div class="copyright-container">
-  <img src="img/4D-mining.png" alt="Snow">
+  <img src="img/4D-mining.png" />
   <div class="copyright-bottom-right font-dark">&copy; Marie Lachaise (DLR)</div>
 </div>
 ]
@@ -363,7 +364,7 @@ ts <- readr::read_csv("https://raw.githubusercontent.com/vwmaus/vwmaus.github.io
   dplyr::filter((EVI > 0.4 & Time < lubridate::ymd(20061231)) | Time >= lubridate::ymd(20061231), Time > lubridate::ymd(20031220), Time < lubridate::ymd(20121001)) 
 
 p <- plot_ly(ts, x = ~Time, y = ~EVI, type = 'scatter', mode = 'lines', name = "Time series") %>%
-  layout(showlegend = TRUE, yaxis = list(title = "MODIS EVI"), font = list(family = 'Fira Sans'))
+  layout(showlegend = TRUE, yaxis = list(title = "MODIS EVI"), font = list(family = 'Fira Sans'), title = "longitude: -52.45200 latitude: -12.33254")
 
 for(i in 1:9){
   v.year <- seq(from = lubridate::ymd(20040101), to = lubridate::ymd(20120930), by = '1 year')[i]
@@ -375,98 +376,6 @@ for(i in 1:9){
   p <- add_lines(p, name = paste("Crop calendar", i), x = c(v.year, v.year), y = c(0, 1), visible="legendonly", line = list(color = "#2ca02c", widthh=1, dash="dot"), legendgroup = 'group3')
 }
 p
-# lines_list <- list()
-# year_segments <- seq(from = lubridate::ymd(20030831), to = lubridate::ymd(20120930), by = '1 year')
-# for(i in 1:length(year_segments)){
-#   lines_list[[i]] <- list(
-#     type = "line",
-#     fillcolor = line_color,
-#     line = list(color = "#ff7f0e", widthh=1, dash="dot"),
-#     opacity = 1,
-#     xref = "Time",
-#     x0 = year_segments[i],
-#     x1 = year_segments[i],
-#     yref = "EVI",
-#     y0 = 0,
-#     y1 = 1
-#   )
-# }
-# 
-# layout(p, shapes = lines_list, visible = "legendonly")
-
-  # add_lines(name = "Time segments", x = seq(from = lubridate::ymd(20020101), to = lubridate::ymd(20120930), by = '1 year'), lubridate::ymd(20070101)), y = c(0, 1), visible="legendonly", line = list(widthh=0.5, dash="dot"))
-  # add_annotations(x = lubridate::ymd(20070420), y=0.8,
-  #           text="Deforestation event",
-  #           showarrow=TRUE,
-  #           arrowhead=1,
-  #           ax = 30,
-  #           ay = -60) %>% 
-  # add_annotations(x = lubridate::ymd(20090301), y=0.45,
-  #           text="Low vegetation (grass)",
-  #           showarrow=TRUE,
-  #           arrowhead=1,
-  #           ax = -30,
-  #           ay = -40)
-```
-
----
-layout: false
-class: 
-# Longer events/processes 
-
-```{r segments-degradation, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.width=15, fig.height=7}
-library(plotly)
-library(magrittr)
-library(lubridate)
-ts <- readr::read_csv("https://raw.githubusercontent.com/vwmaus/vwmaus.github.io/master/assets/data/time-series-degradation.csv")
-# %>% 
-#   dplyr::filter((EVI > 0.4 & Time < lubridate::ymd(20061231)) | Time >= lubridate::ymd(20061231), Time > lubridate::ymd(20031220), Time < lubridate::ymd(20121001)) 
-
-p <- plot_ly(ts, x = ~Time, y = ~EVI, type = 'scatter', mode = 'lines', name = "Time series") %>%
-  layout(showlegend = TRUE, yaxis = list(title = "MODIS EVI"), font = list(family = 'Fira Sans'))
-
-for(i in 1:9){
-  v.year <- seq(from = lubridate::ymd(20040101), to = lubridate::ymd(20120930), by = '1 year')[i]
-  p <- add_lines(p, name = paste("Year calendar", i), x = c(v.year, v.year), y = c(0, 1), visible="legendonly", line = list(color = "#ff7f0e", widthh=1, dash="dot"), legendgroup = 'group2')
-}
-
-for(i in 1:9){
-  v.year <- seq(from = lubridate::ymd(20040820), to = lubridate::ymd(20120930), by = '1 year')[i]
-  p <- add_lines(p, name = paste("Crop calendar", i), x = c(v.year, v.year), y = c(0, 1), visible="legendonly", line = list(color = "#2ca02c", widthh=1, dash="dot"), legendgroup = 'group3')
-}
-p
-# lines_list <- list()
-# year_segments <- seq(from = lubridate::ymd(20030831), to = lubridate::ymd(20120930), by = '1 year')
-# for(i in 1:length(year_segments)){
-#   lines_list[[i]] <- list(
-#     type = "line",
-#     fillcolor = line_color,
-#     line = list(color = "#ff7f0e", widthh=1, dash="dot"),
-#     opacity = 1,
-#     xref = "Time",
-#     x0 = year_segments[i],
-#     x1 = year_segments[i],
-#     yref = "EVI",
-#     y0 = 0,
-#     y1 = 1
-#   )
-# }
-# 
-# layout(p, shapes = lines_list, visible = "legendonly")
-
-  # add_lines(name = "Time segments", x = seq(from = lubridate::ymd(20020101), to = lubridate::ymd(20120930), by = '1 year'), lubridate::ymd(20070101)), y = c(0, 1), visible="legendonly", line = list(widthh=0.5, dash="dot"))
-  # add_annotations(x = lubridate::ymd(20070420), y=0.8,
-  #           text="Deforestation event",
-  #           showarrow=TRUE,
-  #           arrowhead=1,
-  #           ax = 30,
-  #           ay = -60) %>% 
-  # add_annotations(x = lubridate::ymd(20090301), y=0.45,
-  #           text="Low vegetation (grass)",
-  #           showarrow=TRUE,
-  #           arrowhead=1,
-  #           ax = -30,
-  #           ay = -40)
 ```
 
 ---
@@ -475,7 +384,7 @@ class:
 
 # Event-based information
 
-.center[<img src="img/change-from-events.svg" height="450"/>]
+.center[<img src="img/change-from-events.png" height="450"/>]
 
 ???
 
@@ -515,7 +424,7 @@ class: inverse, middle, center
 
 .left-column[
  <div class="copyright-container">
-  <img src="img/what-is-sds.png" alt="Snow">
+  <img src="img/what-is-sds.png" />
   <div class="copyright-bottom-right">&copy; CARTO 2021</div>
 </div>
 ]
@@ -572,7 +481,7 @@ Besides I also bring experience on issues in land use and land coverchanges in B
 ---
 class: clear, inverse
 
-<img src="img/from-ts-to-events-inverse.svg" height="450"/>
+<img src="img/from-ts-to-events-inverse.png" height="450"/>
 
 .pull-left[
   `r rmarkdown::metadata$author`
@@ -590,55 +499,6 @@ class: inverse, middle, center, mline
 # Extra slides 
 
 ---
-layout: false
-
-# Soy supply chains in Brazil
-
-- Applied research I contribute to...
-
-- Explain in short the work with Boku. How does Satellite + surveis + other data source feed into reconstruct supply chains and why is it important. Close on how event-based information could improve this analysis (causal inference and indirect land-use).
-
-- Machine learning algorithms mapping... optimization for supply chains.... ???? 
-
----
-layout: false
-class: clear
-
----
-
-- Application 2: Mineal extraction and regional developemtn
-
-- Automated Depp-learning mapping 
-
-- Volumetric changes using SAR data in collaboration with DLR
-
-- Event-based reprensetation of mining: 4D entity (t, x, y, z) in contrast to 3D (t, x, y) land-use changes.
-
----
-class: inverse, middle, center, mline
-layout: false
-
-# What about accuracy uncertanty on maps? 
-
----
-
-# Copernicus land cover data set 
-
-- I have contributed to global spatial accuracy analysis --- Copernicus global land cover data -- Refer to report. 
-
-- It is available from Google Earth Engine plantfor or XXXXX
-
-- Accuracy assessment and citizens science 
-
-
-
-<!-- .pull-right.center[ -->
-<!-- <img src="img/land-cover-mapping-items.svg" height="350"/> -->
-<!-- .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font120[ -->
-<!-- **The main issue is the lack of high quality labeled data on mining** -->
-<!-- ]] -->
-
----
 # Events do not have a well defined interval to happen
 
 .left-column[
@@ -649,18 +509,42 @@ source: [Verbesselt et al. (2010)](https://doi.org/10.1016/j.rse.2009.08.014)).]
 
 .right-column.center[<img src="img/bfast.png"/>]
 
----
-# Mining and tropical forest loss
 
---
+---
+layout: false
+class: 
+# What happend to longer events/processes?
+
+```{r segments-degradation, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.width=15, fig.height=7}
+library(plotly)
+library(magrittr)
+library(lubridate)
+ts <- readr::read_csv("https://raw.githubusercontent.com/vwmaus/vwmaus.github.io/master/assets/data/time-series-degradation.csv")
+
+p <- plot_ly(ts, x = ~Time, y = ~EVI, type = 'scatter', mode = 'lines', name = "Time series") %>%
+  layout(showlegend = TRUE, yaxis = list(title = "MODIS EVI"), font = list(family = 'Fira Sans'), title = "longitude: -56.66709, latitude: -11.92187")
+
+for(i in 1:18){
+  v.year <- seq(from = lubridate::ymd(20010101), to = lubridate::ymd(20180131), by = '1 year')[i]
+  p <- add_lines(p, name = paste("Segment", i), x = c(v.year, v.year), y = c(0, 1), visible="legendonly", line = list(color = "#ff7f0e", widthh=1, dash="dot"), legendgroup = 'group2')
+}
+p
+```
+
+
+---
+# Tropical forest loss due to mining
 
 .footnote-left[Source: Giljum & Maus et al. (Manuscript under review)]
 
-.right-column.center[<img src="img/tree_map-mining-forest-loss.png"/>]
+.right-column.left[
+<figure>
+  <figcaption>Direct forest cover loss</figcaption>
+  <p><img src="img/tree_map-mining-forest-loss.png"/>
+</figure>
+]
 
---
-
-.left-column.left.mt3[**Mining also causes tropical forest loss up to 50 km from the actual extraction sites due to indirect land-use changes.**]
+.left-column.left.mt3[**Besides direct forest cover loss, mining also causes tropical forest loss up to 50 km from the actual extraction sites due to indirect land-use changes.**]
 
 ???
 
