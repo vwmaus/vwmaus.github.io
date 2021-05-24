@@ -12,3 +12,5 @@ vendor
 *.bib.sav
 teaching-sample/
 .Rproj.user
+index.utf8.md
+index.knit.md

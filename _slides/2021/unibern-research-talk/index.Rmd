@@ -123,7 +123,7 @@ class:
 ---
 class: 
 
-# Were do minerals come from? 
+# Where are minerals extracted from? 
 
 .left-column[
 <img src="https://www.fineprint.global/wp-content/uploads/2019/10/fineprint_w_erc_sm.png"/>
@@ -139,28 +139,6 @@ class:
 
 .right-column.center[
 <img src="img/carajas-misclassification.png" height="400"/>
-.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
-**Mining is dismissed from the classification system of most land cover data products**
-]
-]
-
----
-class: 
-
-# Were do minerals come from? 
-
-.left-column[
-<img src="https://www.fineprint.global/wp-content/uploads/2019/10/fineprint_w_erc_sm.png"/>
-
-- Mapping raw material extraction and related impacts with global coverage
-
-- Linking the extraction pacts to supply chains to calculate final consumption footprints.
-]
-
-.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
-
-.right-column.center[
-<img src="img/carajas-misclassification1.png" height="400"/>
 .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
 **Mining is dismissed from the classification system of most land cover data products**
 ]
@@ -436,11 +414,11 @@ class:
 
 ---
 layout: false
-class: inverse, middle, center
+class: clear, middle, center
 
 <!-- .font-light.font300[**Applied Spatial Data Science**] -->
 
-# New curricular component: <br> Applied Spatial Data Science
+# .font-dark[New curricular component: <br> Applied Spatial Data Science]
 
 <img src="img/what-is-sds.png" height="400" />
 
@@ -467,25 +445,32 @@ Applied because it will focus on concepts and usage of common spatial data scien
 
 --
 
-.right-column.font-dark[
+.right-column.mt0[
 
 ### Applied Spatial Data Science I (BSc Level)
 
 - Reproducibility and open science
 - Geocomputation and programming with R
 - Data cubes
-- Pattern detection and clustering
-- Machine learning algorithms 
-- Geodata visualization
+- Pattern detection and clustering (e.g., using machine learning algorithms)
+- Geodata visualization and sharing
+]
 
+--
+
+.right-column.mt-1[
 ### Applied Spatial Data Science II (MSc Level)
 - Big-Data and cloud computing
 - Predictive analysis
 - Deep learning
+]
+
+--
+.right-column.mt-1[
 
 ### Current related courses
 
-- Math I and II, Geoprocessing I and II, Statistics, Quantitative methods, Network theory
+- Math I and II, Geoprocessing I and II, Statistics, Quantitative methods, Network analysis
 
 ]
 
@@ -519,28 +504,27 @@ Applied because it will focus on concepts and usage of common spatial data scien
 
 # Conclusions 
 
-- ## Geodata is critical for interdisciplinary research 
+--
 
-- ## 
+### Short-term research
+  - Developing methods to improve information on the global mining sector, including 2D and 3D
+  - A range of applications on land use and and land cover change
+  - Investigate whether different crop management can be detected in the satellite image time series
 
-## Collaboration 
+--
 
-- My research contributes to extract info form DATA EO
+### Long-term research 
+  - Develop methods to extract and analyze event using satellite earth observation time series
 
-- I am interested in interdisciplinary applied research, and believe UBIG provides an insparing interdiscplinary environmental --- 
+--
 
-- With expertise and research interests I can already foresee collaborations with UBIG's groups on: 
+### Potential initial collaborations with GIUB (but not limited to)
 
-Remote Sensing Group - Satellite data archive NOAA/MetOp AVHRR - Vegetation and Snow time series analysis
+- Remote sensing group: Vegetation an snow time series analysis
 
-Climate XXXXX - 
+- Climatology: Mining patterns in long-term climate time series
 
-Sustainable land management - 
-
-Regional development?????
-
-Besides I also bring experience on issues in land use and land coverchanges in Brazil that can add to currently African and European contexts... 
-
+- Land systems and sustainable land management: 
 
 ---
 class: clear, inverse
