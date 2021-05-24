@@ -1,8 +1,8 @@
 ---
 title: "Applied Spatial Data Science I"
-subtitle: "Unit 2: Detecting events and patterns<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
-author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
-date: ".left[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
+subtitle: "Unit 4: Detecting events and patterns in time series<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
+date: ".right[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
 output: 
   xaringan::moon_reader:
     chakra: libs/remark-latest.min.js
@@ -85,20 +85,21 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 --
 
 .pull-left[
-## Requiriments:
+## Requirements:
 
 - Basic concepts of remote sensing 
 
-- Basic skills in R programming language from geodata (acquired in Units I of this course)
+- Basic skills in R programming language for geodata handling (acquired in Unit I of this course)
 
 ]
 
 .pull-right[
 ## After this lecture you will:
 
-- Recall the concept of satellite image time series and what information it can provide
+- Recall the concept of satellite image time series
 
-- Know how to use R to visualize satellite image time series for land change analysis
+- Identify potential applications of satellite image time series its data
+
 ]
 
 ---
@@ -139,28 +140,28 @@ class: hide_logo
 ---
 class: hide_logo
 background-image: url(img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)
-# Example of time series application
+# Example of a time series application
 
 .footnote-left.font-light[
-Gold mine in the Kayapo indigenous territory. Photo by IBAMA via Wikimedia Commons [(CC BY-SA 2.0)](https://creativecommons.org/licenses/by-sa/2.0/)
+Gold mine in the Kayapo indigenous territory in Brazil. Photo by IBAMA via Wikimedia Commons [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)
 ]
 
 --
 
 .right-column[![:scale 100%](img/kayapo.gif)]
 
-.left-column.font-dork.bg-washed-green.pl2.bw1.br3.mt4[Animation showing the the evolution of illegal gold mining in the northern part of the Indigenous Territory Kayapó in Brazil from 2018 to 2020. Contains modified Copernicus Sentinel data 2018-2020. More infomration [here](https://news.mongabay.com/2019/12/illegal-gold-rush-causing-irreversible-damage-to-rivers-in-the-brazilian-amazon/).
-]
+.left-column.font-dork.bg-washed-green.pl2.bw1.br3.mt4[Animation showing the evolution of illegal gold mining in the northern part of the Indigenous Territory Kayapó in Brazil from 2018 to 2020. Contains modified Copernicus Sentinel data 2018-2020. More infomration [here](https://news.mongabay.com/2019/12/illegal-gold-rush-causing-irreversible-damage-to-rivers-in-the-brazilian-amazon/).]
 
 
 ---
-class: clear, inverse, top, hide_logo
+class: inverse, top, hide_logo
+# Location of the study area
 
 .panelset[
 
-.panel[.panel-name[Interactive of the study area]
+.panel[.panel-name[Interactive visualization]
 
-```{r, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.width=14, fig.retina = 3}
+```{r, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.width=16, fig.height=6.5, fig.retina = 3}
 suppressPackageStartupMessages(library(leaflet))
 suppressPackageStartupMessages(library(leafem))
 suppressPackageStartupMessages(library(sf))
@@ -272,7 +273,10 @@ class: hide_logo
 
 .panel[.panel-name[Visualization]
 
-.pull-left[<img align="center" src="img/cube-subset-1.png" height="400"/>]
+.pull-left[<figure>
+  <p><img align="center" src="img/cube-subset-1.png" height="370"/>
+  <figcaption>NDVI time series</figcaption>
+</figure>]
 .pull-right[
 ```{r ts-gold-mine, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=6, fig.width=7}
 library(plotly)
@@ -296,7 +300,7 @@ plot_ly(ts1, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Tim
 ]
 
 .panel[.panel-name[Assignment]
-.left-column[Visually investigate temporal patterns in different locations within our area. For example, the time series in the right hand side is within an agricultural crop area. How does it differ from the time series in the mining area? Can you identify other interesting patterns?]
+.left-column[Visually investigate temporal patterns in different locations in the Kayapó Territory. For example, the time series in this figure is within an agricultural crop area. How does it differ from time series in the mining area? Can you identify other interesting temporal patterns?]
 .right-column[
 ```{r ts-crop, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=5, fig.width=10}
 plot_ly(ts2, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time series") %>% 
@@ -378,7 +382,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 ```
 ]
 
-.panel[.panel-name[Extract time series]
+.panel[.panel-name[Plot time series]
 ```{r ts-plot, eval=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
 # load plotly library
 library(plotly)
@@ -409,23 +413,17 @@ class: hide_logo
 .font130[The slides are available from [victor-maus.com/assets/unibern-teaching-example](https://victor-maus.com/assets/unibern-teaching-example)]
 
 ### Data cubes in R
-
 - Pebesma, E., Bivand, R. (2021) Spatial Data Science with applications in R. Chapter 6 Data Cubes [Online](https://keen-swartz-3146c4.netlify.app/datacube.html#datacube).
-
 - Dorman, M. (2021) Introduction to Spatial Data Programming with R. Chapter 6 Raster processing [Online](https://geobgu.xyz/r/raster-processing.html)
-
 - Pebesma, E. (2021) R package stars vignettes. [Online](https://r-spatial.github.io/stars/articles/stars1.html)
 
 ### Additional reading
-
 - Lovelace, R., Nowosad, J., Muenchow, J. (2021) Geocomputation with R. [Online](https://geocompr.robinlovelace.net/#)
-
 - Baumer, B.S., Kaplan, D.T., and Horton N.J. (2021) Modern Data Science with R. [Online](https://mdsr-book.github.io/mdsr2e/index.html)
 
-.pull-left[
-  `r rmarkdown::metadata$author`
-]
+.pull-left[`r rmarkdown::metadata$author`]
 
 .pull-right[
   **.right[.font300.font-dark[Thank you!]]**
 ]
+

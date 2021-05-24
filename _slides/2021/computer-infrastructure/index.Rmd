@@ -27,7 +27,7 @@ options(htmltools.dir.version = FALSE)
 
 .center.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.mb0[**Hardware**]
   
-  - **Access to HPC CPU and GPU clusters:**. The cluster will be used for large scale applied research. UBELIX would proved sufficient processing resources, besides having a pretty cool name.
+  - **Access to HPC CPU and GPU clusters:** The cluster will be used for large scale applied research. UBELIX will provide sufficient processing resources.
 
   - **A data server minimum 24 cores, 64GB RAM, 50TB:** Host Geoserver+PostGIS, Rstudio server. Usage: development and test of algorithms, small scale analysis, geodata persistent storage and sharing.
 
@@ -49,6 +49,6 @@ options(htmltools.dir.version = FALSE)
   
   - UBELIX team charges for additional storage. Are there any additional costs for processing in UBELIX using CPU/GPU?
   
-  - Are there satellite data archives available in the UBELIX cluster network? If not, would it be possible?
+  - Are there satellite data archives available in the UBELIX cluster network? If not, would it be possible to have?
 
 ]
