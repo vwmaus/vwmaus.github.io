@@ -36,7 +36,7 @@ xaringanExtra::use_extra_styles(
 )
 ```
 
-```{r eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
+```{r cube-subset, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE, results='hide', fig.show='hide', fig.path="img/", fig.retina = 3}
 # Create a folder to safe the data
 if (!file.exists("./data/ndvi.zip")){
   dir.create("./data")
@@ -65,9 +65,7 @@ pto <- st_point(c(476361.7, 9239393.0))
 pto <- st_sfc(pto, crs = st_crs(kaiapo_cube))
 ts2 <- tibble::as_tibble(st_extract(kaiapo_cube, pts = pto))
 ts2 <- dplyr::transmute(ts2, Time = time, NDVI = attr / 10000)
-```
 
-```{r cube-subset, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, results='hide', fig.show='hide'}
 plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(20, "viridis")), key.pos = 4)
 ```
 
@@ -331,7 +329,7 @@ leaflet(bb) %>%
 
 .panel[.panel-name[Visualization]
 
-.pull-left[<img align="center" src="./index_files/figure-html/cube-subset-1.png" height="400"/>]
+.pull-left[<img align="center" src="img/cube-subset-1.png" height="400"/>]
 .pull-right[
 ```{r ts-gold-mine, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE, fig.height=6, fig.width=7}
 library(plotly)
@@ -354,7 +352,6 @@ plot_ly(ts1, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Tim
 ]
 ]
 
-<!-- <img align="left" src="./img/ndvi-ts.html" height="450"/>  -->
 .panel[.panel-name[Assignment]
 .left-column[Visually investigate temporal patterns in different locations within our area. For example, the time series in the right hand side is within an agricultural crop area. How does it differ from the time series in the mining area? Can you identify other interesting patterns?]
 .right-column[
