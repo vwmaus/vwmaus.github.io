@@ -19,4 +19,6 @@ system("drawio -x -t -o ./img/from-ts-to-events-inverse.png ./img/from-ts-to-eve
 system("drawio -x -t -o ./img/sits.png ./img/sits.drawio")
 system("drawio -x -t -o ./img/land-cover-mapping-items.png ./img/land-cover-mapping-items.drawio")
 system("drawio -x -t -o ./img/carajas-misclassification.png ./img/carajas-misclassification.drawio")
+system("drawio -x -t -o ./img/carajas-misclassification1.png ./img/carajas-misclassification1.drawio")
 system("drawio -x -t -o ./img/twdtw.png ./img/twdtw.drawio")
+system("drawio -x -t -o ./img/what-is-sds.png ./img/what-is-sds.drawio")

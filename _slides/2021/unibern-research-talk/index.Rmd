@@ -39,17 +39,17 @@ class:
 --
 <div class="extension-tile lemon-meringue"><div>Earth observation</div></div>
 --
-<div class="extension-tile maximum-yellow-red"><div>In situ sensors</div></div>
+<div class="extension-tile maximum-yellow-red"><div>In situ<br>data</div></div>
 --
 <div class="extension-tile prussian-orange"><div>Statistics and surveys</div></div>
 --
-<div class="extension-tile maximum-red"><div>...and more</div></div>
+<div class="extension-tile maximum-red"><div>Citizen science</div></div>
 </div>
 
 --
 
 .center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4[
-### **I investigate how to integrate and extract information from a variate of data sources and develop methods and tools to support real world applications.**
+### **I investigate how to integrate and extract information from a variate of data sources and develop spatial analysis tools to support real world applications.**
 ]
 
 
@@ -125,14 +125,46 @@ class:
 
 # Were do minerals come from? 
 
-.footnote-left[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+.left-column[
+<img src="https://www.fineprint.global/wp-content/uploads/2019/10/fineprint_w_erc_sm.png"/>
 
-.center[
-<img src="img/carajas-misclassification.png" height="450"/>
-.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font120[
+- Mapping raw material extraction and related impacts with global coverage
+
+- Linking the extraction pacts to supply chains to calculate final consumption footprints.
+]
+
+--
+
+.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+.right-column.center[
+<img src="img/carajas-misclassification.png" height="400"/>
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
 **Mining is dismissed from the classification system of most land cover data products**
-]]
+]
+]
 
+---
+class: 
+
+# Were do minerals come from? 
+
+.left-column[
+<img src="https://www.fineprint.global/wp-content/uploads/2019/10/fineprint_w_erc_sm.png"/>
+
+- Mapping raw material extraction and related impacts with global coverage
+
+- Linking the extraction pacts to supply chains to calculate final consumption footprints.
+]
+
+.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+.right-column.center[
+<img src="img/carajas-misclassification1.png" height="400"/>
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
+**Mining is dismissed from the classification system of most land cover data products**
+]
+]
 
 ???
 
@@ -372,7 +404,7 @@ for(i in 1:9){
 }
 
 for(i in 1:9){
-  v.year <- seq(from = lubridate::ymd(20040820), to = lubridate::ymd(20120930), by = '1 year')[i]
+  v.year <- seq(from = lubridate::ymd(20040801), to = lubridate::ymd(20120731), by = '1 year')[i]
   p <- add_lines(p, name = paste("Crop calendar", i), x = c(v.year, v.year), y = c(0, 1), visible="legendonly", line = list(color = "#2ca02c", widthh=1, dash="dot"), legendgroup = 'group3')
 }
 p
@@ -406,7 +438,11 @@ class:
 layout: false
 class: inverse, middle, center
 
-.font-light.font300[**Applied Spatial Data Science**]
+<!-- .font-light.font300[**Applied Spatial Data Science**] -->
+
+# New curricular component: <br> Applied Spatial Data Science
+
+<img src="img/what-is-sds.png" height="400" />
 
 ???
 
@@ -420,43 +456,74 @@ class: inverse, middle, center
 
 
 ---
-# A
+# Applied Spatial Data Science
 
 .left-column[
- <div class="copyright-container">
   <img src="img/what-is-sds.png" />
-  <div class="copyright-bottom-right">&copy; CARTO 2021</div>
-</div>
+  
+Applied because it will focus on concepts and usage of common spatial data science infrastructures and software for interdisciplinary problems.
+
 ]
+
+--
 
 .right-column.font-dark[
 
-- A subset of Data Science that focuses on spatial data
+### Applied Spatial Data Science I (BSc Level)
 
-- questions on the basis of available data
+- Reproducibility and open science
+- Geocomputation and programming with R
+- Data cubes
+- Pattern detection and clustering
+- Machine learning algorithms 
+- Geodata visualization
+
+### Applied Spatial Data Science II (MSc Level)
+- Big-Data and cloud computing
+- Predictive analysis
+- Deep learning
+
+### Current related courses
+
+- Math I and II, Geoprocessing I and II, Statistics, Quantitative methods, Network theory
+
+]
+
+???
+
+- raster (satellite EO) and vector data
+
+- methods to analyze patterns in space as well as time
+ 
+- how to apply ML method to forecast deforestation/XXXXXXX
+
+- It will not focus on theoretical elaboration of the mathematics, statistics and informatics.
+
+- The learning of the topics would be via applications example.  
+
+- Questions on the basis of available data
 
 - communicating that effort
 
 - showing the results
 
-- sharing the data used
+- Sharing the data used
 
 - exposing the path that led to the answers in a comprehensive and reproducible way
-]
 
+- R because it offers a statistical language and environment easily extensible and broadly used by non-computer programmers to carry out programming tasks. Moreover, R plays a large role in data science and geodata analysis. Nevertheless, solid knowledge of geocomputation will allow students to use other prominent programming languages, for example, Python and Julia.
 
 <!-- - Acknowledges the fact that available data may not be sufficient to answer questions, and that any answers are conditional on the data collection or sampling protocols employed. -->
 
 ---
-# Content
 
-spatial data: points, lines, polygons, rasters, coverages, geometry attributes, data cubes, reference systems, as well as higher-level concepts including how attributes relate to geometries and how this affects analysis.
+# Conclusions 
 
----
-layout: false
-class: inverse, middle, center, mline
+- ## Geodata is critical for interdisciplinary research 
 
-# Collaboration 
+- ## 
+
+## Collaboration 
 
 - My research contributes to extract info form DATA EO
 
@@ -474,9 +541,6 @@ Regional development?????
 
 Besides I also bring experience on issues in land use and land coverchanges in Brazil that can add to currently African and European contexts... 
 
----
-
-# Conclusions 
 
 ---
 class: clear, inverse

@@ -467,7 +467,9 @@ plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time
 ---
 # Online resources
 
-## Data cubes in R
+.font130[The slides are available from [victor-maus.com/assets/unibern-teaching-example](https://victor-maus.com/assets/unibern-teaching-example)]
+
+### Data cubes in R
 
 - Pebesma, E., Bivand, R. (2021) Spatial Data Science with applications in R. Chapter 6 Data Cubes [Online](https://keen-swartz-3146c4.netlify.app/datacube.html#datacube).
 
@@ -475,12 +477,11 @@ plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time
 
 - Pebesma, E. (2021) R package stars vignettes. [Online](https://r-spatial.github.io/stars/articles/stars1.html)
 
-## Geocomputation with R
+### Additional reading
 
 - Lovelace, R., Nowosad, J., Muenchow, J. (2021) Geocomputation with R. [Online](https://geocompr.robinlovelace.net/#)
 
-<br>
-Slides available from [https://victor-maus.com/assets/unibern-teaching-example](https://victor-maus.com/assets/unibern-teaching-example)
+- Baumer, B.S., Kaplan, D.T., and Horton N.J. (2021) Modern Data Science with R. [Online](https://mdsr-book.github.io/mdsr2e/index.html)
 
 .pull-left[
   `r rmarkdown::metadata$author`
