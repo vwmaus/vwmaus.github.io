@@ -28,11 +28,11 @@ xaringanExtra::use_panelset()
 
 <div class="grid-4-1-img">
 <div class="copyright-container">
-  <img src="img/Marco Dormino_UN_Photo-CC-BY-NC-ND-2.0.jpg" />
+  <img src="img/Marco_Dormino_UN_Photo-CC-BY-NC-ND-2-0.jpg" />
   <div class="cc-bottom-right font-light">Photo by Marco Dormino <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a></div>
 </div>
 <div class="copyright-container">
-  <img src="img/Nanang_Sujana_CIFOR-CC-BY-NC-ND-2.0.jpg" />
+  <img src="img/Nanang_Sujana_CIFOR-CC-BY-NC-ND-2-0.jpg" />
   <div class="cc-bottom-right font-light">Photo by Nanang Sujana <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a></div>
 </div>
 <div class="copyright-container">
@@ -63,26 +63,6 @@ xaringanExtra::use_panelset()
 ]
 
 
-???
-
-- Big-Data supporting interdisciplinary research
-
-- XXXXXX, thank you for the introduction and for the opportunity to share and discuss my work with you 
-
-- Today we face big environmental and sustainability challenges: climate changes, biodiversity loss, inequality, everything in a globalized world 
-
-- To tackle these challenges a interdisciplinary research is needed
-
-- usually, requiring a great deal of heterogeneous data sets, including different space and time scales, as well as data quality
-
-- Including, for example, EO, In situ sensors, Statistics and surveys, and more, such as citizen science sources 
-
-- Therefore, it is not always easy to extract information from such sources 
-
-- In my research, in Geoinformatics and GIScience I investigate how to integrate and extract information from a variate of data sources
-
-- I develop new methods and tools to support real world applications and eventually also decision making and policy making
-
 ---
 # Time-Weighted Dynamic Time Warping (TWDTW)
 
@@ -106,31 +86,6 @@ xaringanExtra::use_panelset()
 `install.package("dtwSat")`
 - Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
 
-???
-
-- My main contribution to that was the development of a novel method to extract land-use and land-cover information from EO time series (EOTS)
-
-- My motivation to develop the new method was that the current state-of-the-art machine learning algorithms require enormous amounts of labeled training data
-
-- (The data used to calibrate classification land-use and land-cover classification models)
-
-- However, this data is not always easy to collect or sometimes even impossible, for example wen we want to produce information of historical land-use and land-cover changes
-
-- While investigating how to overcome this limitation 
-
-- I discovered that by adding a "temporal-weight" to a method called dynamic time warping (developed in the 70s in the field of speak recognition) I could produce accurate land-use and land-cover maps using as little as one sample per land-use or land-cover class -- while machine learning algorithms require the order of thousands samples per class. 
-
-- The main limitation of the method is its computational time. However, The method is proven to be robust to variations in the phelogical cycles, to noise and gaps in the EO satellite time series.
-
-- Dynamic Time Warping searches for similar temporal profiles by minimizing the difference between them
-
-- For example, in the top of the figure in the left hand side is a well known temporal profile (e.g. Vegetation Index)
-
-- TWDTW finds the matches of the profile to segments of an arbitrary vegetation time series
-
-- Besides the scientific publication, I also published the novel method as an open source R package called dtwSat. 
-
-- I was very happy that the package was well received, it has been downloaded more than 30K times and I haven been contacted by researcher and private sector (mostly remote sensing companies) that use the software on their applications.
 
 ---
 class: 
@@ -156,27 +111,6 @@ class:
 ]
 ]
 
-???
-
-- Besides methods my research has also produced novel data sets. 
-
-- My most recent data contribution was the production of a global mining map
-
-- This work was developed in the context of the ERC project FINEPRINT, for which I lead a work package on geodata integration and analysis
-
-- In this project I identified a large data gap on global mining areas
-
-- Although, mining is an important economic activity and critical to our modern society, providing materials for buildings, cars, mobile phones, computers you name it.... almost everything we use this days
-
-- Global scale land cover maps usually disregard mining areas 
-
-- As an example, look at these red areas in CCI Land cover map from the European Space Agency (ESA). 
-
-- The red area in the right hand side is the Urban area of Paraupebas municipality in Brazil
-
-- The area in the left hand side is the largest Iron mine in the world, the Carajá Iron Ore mine
-
-- Although, these two areas have different uses and also different land-covers (biophysical cover), for this map's classification system they are the same
 
 ---
 class: 
@@ -198,27 +132,6 @@ class:
 <img src="img/parauapebas-city-satellite.png" height="450"/>
 ]
 
-???
-
-- In these two figures we can see the two areas in a I just mentioned, 
-
-- The Carajás Iron Ore mine in the left hand side and 
-
-- The Urban area of Paraupebas in the right hand side
-
-- If the areas so different even from a satellite image
-
-- Why we do still do not have mining areas in the classification system of land-use and land-cover maps? 
-
-- Is it the algorithms' fault or lack of labeled data?
-
-- State-of-the-art machine learning algorithms can produce extremely accurate maps but require lots of training data 
-
-- This data should cover the full variance/variability of each land cover class
-
-- which is really bad new for mapping mining areas as they are extremely heterogeneous around the world, because of different landscapes, mining techniques, and of course the types of minerals extracted 
-
-- Therefore, automated mining mapping was not an option, and I had to step back and start collecting data
 
 ---
 layout: false
@@ -258,21 +171,6 @@ background-image: url(img/global-mining-map.png)
 - **Mining and tropical forest loss (WWF Germany)**
 ]]
 
-???
-
-- This map shows the locations of more than 21,000 polyogns which my team produced to fill the mining data gap
-
-- This data has been produce via visual interpretation of satellite images from various sources 
-
-- I am now finishing a second release of the data set which will include more than 50,000 polygons
-
-- This data set is open and anyone can use it for research or other applications 
-
-- The new data set was well received and has generated several follow up research and collaboration (examples in the slide) 
-
-- As you can see there is a vast range of research topics are making use of the data and which I would never have imaged
-
-- This also, highlights the importance of open data and open science
 
 ---
 layout: false
@@ -299,14 +197,6 @@ class: inverse, middle, center
 --
 
 .font300[**How do we measure land-use change using satellite earth observations?**]
-
-???
-
-- You might be wandering what this all have to do with the title of this presentation! 
-
-- Well, everything we have been talking about has to do with land-use and land-cover changes. 
-
-- But how do we measure land-use and land-cover changes using satellite EO? 
 
 ---
 class:
@@ -335,44 +225,6 @@ class:
   <p><img src="img/change-from-timeseries.png" height="400"/>
 </figure>
 ]
-
-???
-
-- When satellite EO data was more scarce, we could measure changes by using single images taken at a different time, as we can see in this figure
-
-- We take two images from different dates and produce a map of states for each image
-
-- let's say a two land-cover maps and compare them to capture the changes 
-
-- These approach can be strongly affected by the accuracy of the map which is highly dependent on the period of the year when the images were acquired 
-
-- Today more sophisticate classification algorithms use multiple images to produce each land cover map with higher accuracy than using a single image for each period
-
-- As we see in the illustration in the right hand side, where the maps are produced using two temporal stacks
-
-- However, the higher accuracy comes at a cost of an arbitrary selection of intervals that violates time
-
-- The arbitrary length of the stacks adds additional error to change measurements and can distort causal links between variables in land change analysis
-
-- This happens because events and process taking place on the ground can irregular and have variable duration 
-
-- For example, a fast forest clear cut event can take place at any time, but not over the complete arbitrary time period 
-
-- On the other hand, a forest degradation process can be slower, holding from several months to years with consecutive events of selective logging or forest fires
-
-
-This has been allowed by the increasing availability of satellite images with high spatial temporal resolution, for example, Sentinel-2
-
-In the past when only a few satellite images were availabel over time, the best we could do to analyse changes was to compare them.  Today we still continue to compare images, alghough on a higher temporal resolution.The full potential of the currently tempral available satellite images time series is still to be explored in a continuus manner. For example moving from comparing time series to events, would improve studies on land use trajectories and extraction of causal rules. 
-
-Ignoring the order of time can destor causal links between variables. Runge 2018 (Other others do) shows that time aggregation can create spurious causal links as it can violate the Markov assumption. 
-
-According to Runge 2018 the strengh of the causal machanisms can fluctuate onver time. Could the strengh of spefic causal machanism Z --> Y be hold null for a time period given an intervention machanism (Z _||_ Y | X)?  In that case does the causal machanism exists or it does not exist during the time period? Peters et al (2016) will explain this better! 
-
-<!-- .bg-washed-green.b--dark-green.ba.bw0.br3.shadow-5.mt0.font120.ph2[ -->
-<!-- **Temporal stacks have arbitrary length that violates time and add error in change measurements and distort causal links between variables in land-use change analysis.** -->
-<!-- ] -->
-
 
 ---
 layout: false
@@ -413,41 +265,14 @@ class:
 
 .bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**How to produce event-based information preserving temporal hierarchy?**]
 
-???
-
-- Here I argue for a methodological paradigm change on land change information 
-
-- Moving from comparing maps of states to analyzing spatiotemporal events 
-
-- Therefore, I propose this following research question
-
-- I intend to investigate this question during the next years 
-
-- And I for see that ensuring this question will allow to improve land change analysis, for example, 
-
-- It will allow to analyze land-use trajectories 
-
-- And improve causal inference to help understand drivers of change and assess intervention outcomes that can give valuable information for sustainable land management, environmental conservation, food security and other interdisciplinary applications 
 
 ---
 layout: false
 class: clear, middle, center
 
-<!-- .font-light.font300[**Applied Spatial Data Science**] -->
-
 # .font-dark[New curricular component: <br> Applied Spatial Data Science]
 
 <img src="img/what-is-sds.png" height="400" />
-
-???
-
-- Data Science GIS that exploring geodata, looking at where things happen and understanding why they happen there.
-
-- physical geography, human geography and in geographies of sustainability
-
-- Spatial Data Science
-
-- Using semantics and spatial data science to explore petabytes of satellite images.
 
 
 ---
@@ -491,31 +316,6 @@ Applied because it will focus on concepts and usage of common spatial data scien
 
 ]
 
-???
-
-- raster (satellite EO) and vector data
-
-- methods to analyze patterns in space as well as time
- 
-- how to apply ML method to forecast deforestation/XXXXXXX
-
-- It will not focus on theoretical elaboration of the mathematics, statistics and informatics.
-
-- The learning of the topics would be via applications example.  
-
-- Questions on the basis of available data
-
-- communicating that effort
-
-- showing the results
-
-- Sharing the data used
-
-- exposing the path that led to the answers in a comprehensive and reproducible way
-
-- R because it offers a statistical language and environment easily extensible and broadly used by non-computer programmers to carry out programming tasks. Moreover, R plays a large role in data science and geodata analysis. Nevertheless, solid knowledge of geocomputation will allow students to use other prominent programming languages, for example, Python and Julia.
-
-<!-- - Acknowledges the fact that available data may not be sufficient to answer questions, and that any answers are conditional on the data collection or sampling protocols employed. -->
 
 ---
 
@@ -611,14 +411,3 @@ p
 
 .left-column.left.mt3[**Besides direct forest cover loss, mining also causes tropical forest loss up to 50 km from the actual extraction sites due to indirect land-use change.**]
 
-???
-
-- Just to bring an example of research unloked by the nove mining data 
-
-- We have quantified the direct tropical forest loss due to mining 
-
-- Not for example, Indonesia, where lots of coal mining has taken place over forests over the last two decades
-
-- Besides that, mining also attracts other economic activities and settlements, which can cause further forest loss, but this time indirectly
-
-- We found global mines can drive forest loss up to 50 km far from mining sites 

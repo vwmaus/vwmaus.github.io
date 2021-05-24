@@ -75,7 +75,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 
 # Applied Spatial Data Science I
 
-<div class="grid-3-1">
+<div class="grid-4-1">
 <div class="extension-tile-course font150 bg1-grey">Unit 1<br>Introduction to Spatial Data Science</div>
 <div class="extension-tile-course bg1-grey">Unit 2<br>Geodata visualization and sharing</div>
 <div class="extension-tile-course bg1-grey">Unit 3<br>Spatial patterns and clustering</div>
@@ -101,18 +101,6 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 - Know how to use R to visualize satellite image time series for land change analysis
 ]
 
-???
-
-- The main objective of the course on Applied Spatial Data Science I is to prepare you to solve interdisciplinary problems using geodata and programming
-
-- In the first unit, concluded last week, we learned the basic concepts of spatial data science and how to use R programming language for geodata handling and analysis
-
-- Today I will introduce you to data cubes and change detection
-
-- This topic is extremely relevant, for example, to measure Sustainable Development Goals Indicators related to forest cover and land-use changes. As we will see in today's application on Iligal gold mining within the Indigenous Territory Kayapó.
-
-- Let's start by introducing the concept of satellite image time series
-
 ---
 class: hide_logo
 # Sequence of images acquired at different dates
@@ -123,17 +111,6 @@ class: hide_logo
 .font80[Images by Lorenz Wimmer. True color composites form Sentinel-2 images over Vienna (Contains modified Copernicus Sentinel data 2020)]
 </div>
 
-???
-
-- SITS as the name says, is a sequence of images from the same location acquired at different times
-
-- In this slide we see a sequence of satellite images from the city of Vienna
-
-- Kindle prepared by my master student Lorenz Wimmer who investigated environmental inequalities in Vienna using satellite images time series 
-
-- To make a time series, these images must be properly georeferenced so that pixel in one image correspond the same location in the other images
-
-- If the images are correctly georeferneced we can stack them --- making a pile of images --- a time series
 
 ---
 class: hide_logo
@@ -149,13 +126,6 @@ class: hide_logo
 ![:scale 100%](./img/rgb-time-series-arrow.png)
 ]
 
-???
-
-- Obviously, a pile of images can produce very nice videos and animations of changes on the Earth's surface
-
-- But it can also produce extremely relevant information for a range of applications, e.g. Urbanization, Forest and habitat loss, crop helpth monitoring relevant for food security, and many more.... 
-
-- Look at this illustration 
 
 ---
 class: hide_logo
@@ -165,33 +135,6 @@ class: hide_logo
 
 .footnote[Figure source: [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
 
-???
-
-- Note that we move from comparing image snapshots to analysis complete time series 
-
-- When we look into a single location we can see the history of what has happened in that location 
-
-- On the left hand side we have a sequence of satellite images -- in this case the vegetation index EVI, which you probably remember from your Geoprocessing course -- In short higher EVI values mean more green vegetation 
-
-- And on the right hand side we visualize the values of the vegetation index of a single pixel over time
-
-- I have added some labels here based on ground information --- this is a real data point in the Brazilian Amazon 
-
-- Initially the area is cover with forest, but in the beginning of 2002 a deforestation event happened 
-
-- After that, the area has been used for cattle razing until 2005
-
-- And converted to agriculture in 2006
-
-- We can call that the land-use trajectory of the area, which is a extremely important information for sustainable land management and planing 
-
-- For example, this information can be used to understand drivers of change, what caused the deforestation? Cattle razing or agriculture? 
-
-- Soils in the amazon region are not apt for agriculture immediately after the forest cut, they require a few years of rest to correct Ph for example before crop plantations can be introduced
-
-- Now that we know what SITS are and that time series can provide valiuable information on land-use changes
-
-- Let's see how they look like in our computer systems 
 
 ---
 class: hide_logo
@@ -209,15 +152,6 @@ Gold mine in the Kayapo indigenous territory. Photo by IBAMA via Wikimedia Commo
 .left-column.font-dork.bg-washed-green.pl2.bw1.br3.mt4[Animation showing the the evolution of illegal gold mining in the northern part of the Indigenous Territory Kayapó in Brazil from 2018 to 2020. Contains modified Copernicus Sentinel data 2018-2020. More infomration [here](https://news.mongabay.com/2019/12/illegal-gold-rush-causing-irreversible-damage-to-rivers-in-the-brazilian-amazon/).
 ]
 
-???
-
-- In this animation we observe the land-cover changes in the Indigenous Territory Kayapó in Brazil from 2018 to 2020, where small scale gold mining takes place
-
-- Small scale gold mining within Indigenous Territories in Brazil is a very old topic
-
-- But over the last two to three years conflicts between indigenous populations and miners have increased, gaining international attention because of its effects on the well-being of indigenous populations and on the tropical forest and biodiversity conservation
-
-- In the next slides we will build a data cube for this area and give a close look at a time series example 
 
 ---
 class: clear, inverse, top, hide_logo
@@ -467,8 +401,6 @@ plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time
 ```
 ]
 ]
-
-???
 
 ---
 class: hide_logo
