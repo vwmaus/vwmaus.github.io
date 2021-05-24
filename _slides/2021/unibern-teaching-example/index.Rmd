@@ -1,6 +1,6 @@
 ---
 title: "Applied Spatial Data Science I"
-subtitle: "Unit 2: Pattern detection and clustering<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
+subtitle: "Unit 2: Detecting events and patterns<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
 author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
 date: ".left[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
 output: 
@@ -77,8 +77,9 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 
 <div class="grid-3-1">
 <div class="extension-tile-course font150 bg1-grey">Unit 1<br>Introduction to Spatial Data Science</div>
-<div class="extension-tile-course maximum-red">Unit 2<br>Geodata visualization and sharing</div>
-<div class="extension-tile-course bg1-grey">Unit 3<br>Pattern detection and clustering</div>
+<div class="extension-tile-course bg1-grey">Unit 2<br>Geodata visualization and sharing</div>
+<div class="extension-tile-course bg1-grey">Unit 3<br>Spatial patterns and clustering</div>
+<div class="extension-tile-course maximum-red">Unit 4<br>Detecting events and patterns in time series</div>
 </div>
 
 --
@@ -194,11 +195,11 @@ class: hide_logo
 
 ---
 class: hide_logo
-background-image: url(img/kayapo_gold_mining.jpg)
+background-image: url(img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)
 # Example of time series application
 
 .footnote-left.font-light[
-Gold mine in the Kayapo indigenous territory. Image by Ibama via Wikimedia Commons [(CC BY-SA 2.0)](https://creativecommons.org/licenses/by-sa/2.0/)
+Gold mine in the Kayapo indigenous territory. Photo by IBAMA via Wikimedia Commons [(CC BY-SA 2.0)](https://creativecommons.org/licenses/by-sa/2.0/)
 ]
 
 --
