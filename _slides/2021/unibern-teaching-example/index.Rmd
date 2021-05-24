@@ -1,8 +1,8 @@
 ---
 title: "Applied Spatial Data Science I"
-subtitle: "Unit 2: Detecting events and patterns<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
+subtitle: "Unit 2: Pattern detection and clustering<br><br>.font70[This lecture is an excerpt of the lecture: **Earth observation time series and change detection]**"
 author: "Dr Victor Maus<br>.font80[Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
-date: ".left[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a></div>"
+date: ".left[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
 output: 
   xaringan::moon_reader:
     chakra: libs/remark-latest.min.js
@@ -18,7 +18,11 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
-class: inverse, mline
+class: inverse, mline, hide_logo
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(image_url = "https://github.com/vwmaus/vwmaus.github.io/raw/master/assets/img/what-is-sds.png", exclude_class = c("hide_logo"), height = "489px", width = "323px")
+```
 
 ```{r xaringanExtra-clipboard, echo=FALSE}
 xaringanExtra::use_clipboard()
@@ -73,8 +77,8 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 
 <div class="grid-3-1">
 <div class="extension-tile-course font150 bg1-grey">Unit 1<br>Introduction to Spatial Data Science</div>
-<div class="extension-tile-course bg1-grey">Unit 2<br>Predictive analysis using machine learning</div>
-<div class="extension-tile-course maximum-red">Unit 3<br>Detecting events and patterns</div>
+<div class="extension-tile-course maximum-red">Unit 2<br>Geodata visualization and sharing</div>
+<div class="extension-tile-course bg1-grey">Unit 3<br>Pattern detection and clustering</div>
 </div>
 
 --
@@ -84,7 +88,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 
 - Basic concepts of remote sensing 
 
-- Basic skills in R programming language from geodata (acquired in Unit I of this course)
+- Basic skills in R programming language from geodata (acquired in Units I of this course)
 
 ]
 
@@ -109,6 +113,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 - Let's start by introducing the concept of satellite image time series
 
 ---
+class: hide_logo
 # Sequence of images acquired at different dates
 
 .center[![:scale 85%](./img/rgb-images.png)]
@@ -130,6 +135,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 - If the images are correctly georeferneced we can stack them --- making a pile of images --- a time series
 
 ---
+class: hide_logo
 # Satellite Images Time Series
 
 .footnote-left[Images by Lorenz Wimmer. True color composites form Sentinel-2 images over Vienna (Contains modified Copernicus Sentinel data 2020)]
@@ -151,6 +157,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 - Look at this illustration 
 
 ---
+class: hide_logo
 # Land-use trajectory
 
 .center[![:scale 100%](img/sits.png)]
@@ -186,7 +193,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 - Let's see how they look like in our computer systems 
 
 ---
-class: 
+class: hide_logo
 background-image: url(img/kayapo_gold_mining.jpg)
 # Example of time series application
 
@@ -212,7 +219,7 @@ Gold mine in the Kayapo indigenous territory. Image by Ibama via Wikimedia Commo
 - In the next slides we will build a data cube for this area and give a close look at a time series example 
 
 ---
-class: clear, inverse, top
+class: clear, inverse, top, hide_logo
 
 .panelset[
 
@@ -321,6 +328,7 @@ leaflet(bb) %>%
 ]
 ]
 ---
+class: hide_logo
 # Hands on: 
 
 ### Repeat the steps below to create and visualize a data cube for the sudy area
@@ -462,6 +470,7 @@ plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time
 ???
 
 ---
+class: hide_logo
 # Online resources
 
 .font130[The slides are available from [victor-maus.com/assets/unibern-teaching-example](https://victor-maus.com/assets/unibern-teaching-example)]
