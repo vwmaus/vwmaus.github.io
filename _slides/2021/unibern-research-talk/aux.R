@@ -22,3 +22,4 @@ system("drawio -x -t -o ./img/carajas-misclassification.png ./img/carajas-miscla
 system("drawio -x -t -o ./img/carajas-misclassification1.png ./img/carajas-misclassification1.drawio")
 system("drawio -x -t -o ./img/twdtw.png ./img/twdtw.drawio")
 system("drawio -x -t -o ./img/what-is-sds.png ./img/what-is-sds.drawio")
+system("drawio -x -t -o ./img/smartfarm.png ./img/smartfarm.drawio")

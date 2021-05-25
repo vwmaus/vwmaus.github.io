@@ -62,6 +62,15 @@ xaringanExtra::use_panelset()
 ### **I investigate how to integrate and extract information from a variety of data sources and develop spatiotemporal analysis tools to support real world applications.**
 ]
 
+???
+
+1. Today we face global challenges 
+
+2. Interdisciplinary research 
+
+3. The most critical aspect is geodata 
+
+4. My research on Geoinformatics 
 
 ---
 # Time-Weighted Dynamic Time Warping (TWDTW)
@@ -85,6 +94,54 @@ xaringanExtra::use_panelset()
 - More than 30K downloads from [CRAN](https://cran.r-project.org/web/packages/dtwSat) with known applications in research and business
 `install.package("dtwSat")`
 - Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
+
+???
+
+1. One of my main scientific contribution is
+
+2. Previous speakers, ...
+
+3. While investigating... 
+
+4. TWDTW steps -- library -- matches 
+
+5. Matches to maps time series 
+
+6. Crop type maps application
+
+7. Open source software 
+
+8. CRAN + GitHub
+
+---
+class: 
+# Climate-smart agricultural practices
+
+<br><br>
+.left-column[
+**Mapping agricultural management practices using earth observation time series.**
+]
+
+.right-column.left[
+<div class="copyright-container">
+  <img src="img/smartfarm.png", height="350"/>
+  <div class="copyright-bottom-right2 font-dark">&copy; Gernot Bodner (BOKU)</div>
+</div>
+]
+
+???
+
+1. Further development - RP IIASA
+
+2. Explain TWDTW in this context 
+
+3. Link to ERC 
+
+4. Dynamic programming approaches
+
+5. Long-term climate + Vegetation + Snow
+
+- Investigate whether different crop management practices can be detected from satellite image time series
 
 
 ---
@@ -111,6 +168,25 @@ class:
 ]
 ]
 
+???
+
+- Contribute to open data 
+
+- Lead geodata workpackage
+
+- Map + Link + Calculate
+
+- Missing data hit again 
+
+- Dismiss mining from classification systems 
+
+- Illustration ESA CCI Land cover 
+
+- We see several red urban areas  
+
+- However, the biggest Iron mine 
+
+- Why they are dismissed from 
 
 ---
 class: 
@@ -131,6 +207,14 @@ class:
 ]
 <img src="img/parauapebas-city-satellite.png" height="450"/>
 ]
+
+???
+
+- Algorithm x labeled data 
+
+- Labeled data is missing 
+
+- They look different 
 
 
 ---
@@ -160,17 +244,30 @@ background-image: url(img/global-mining-map.png)
 ]
 
 .bg-washed-green.br3.pl3.left.pt1.pb2.mt5[
-- **Mining and regional development in Brazil (WU Vienna)**
+- **What is the impact of sand mining on ecosystems in South Africa? (University of Copenhagen)**
 
-- **Unemployment in coal mining regions (World Bank)**
+- **What is the indirect effect of mining on land-use change? (University of Queensland and University of Melbourne, Australia): Upcoming: Workshop in the Royal Geographical Society Annual International Conference 2021**
 
-- **Impact of heavy sand extraction on ecosystems (University of Copenhagen)**
+- **How much tropical forest loss is driven by mining directly and indirectly? (WWF Germany)**
 
-- **Land use change in the world's mining regions (University of Queensland and University of Melbourne, Australia): Upcoming: Workshop in the Royal Geographical Society Annual International Conference 2021**
+- **How does closing coal mines affects unemployment? (World Bank)**
 
-- **Mining and tropical forest loss (WWF Germany)**
+- **Does mining contribute to regional development in Brazil? (WU Vienna)**
 ]]
 
+???
+
+- I took the challenge -- visual interpretation 
+
+- Lead research 
+
+- We produced 
+
+- Mining deforestation 
+
+- Ongoing collaborations
+
+- Collaboration - Regional development
 
 ---
 layout: false
@@ -193,13 +290,42 @@ class:
 </div>
 ]
 
----
-class: inverse, middle, center
+???
 
+- My short-term aims
+
+- Automatize mining mapping
+
+- And beyond 3D - SAR
+
+- Illustration ground changes 
+
+- We don't know the volumes 
+
+- Critical to assess environmental risks 
+
+- Austrian Science Fund 
+
+
+---
+class: clear, middle, center
+background-image: url(img/Nanang_Sujana_CIFOR-CC-BY-NC-ND-2-0.jpg)
+
+
+.footnote-left.font-light[Photo by Nanang Sujana [CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)]
 
 --
 
-.font300[**How do we measure land-use change using satellite earth observations?**]
+.font300.font-light[**How do we measure land-use change using satellite earth observations?**]
+
+???
+
+- Methods to map LULCC
+
+- BUT now basic science perspective 
+
+- Focusing.... 
+
 
 ---
 class:
@@ -228,6 +354,12 @@ class:
   <p><img src="img/change-from-timeseries.png" height="400"/>
 </figure>
 ]
+
+???
+
+- Explain illustration 
+
+- BUT: What happens when we segment the time series into intervals 
 
 ---
 layout: false
@@ -283,7 +415,11 @@ for(i in 1:9){
 p
 ```
 
-.bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**The higher accuracy comes at a cost of an arbitrary selection of intervals that violates time and can create spurious causal links between variables on land change analysis.**]
+.bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**The arbitrary choice of time intervals can cause data artifacts harming further land-use change analysis.**]
+
+???
+
+- Can create spurious causal links between variables
 
 ---
 layout: false
@@ -295,6 +431,21 @@ class:
 
 .bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**How to produce event-based information preserving temporal hierarchy?**]
 
+???
+
+- Therefore, I argue for a new methodological paradigm in land-use change analysis 
+
+- Extract events from time series
+
+- "How can we do that?" 
+
+- Event-based land information would Open up 
+
+- land-use trajectories 
+
+- Causal analysis using logic of events 
+
+- With this I close .... 
 
 ---
 layout: false
@@ -304,14 +455,25 @@ class: clear, middle, center
 
 <img src="img/what-is-sds.png" height="400" />
 
+???
+
+- After looking
+
+- and reflecting on future required skills for Geographers...
+
+- I identified ASDS, as a key field
+
+- SDS is emerging as a field -- IFGI is incorporating 
+
+- Why Applied? 
 
 ---
 # Applied Spatial Data Science
 
-.left-column[
+.left-column.font-dark[
   <img src="img/what-is-sds.png" />
   
-Applied because it will focus on concepts and usage of common spatial data science infrastructures and software for interdisciplinary problems.
+Applied SDS because it will focus on concepts and usage of common spatial data science infrastructures and software for interdisciplinary problems.
 
 ]
 
@@ -336,16 +498,22 @@ Applied because it will focus on concepts and usage of common spatial data scien
 - Deep learning
 ]
 
---
-.right-column.mt-1[
 
-### Current related courses
+???
 
-- *Prerequisite:* Math I and II, Geoprocessing I and II, Statistics
-- *Related/Complementary to:* Quantitative methods, Network analysis
+- Concepts and usage
 
-]
+- Not on theoretical elaboration of the mathematics, statistics and informatics
 
+- Application oriented teaching, interdisciplinary problem
+
+- I foresee two
+
+- BSc level
+
+- MSc level
+
+- These components will strongly position the institute
 
 ---
 
@@ -367,9 +535,19 @@ Applied because it will focus on concepts and usage of common spatial data scien
 --
 
 ### Potential initial collaborations topics with GIUB (but not limited to)
-- Remote sensing: Vegetation time series analysis
+- Remote sensing: Vegetation and snow time series analysis
 - Climatology: Detecting patterns in long-term climate time series
 - Land systems and sustainable land management: mapping and monitoring land management systems using earth observation data
+- Economic Geography: regional development and mining
+
+???
+
+- Besides 
+
+- International collaborations
+
+- Experience in land-use change in Brazil
+
 
 ---
 class: clear, inverse

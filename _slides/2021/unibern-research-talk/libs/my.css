@@ -4,6 +4,13 @@
   color: white;
 }
 
+.copyright-bottom-right2 {
+  font-size: 80%;
+  position: absolute;
+  bottom: 8px;
+  right: 570px;
+}
+
 .copyright-bottom-right {
   font-size: 80%;
   position: absolute;
