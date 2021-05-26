@@ -343,7 +343,7 @@ class:
 ---
 layout: false
 class: 
-# Arbitrary temporal segmentation
+# Arbitrary temporal aggregation
 
 ```{r calendar-segments-plot, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.width=15, fig.height=6}
 library(plotly)
@@ -370,7 +370,7 @@ p
 ---
 layout: false
 class: 
-# Arbitrary temporal segmentation
+# Arbitrary temporal aggregation
 
 ```{r calendar-segments-plot2, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.width=15, fig.height=6}
 library(plotly)
@@ -394,7 +394,7 @@ for(i in 1:9){
 p
 ```
 
-.bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**The arbitrary choice of time intervals can cause data artifacts harming further land-use change analysis.**]
+.bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**The arbitrary temporal aggregation can cause data artifacts harming further land-use change analysis, e.g. by creating spurious causal links between variables.**]
 
 ???
 
@@ -574,7 +574,7 @@ p <- plot_ly(ts, x = ~Time, y = ~EVI, type = 'scatter', mode = 'lines', name = "
 
 for(i in 1:18){
   v.year <- seq(from = lubridate::ymd(20010101), to = lubridate::ymd(20180131), by = '1 year')[i]
-  p <- add_lines(p, name = paste("Segment", i), x = c(v.year, v.year), y = c(min(ts$EVI), max(ts$EVI)), visible="legendonly", line = list(color = "#ff7f0e", widthh=1, dash="dot"), legendgroup = 'group2')
+  p <- add_lines(p, name = paste("Interval", i), x = c(v.year, v.year), y = c(min(ts$EVI), max(ts$EVI)), visible="legendonly", line = list(color = "#ff7f0e", widthh=1, dash="dot"), legendgroup = 'group2')
 }
 p
 ```
