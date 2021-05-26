@@ -46,14 +46,6 @@ xaringanExtra::use_panelset()
 </div>
 <div class="grid-4-1">
 
-???
-
-1. Today we face global challenges 
-
-2. Interdisciplinary research 
-
-3. The most critical aspect is geodata 
-
 --
 <div class="extension-tile lemon-meringue font-dark"><div>Earth observation</div></div>
 --
@@ -72,6 +64,12 @@ xaringanExtra::use_panelset()
 
 ???
 
+1. Today we face global challenges 
+
+2. Interdisciplinary research 
+
+3. The most critical aspect is geodata 
+
 4. My research on Geoinformatics 
 
 
@@ -79,6 +77,23 @@ xaringanExtra::use_panelset()
 # Time-Weighted Dynamic Time Warping (TWDTW)
 
 .footnote-left[[Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
+
+.pull-left.center[<img src="img/sits-color.png" height="270"/>
+#### TWDTW matches well known temporal profiles to segments of satellite image time series to produce land-use/land-cover information.
+]
+
+--
+
+.pull-right.center[<img src="img/mt-map.png" height="400"/>]
+
+--
+
+.pull-left.mt3[<img src="img/dtwSat-light.png" height="100"/>]
+
+.pull-right.pl2[
+- More than 30K downloads from [CRAN](https://cran.r-project.org/web/packages/dtwSat) with known scientific and business applications
+`install.package("dtwSat")`
+- Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
 
 ???
 
@@ -93,26 +108,6 @@ xaringanExtra::use_panelset()
 - Matches to maps time series 
 
 - Assemble crop maps 
-
-.pull-left.center[<img src="img/sits-color.png" height="270"/>
-#### TWDTW matches well known temporal profiles to segments of satellite image time series to produce land-use/land-cover information.
-]
-
---
-
-.pull-right.center[<img src="img/mt-map.png" height="400"/>]
-
---
-
-
-.pull-left.mt3[<img src="img/dtwSat-light.png" height="100"/>]
-
-.pull-right.pl2[
-- More than 30K downloads from [CRAN](https://cran.r-project.org/web/packages/dtwSat) with known scientific and business applications
-`install.package("dtwSat")`
-- Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
-
-???
 
 - Open source software 
 
