@@ -165,7 +165,7 @@ class:
 .right-column.center[
 <img src="img/carajas-misclassification.png" height="400"/>
 .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
-**Why most land cover maps dismiss mining from their classification system?**
+**Why most land cover maps dismiss mining in the classification system?**
 ]
 ]
 
