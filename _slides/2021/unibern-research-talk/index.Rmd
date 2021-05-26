@@ -44,8 +44,16 @@ xaringanExtra::use_panelset()
   <div class="cc-bottom-right font-light">Photo by IBAMA<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></div>
 </div>
 </div>
-
 <div class="grid-4-1">
+
+???
+
+1. Today we face global challenges 
+
+2. Interdisciplinary research 
+
+3. The most critical aspect is geodata 
+
 --
 <div class="extension-tile lemon-meringue font-dark"><div>Earth observation</div></div>
 --
@@ -59,23 +67,32 @@ xaringanExtra::use_panelset()
 --
 
 .center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4[
-### **I investigate how to integrate and extract information from a variety of data sources and develop spatiotemporal analysis tools to support real world applications.**
+### **I investigate how to represent, integrate and extract information from a variety of data sources and develop spatiotemporal analysis tools to support real world applications.**
 ]
 
 ???
 
-1. Today we face global challenges 
-
-2. Interdisciplinary research 
-
-3. The most critical aspect is geodata 
-
 4. My research on Geoinformatics 
+
 
 ---
 # Time-Weighted Dynamic Time Warping (TWDTW)
 
 .footnote-left[[Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
+
+???
+
+- One of my main scientific contribution is
+
+- Previous speakers, ...
+
+- While investigating... 1000 times less 
+
+- TWDTW steps -- library -- matches 
+
+- Matches to maps time series 
+
+- Assemble crop maps 
 
 .pull-left.center[<img src="img/sits-color.png" height="270"/>
 #### TWDTW matches well known temporal profiles to segments of satellite image time series to produce land-use/land-cover information.
@@ -91,27 +108,16 @@ xaringanExtra::use_panelset()
 .pull-left.mt3[<img src="img/dtwSat-light.png" height="100"/>]
 
 .pull-right.pl2[
-- More than 30K downloads from [CRAN](https://cran.r-project.org/web/packages/dtwSat) with known applications in research and business
+- More than 30K downloads from [CRAN](https://cran.r-project.org/web/packages/dtwSat) with known scientific and business applications
 `install.package("dtwSat")`
 - Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
 
 ???
 
-1. One of my main scientific contribution is
+- Open source software 
 
-2. Previous speakers, ...
+- CRAN + GitHub
 
-3. While investigating... 
-
-4. TWDTW steps -- library -- matches 
-
-5. Matches to maps time series 
-
-6. Crop type maps application
-
-7. Open source software 
-
-8. CRAN + GitHub
 
 ---
 class: 
@@ -119,7 +125,7 @@ class:
 
 <br><br>
 .left-column[
-**Mapping agricultural management practices using earth observation time series.**
+**Detecting agricultural management practices using earth observation time series and TWDTW.**
 ]
 
 .right-column.left[
@@ -164,7 +170,7 @@ class:
 .right-column.center[
 <img src="img/carajas-misclassification.png" height="400"/>
 .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
-**Mining is dismissed from the classification system of most land cover data products**
+**Why most land cover maps dismiss mining from their classification system?**
 ]
 ]
 
@@ -187,28 +193,6 @@ class:
 - However, the biggest Iron mine 
 
 - Why they are dismissed from 
-
----
-class: 
-# Algorithms' fault or lack of labeled data?
-
-.footnote-left[Screenshots of [FINEPRINT Viewer](https://www.fineprint.global/viewer)]
-
-.pull-left.center[
-.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
-**Carajás Iron Mine, Brazil**
-]
-<img src="img/carajas-mine-satellite.png" height="450"/>
-]
-
-.pull-right.center[
-.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
-**Parauapebas, Brazil**
-]
-<img src="img/parauapebas-city-satellite.png" height="450"/>
-]
-
-???
 
 - Algorithm x labeled data 
 
@@ -427,9 +411,9 @@ class:
 
 # Producing event-based information
 
-.center[<img src="img/change-from-events.png" height="450"/>]
+.center[<img src="img/change-from-events.png" height="430"/>]
 
-.bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**How to produce event-based information preserving temporal hierarchy?**]
+.bg-washed-blue.b--dark-green.ba.bw0.br3.shadow-5.mt0.font130.ph2.center[**Event-based information could support for example land trajectories analsis and extraction of causal relations from spatiotemporal data**]
 
 ???
 
@@ -494,8 +478,8 @@ Applied SDS because it will focus on concepts and usage of common spatial data s
 .right-column.mt-1[
 ### Applied Spatial Data Science II (MSc Level)
 - Big-Data and cloud computing
+- Pattern detection (Deep learning)
 - Predictive analysis
-- Deep learning
 ]
 
 
@@ -615,3 +599,22 @@ p
 
 .left-column.left.mt3[**Besides direct forest cover loss, mining also causes tropical forest loss up to 50 km from the actual extraction sites due to indirect land-use change.**]
 
+---
+class: 
+# Algorithms' fault or lack of labeled data?
+
+.footnote-left[Screenshots of [FINEPRINT Viewer](https://www.fineprint.global/viewer)]
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Carajás Iron Mine, Brazil**
+]
+<img src="img/carajas-mine-satellite.png" height="450"/>
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Parauapebas, Brazil**
+]
+<img src="img/parauapebas-city-satellite.png" height="450"/>
+]
