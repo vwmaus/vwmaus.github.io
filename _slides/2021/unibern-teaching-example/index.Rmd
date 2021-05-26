@@ -98,7 +98,7 @@ plot(zoom_cube[,,,seq(2,40,5)] / 10000, breaks = "equal", col = rev(hcl.colors(2
 
 - Recall the concept of satellite image time series
 
-- Identify potential applications of satellite image time series its data
+- Identify potential applications of satellite image time series data
 
 ]
 
