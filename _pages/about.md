@@ -17,4 +17,4 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Welcome to my web page. I am a researcher at the Institute for Ecological Economics from Vienna University of Economics and Business. My fields of research are Geoinformatics, GIScience, and Spatial Data Science with application in environmental modelling and monitoring, in particular land-use changes. I am the author of the [R](https://www.cran.r-project.org) package [dtwSat](https://www.cran.r-project.org/package=dtwSat), which provides a set of function for satellite time series analysis.
+Welcome to my web page. I am a researcher at the Institute for Ecological Economics from Vienna University of Economics and Business. My fields of research are Geoinformatics and Spatial Data Science with application in sustainability science, in particular land-use changes. I am the author of Time-Weighted Dynamic Time Warping (TWDTW) algorithm, available in my [R](https://www.cran.r-project.org) package [dtwSat](https://www.cran.r-project.org/package=dtwSat).

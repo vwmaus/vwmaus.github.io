@@ -1,9 +1,9 @@
-# -----------------------------------------------------------------------------
+ # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-fields: Geoinformatics, GIScience, Spatial Data Science
+fields: Geoinformatics and Spatial Data Science for sustainable development
 first_name: Victor
 #middle_name: 
 last_name: Maus
@@ -68,8 +68,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Time  # your blog must have a name for it to show up in the nav bar
-blog_description: A simple whitespace theme for academics
+blog_name: Timeless  # your blog must have a name for it to show up in the nav bar
+blog_description: Under construction
 permalink: /blog/:year/:title/
 
 # Pagination
