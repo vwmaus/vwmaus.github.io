@@ -9,7 +9,7 @@ first_name: Victor
 last_name: Maus
 email: victor.maus@wu.ac.at
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Geoinformatics, GIScience, Spatial Data Science.
+  Geoinformatics and Spatial Data Science for sustainable development
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
