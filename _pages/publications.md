@@ -6,8 +6,8 @@ title: Publications
 years_articles: [2021, 2020, 2019, 2018, 2017, 2016, 2015, 2009]
 years_proceedings: [2017, 2016, 2015, 2011]
 years_software: [2020, 2019, 2018]
-years_other: [2016, 2014, 2013, 2011, 2009]
-years_outreach: [2021, 2020, 2019, 2018, 2017]
+years_other: [2021, 2016, 2014, 2013, 2011, 2009]
+years_outreach: [2020, 2019, 2018, 2017]
 nav: true
 ---
 
@@ -63,6 +63,7 @@ nav: true
         {% bibliography -f papers -q @PhdThesis[year={{y}}]* %}
         {% bibliography -f papers -q @Thesis[year={{y}}]* %}
         {% bibliography -f papers -q @TechReport[year={{y}}]* %}
+        {% bibliography -f papers -q @Manual[year={{y}}]* %}
       {% endfor %}
     </div>
   </div>
