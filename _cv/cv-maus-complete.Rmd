@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 ```
 
-I am a researcher in Geoinformatics and GIScience interested in environmental modeling and monitoring to understand drivers of global environmental change. My research has contributed to new methods for analyzing large satellite image data sets and help better understand the interactions between environment and human activities. I am experienced in IT, software development, management of servers and web services. To support my research, I have developed software and tools to visualize, handle and analyze large volumes of heterogeneous geodata, from statistical surveys to citizen science and satellite earth observations.
+I am a researcher in Geoinformatics and Spatial Data Science with application in sustainability science, in particular land-use changes. I am the author of Time-Weighted Dynamic Time Warping (TWDTW) algorithm, to classify Earth observation time series in data-scarce conditions. I have implemented the TWDTW as open-source in my R package [dtwSat](https://cran.r-project.org/web/packages/dtwSat/). I have also led the production of the first-ever spatially-explicit global assessment of mining land use to assess the  environmental impacts and sustainability of the global mining sector.
 
 # EDUCATION
 
