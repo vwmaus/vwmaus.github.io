@@ -35,7 +35,7 @@ nav: true
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <div class="publications">
       {% for y in page.years_articles %}
-        <h5 class="year">{{y}}</h5>
+        <!-- <h5 class="year">{{y}}</h5> -->
         {% bibliography -f papers -q @Article[year={{y}}]* %}
       {% endfor %}
     </div>
@@ -43,7 +43,7 @@ nav: true
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="publications">
       {% for y in page.years_proceedings %}
-        <h5 class="year">{{y}}</h5>
+        <!-- <h5 class="year">{{y}}</h5> -->
         {% bibliography -f papers -q @InProceedings[year={{y}}]* %}
       {% endfor %}
     </div>
@@ -51,7 +51,7 @@ nav: true
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <div class="publications">
       {% for y in page.years_software %}
-        <h5 class="year">{{y}}</h5>
+        <!-- <h5 class="year">{{y}}</h5> -->
         {% bibliography -f papers -q @Software[year={{y}}]* %}
       {% endfor %}
     </div>
@@ -59,7 +59,7 @@ nav: true
   <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="contact-tab">
     <div class="publications">
       {% for y in page.years_other %}
-        <h5 class="year">{{y}}</h5>
+        <!-- <h5 class="year">{{y}}</h5> -->
         {% bibliography -f papers -q @PhdThesis[year={{y}}]* %}
         {% bibliography -f papers -q @Thesis[year={{y}}]* %}
         {% bibliography -f papers -q @TechReport[year={{y}}]* %}
@@ -70,7 +70,7 @@ nav: true
   <div class="tab-pane fade" id="outreach" role="tabpanel" aria-labelledby="contact-tab">
     <div class="publications">
       {% for y in page.years_outreach %}
-        <h5 class="year">{{y}}</h5>
+        <!-- <h5 class="year">{{y}}</h5> -->
         {% bibliography -f papers -q @Misc[year={{y}}]* %}
       {% endfor %}
     </div>
