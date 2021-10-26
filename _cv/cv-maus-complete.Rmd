@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 ```
 
-I am a researcher in Geoinformatics and Spatial Data Science with application in sustainability science, in particular land-use changes. I am the author of Time-Weighted Dynamic Time Warping (TWDTW) algorithm, to classify Earth observation time series in data-scarce conditions. I have implemented the TWDTW as open-source in my R package [dtwSat](https://cran.r-project.org/web/packages/dtwSat/). I have also led the production of the first-ever spatially-explicit global assessment of mining land use to assess the  environmental impacts and sustainability of the global mining sector.
+I am a researcher in Geoinformatics and Spatial Data Science with application in sustainability science, in particular land-use changes. I am the author of Time-Weighted Dynamic Time Warping (TWDTW) algorithm, to classify Earth observation time series in data-scarce conditions. I have implemented the TWDTW as open-source in my R package [dtwSat](https://cran.r-project.org/web/packages/dtwSat/). I have also led the production of the first-ever spatially-explicit global assessment of mining land use to assess the environmental impacts and sustainability of the global mining sector.
 
 # EDUCATION
 
@@ -31,7 +31,7 @@ tribble(
   "PhD in Earth System Science", "2016", "National Institute for Space Research (INPE)", "São José dos Campos, Brazil",
   "MSc in Computational Modeling", "2011", "Federal University of Juiz de Fora (UFJF)", "Juiz de Fora, Brazil",
   "BSc in Environmental Engineering", "2009", "Franciscan University (UFN)", "Santa Maria, Brazil"
-) %>% 
+) |> 
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
@@ -41,7 +41,7 @@ tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
   "Senior Researcher", "2018-", "Vienna University of Economics and Business (WU)", "Vienna, Austria",
   "Research Scholar", "2016-", "International Institute for Applied Systems Analysis (IIASA)", "Laxenburg, Austria",
-) %>% 
+) |> 
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
@@ -54,11 +54,22 @@ tribble(
   "University Lecturer", "2012-2014", "Federal University of Pampa (UNIPAMPA)", "Itaqui, Brazil",
   "Research Assistant", "2011-2012", "National Institute for Space Research (INPE)", "São José dos Campos, Brazil",
     "Research Assistant", "2009-2011", "Federal University of Juiz de Fora (UFJF)", "Juiz de Fora, Brazil"
-) %>% 
+) |> 
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
 # FELLOWSHIPS AND AWARDS
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Research Assistant", "2014-2016", "University of Münster (WWU)", "Münster, Germany",
+  "University Lecturer", "2012-2014", "Federal University of Pampa (UNIPAMPA)", "Itaqui, Brazil",
+  "Research Assistant", "2011-2012", "National Institute for Space Research (INPE)", "São José dos Campos, Brazil",
+    "Research Assistant", "2009-2011", "Federal University of Juiz de Fora (UFJF)", "Juiz de Fora, Brazil"
+) |> 
+  detailed_entries(Degree, Year, Institution, Where)
+```
 
 # SUPERVISION OF STUDENTS
 
@@ -78,8 +89,8 @@ bold_author <- function(x){
   #class(res) <- c("list_of_csl_names", "vctrs_list_of", "vctrs_vctr", "list")
   list_of_csl_names(res)
 }
-bibliography_entries("./../_bibliography/papers.bib") %>%
-  filter(type == "article-journal") %>%
-  # mutate(author = bold_author(author)) %>% 
+bibliography_entries("./../_bibliography/papers.bib") |>
+  filter(type == "article-journal") |>
+  # mutate(author = bold_author(author)) |> 
   arrange(desc(issued), issued)
 ```

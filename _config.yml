@@ -68,16 +68,16 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Timeless  # your blog must have a name for it to show up in the nav bar
-blog_description: Under construction
-permalink: /blog/:year/:title/
+#blog_name: Timeless  # your blog must have a name for it to show up in the nav bar
+#blog_description: Under construction
+#permalink: /blog/:year/:title/
 
-# Pagination
-pagination:
-  enabled: true
+## Pagination
+#pagination:
+#  enabled: true
 
-# Comments
-disqus_shortname: maus # put your disqus shortname
+## Comments
+#disqus_shortname: maus # put your disqus shortname
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -93,7 +93,7 @@ collections:
     output: true
     permalink: /projects/:path/
 
-news_limit: 5
+news_limit: 3
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
