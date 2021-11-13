@@ -6,7 +6,7 @@ date: ".right[.font80[May 26, 2021]]<div class='footnote-right'>Except where oth
 output: 
   xaringan::moon_reader:
     chakra: libs/remark-latest.min.js
-    self_contained: true
+    self_contained: false
     css: [default, metropolis, metropolis-fonts, libs/my.css, libs/tachyons-min.css]
     nature:
       beforeInit: "libs/my-macros.js"
