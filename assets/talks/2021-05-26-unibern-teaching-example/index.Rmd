@@ -6,7 +6,7 @@ date: ".right[.font80[May 26, 2021]]<div class='footnote-right'>Except where oth
 output: 
   xaringan::moon_reader:
     chakra: ./../libs/remark-latest.min.js
-    self_contained: true
+    self_contained: false
     css: [default, metropolis, metropolis-fonts, ./../libs/my.css, ./../libs/tachyons-min.css]
     nature:
       beforeInit: "./../libs/my-macros.js"
@@ -410,7 +410,7 @@ plot_ly(ts, x = ~Time, y = ~NDVI, type = 'scatter', mode = 'lines', name = "Time
 class: hide_logo
 # Online resources
 
-.font130[The slides are available from [victor-maus.com/assets/unibern-teaching-example](https://victor-maus.com/assets/unibern-teaching-example)]
+.font130[The slides are available from [victor-maus.com/assets/2021-05-26-unibern-teaching-example](https://victor-maus.com/assets/2021-05-26-unibern-teaching-example)]
 
 ### Data cubes in R
 - Pebesma, E., Bivand, R. (2021) Spatial Data Science with applications in R. Chapter 6 Data Cubes [Online](https://keen-swartz-3146c4.netlify.app/datacube.html#datacube).
