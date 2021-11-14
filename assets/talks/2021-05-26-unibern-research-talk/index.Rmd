@@ -264,7 +264,7 @@ class:
 
 .right-column[
 <div class="copyright-container">
-  <img src="./../img/4D-mining.png" />
+  <img src="./../img/MarieLachaiseDLRcopyright.png" />
   <div class="copyright-bottom-right font-dark">&copy; Marie Lachaise (DLR)</div>
 </div>
 ]
