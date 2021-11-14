@@ -100,7 +100,7 @@ mv _site/* .
 rm -R _site/
 
 # Delete R files
-find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \) -exec rm -rf {} \;
+m -rf $(find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \))
 
 # Push to DEPLOY_BRANCH
 git add -fA
