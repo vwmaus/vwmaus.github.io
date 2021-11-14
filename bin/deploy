@@ -95,9 +95,7 @@ git checkout -b $DEPLOY_BRANCH
 bundle exec jekyll build
 
 # Delete and move files
-find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
-# Delete R files
-find . -maxdepth 1 ! -name 'index_cache' ! -name 'index_data' ! -name '.Rhistory' ! -name '*.RData' ! -name '.Rproj.user' -exec rm -rf {} \;
+find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' ! -name 'index_cache' ! -name 'index_data' ! -name '.Rhistory' ! -name '*.RData' ! -name '.Rproj.user' -exec rm -rf {} \;
 mv _site/* .
 rm -R _site/
 
