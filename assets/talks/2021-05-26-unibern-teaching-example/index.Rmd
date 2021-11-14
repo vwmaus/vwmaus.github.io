@@ -42,16 +42,16 @@ xaringanExtra::use_extra_styles(
 
 ```{r cube-subset, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE, results='hide', fig.show='hide', fig.retina = 3}
 # Create a folder to safe the data
-if (!file.exists("./data/ndvi.zip")){
-  dir.create("./data")
-  download.file("https://cheesebox.crabdance.com/s/wjA3yWarLpKXTA8", destfile = "./data/ndvi.zip")
+if (!file.exists("./index_data/ndvi.zip")){
+  dir.create("./index_data")
+  download.file("https://cheesebox.crabdance.com/s/wjA3yWarLpKXTA8", destfile = "./index_data/ndvi.zip")
 }
-unzip("./data/ndvi.zip", exdir = "./data")
+unzip("./index_data/ndvi.zip", exdir = "./index_data")
 
 library(stars)
 
-files <- dir("./data/NDVI", pattern = ".tif$", full.names = TRUE)
-dates <- readr::read_csv("data/NDVI/dates.csv")
+files <- dir("./index_data/NDVI", pattern = ".tif$", full.names = TRUE)
+dates <- readr::read_csv("./index_data/NDVI/dates.csv")
 kaiapo_cube <- read_stars(files, along = "time", proxy = TRUE)
 kaiapo_cube <- st_set_dimensions(kaiapo_cube, which = "time", values = dates$date)
 
@@ -327,17 +327,17 @@ install.packages("plotly")
 .panel[.panel-name[Download data]
 ```{r eval=FALSE}
 # Create a folder to safe the data
-dir.create("./data")
+dir.create("./index_data")
 
 # Download images to data folder
 # 40 Sentinel-2 images from the Indigenous Territory Kayapó (~800 MB)
 timeout <- getOption('timeout')
 options(timeout=300)
-download.file("https://cheesebox.crabdance.com/s/sTGyHGxiTFGd2aD/download", destfile = "./data/ndvi.zip")
+download.file("https://cheesebox.crabdance.com/s/sTGyHGxiTFGd2aD/download", destfile = "./index_data/ndvi.zip")
 options(timeout=timeout)
 
 # Unzip the files in the data folder - A folder called NDVI will be created 
-unzip("./data/ndvi.zip", exdir = "./data")
+unzip("./index_data/ndvi.zip", exdir = "./index_data")
 ```
 ]
 
@@ -347,7 +347,7 @@ unzip("./data/ndvi.zip", exdir = "./data")
 library(stars)
 
 # Create a list with the path to all downloaded ndvi tif files
-files <- dir("./data/NDVI", pattern = ".tif$", full.names = TRUE)
+files <- dir("./index_data/NDVI", pattern = ".tif$", full.names = TRUE)
 
 # A file with the dates of the images is also available. Read it into R
 dates <- readr::read_csv("data/NDVI/dates.csv")
@@ -413,7 +413,7 @@ class: hide_logo
 .font130[The slides are available from [victor-maus.com/assets/2021-05-26-unibern-teaching-example](https://victor-maus.com/assets/2021-05-26-unibern-teaching-example)]
 
 ### Data cubes in R
-- Pebesma, E., Bivand, R. (2021) Spatial Data Science with applications in R. Chapter 6 Data Cubes [Online](https://keen-swartz-3146c4.netlify.app/datacube.html#datacube).
+- Pebesma, E., Bivand, R. (2021) Spatial Data Science with applications in R. Chapter 6 Data Cubes [Online](https://keen-swartz-3146c4.netlify.app/index_datacube.html#datacube).
 - Dorman, M. (2021) Introduction to Spatial Data Programming with R. Chapter 6 Raster processing [Online](https://geobgu.xyz/r/raster-processing.html)
 - Pebesma, E. (2021) R package stars vignettes. [Online](https://r-spatial.github.io/stars/articles/stars1.html)
 

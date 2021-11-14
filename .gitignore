@@ -10,8 +10,14 @@ Gemfile.lock
 vendor
 *.bib.bak
 *.bib.sav
-teaching-sample/
 .Rproj.user
 index.utf8.md
 index.knit.md
+
+# R and Rmarkdown slids 
+.Rhistory
+*.RData
+.Rproj.user/
+index_cache/
+index_data/
 _slides/2021/unimuenster-giforum/
