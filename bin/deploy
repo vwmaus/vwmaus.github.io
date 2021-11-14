@@ -92,7 +92,7 @@ fi
 git checkout -b $DEPLOY_BRANCH
 
 # Delete R files
-find . -maxdepth 5 ! -name 'index_cache' ! -name 'index_data' ! -name '.Rhistory' ! -name '*.RData' ! -name '.Rproj.user' -exec rm -rf {} \;
+find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \) -exec rm -rf {} \;
 
 # Build site
 bundle exec jekyll build
