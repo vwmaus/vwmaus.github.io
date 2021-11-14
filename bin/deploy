@@ -100,10 +100,12 @@ mv _site/* .
 rm -R _site/
 
 # Delete R files
-rm -rf $(find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \))
+#rm -rf $(find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \))
 
 # Push to DEPLOY_BRANCH
 git add -fA
+# Remove R files before commit
+git restore --staged $(find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \))
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
 [[ ${NO_PUSH} ]] || git push -f -q origin $DEPLOY_BRANCH
 
