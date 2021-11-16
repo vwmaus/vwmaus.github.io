@@ -11,6 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 readr::read_csv("../../data/coal_mining_area.csv") |> 
-  DT::datatable(options = list(pageLength = 25)) |> 
+  DT::datatable(options = list(pageLength = 70)) |> 
   DT::formatRound(columns = 3:4, digits = 2)
 ```
