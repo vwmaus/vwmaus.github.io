@@ -5,12 +5,15 @@ date: "November 16, 2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+coal_area <- readr::read_csv("../../data/coal_mining_area.csv")
 ```
 
+The number of polygons linked to coal mining is `r sum(coal_area$N_POLYGONS, na.rm = TRUE) |> format(scientific = F, big.mark=',')` adding up to `r sum(coal_area$AREA_SUM, na.rm = TRUE) |> format(scientific = F, digits = 7, big.mark=',')` km<sup>2</sup>.
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-readr::read_csv("../../data/coal_mining_area.csv") |> 
+coal_area |> 
   DT::datatable(options = list(pageLength = 70)) |> 
   DT::formatRound(columns = 3:4, digits = 2)
 ```
