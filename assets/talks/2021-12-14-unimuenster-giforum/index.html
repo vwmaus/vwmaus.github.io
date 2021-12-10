@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>From Earth Observation Time Series to Event-based Information for Land-use Change Analysis</title>
+    <title>Linking geospatial Earth observation to global supply chains to support sustainable development</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr Victor Maus .font80[Institute for Ecological Economics Vienna University of Economics and Business] .font80[victor.maus@wu.ac.at] .font80[www.victor-maus.com]" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
@@ -17,7 +17,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# From Earth Observation Time Series to Event-based Information for Land-use Change Analysis
+# Linking geospatial Earth observation to global supply chains to support sustainable development
 ## <br>
 ### Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a>]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]
 ### .right[.font80[May 26, 2021]]
@@ -27,57 +27,8 @@ Except where otherwise noted, content on these slides is licensed under <a href=
 
 ---
 
-class: clear
 
 
-&lt;div class="grid-4-1-img"&gt;
-&lt;div class="copyright-container"&gt;
-  &lt;img src="./../img/Marco_Dormino_UN_Photo-CC-BY-NC-ND-2-0.jpg" /&gt;
-  &lt;div class="cc-bottom-right font-light"&gt;Photo by Marco Dormino &lt;a href="https://creativecommons.org/licenses/by-nc-nd/2.0/"&gt;CC BY-NC-ND 2.0&lt;/a&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;div class="copyright-container"&gt;
-  &lt;img src="./../img/Nanang_Sujana_CIFOR-CC-BY-NC-ND-2-0.jpg" /&gt;
-  &lt;div class="cc-bottom-right font-light"&gt;Photo by Nanang Sujana &lt;a href="https://creativecommons.org/licenses/by-nc-nd/2.0/"&gt;CC BY-NC-ND 2.0&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="copyright-container"&gt;
-  &lt;img src="./../img/Ivan2010-cc-by-sa-3.0.jpg" /&gt;
-  &lt;div class="cc-bottom-right font-light"&gt;Photo by Ivan2010 &lt;a href="https://creativecommons.org/licenses/by-sa/3.0/"&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="copyright-container"&gt;
-  &lt;img src="./../img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg" /&gt;
-  &lt;div class="cc-bottom-right font-light"&gt;Photo by IBAMA&lt;a href="https://creativecommons.org/licenses/by-sa/2.0/"&gt;CC BY-SA 2.0&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="grid-4-1"&gt;
-
---
-&lt;div class="extension-tile lemon-meringue font-dark"&gt;&lt;div&gt;Earth observation&lt;/div&gt;&lt;/div&gt;
---
-&lt;div class="extension-tile maximum-yellow-red font-dark"&gt;&lt;div&gt;In situ&lt;br&gt;data&lt;/div&gt;&lt;/div&gt;
---
-&lt;div class="extension-tile prussian-orange font-dark"&gt;&lt;div&gt;Statistics and surveys&lt;/div&gt;&lt;/div&gt;
---
-&lt;div class="extension-tile maximum-red font-dark"&gt;&lt;div&gt;Citizen science&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
---
-
-.center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4[
-### **I investigate how to represent, integrate and extract information from a variety of data sources and develop spatiotemporal analysis tools to support real world applications.**
-]
-
-???
-
-1. Today we face global challenges 
-
-2. Interdisciplinary research 
-
-3. The most critical aspect is geodata 
-
-4. My research on Geoinformatics 
-
-
----
 # Time-Weighted Dynamic Time Warping (TWDTW)
 
 .footnote-left[[Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
@@ -86,11 +37,7 @@ class: clear
 #### TWDTW matches well known temporal profiles to segments of satellite image time series to produce land-use/land-cover information.
 ]
 
---
-
 .pull-right.center[&lt;img src="./../img/mt-map.png" height="400"/&gt;]
-
---
 
 .pull-left.mt3[&lt;img src="./../img/dtwSat-light.png" height="100"/&gt;]
 
@@ -99,27 +46,197 @@ class: clear
 `install.package("dtwSat")`
 - Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
 
-???
+---
+# Global Sustainability
 
-- One of my main scientific contribution is
+.center[
+  &lt;img src="https://www.cgdev.org/sites/default/files/perssonetalblog1.png?itok=TUj8JebP" height="450"/&gt;
+]
 
-- Previous speakers, ...
 
-- While investigating... 1000 times less 
+### **Information on the global drivers of local changes is critical to support sustainable development**
 
-- TWDTW steps -- library -- matches 
+---
+class: clear
+&lt;img src="./../img/mrio-vewer-soy-brazil-20211210.png" height="600"/&gt;
 
-- Matches to maps time series 
+.footnote-left[[MRIO-Viewer www.fineprint.global/visualisations/fabio-viewer](https://www.fineprint.global/visualisations/fabio-viewer) Gutschlhofer &amp; Maus (Under review)]
 
-- Assemble crop maps 
 
-- Open source software 
 
-- CRAN + GitHub
+---
+layout: false
+# Spatial heterogeneity
+
+.pull-left.center[
+  .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+    **Biomes**
+  ]
+  &lt;img src="./../img/hetereogeneity-biomes.png" height="500"/&gt;
+]
+
+.pull-right.center[
+  .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+    **GDP per capita 2017**
+  ]
+  &lt;img src="./../img/gdp-percapita-2017-brazil.png" height="500"/&gt;
+]
+
+---
+# Global data sets
+
+Image of the data gap....
+
+.center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4[
+### **Data on production, trade, use, and reserves are commercial and treated in confidence.**
+]
+
+---
+layout: false
+class: inverse, middle, center, mline
+# The mining sector (add background image for mining)
+
+---
+layout: false
+# Global mining areas
+
+.left-column[
+&lt;img src="https://www.fineprint.global/wp-content/uploads/2019/10/fineprint_w_erc_sm.png"/&gt;
+
+- Map raw material extraction and related impacts with global coverage.
+
+- Link the extraction impacts to supply chains and calculate final consumption footprints.
+]
+
+.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+.right-column.center[
+&lt;img src="./../img/carajas-misclassification.png" height="400"/&gt;
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font110[
+**Why most land cover maps dismiss mining in the classification system?**
+]
+
+---
+class: 
+# Algorithms' fault or lack of labeled data?
+
+.footnote-left[Screenshots of [FINEPRINT Viewer](https://www.fineprint.global/viewer)]
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Carajás Iron Mine, Brazil**
+]
+&lt;img src="./../img/carajas-mine-satellite.png" height="450"/&gt;
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Parauapebas, Brazil**
+]
+&lt;img src="./../img/parauapebas-city-satellite.png" height="450"/&gt;
+]
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/global-mining-map.png)
+
+.footnote-right[.font-light[Figure: Screenshot of [FINEPRINT Viewer](https://www.fineprint.global/viewer) Data sources: v1 [Maus et al. (2020)](https://www.nature.com/articles/s41597-020-00624-w) v2 Maus et al. (Under review)]]
+
+.left-column.pl1.mt0.font120.left.bottom.font-light[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**45,000 Polygons**
+
+**100,000 km²**
+
+]
+
+---
+layout: false
+# Global forest cover loss due to mining
+
+.center.red[
+  REPLACE FIGURE WITH NEW BAR PLOT&lt;br&gt;
+  &lt;img src="./../img/mining-deforestation-time-series.png" height="450"/&gt;
+]
+
+### Accumulated: 13,744 sq. km
+
+.footnote-right[Maus et al. (Under review)]
+
+
+---
+layout: false
+# Global forest cover loss due to mining
+
+.center[
+  &lt;img src="./../img/mining-deforestation-biome.png" height="450"/&gt;
+]
+
+### 62% (8,533 sq. km) on Tropical &amp; Subtropical Moist Broadleaf Forests 
+
+.footnote-right[Maus et al. (Under review)]
+
+---
+layout: false
+class: inverse, middle, center, mline
+# Does mining drive regional development?
+
+---
+layout: false
+# Mining and regional develiopment
+
+Figure showing the effect of the mining in Brazil efect fades off. 
+
+.footnote-right[Luckeneder and Maus et al. (Under review)]
+
+---
+layout: false
+# Estimating coal mining production
+
+A global map of coal production. Add the percentages of coverage in the bottom. Tell that no data is available.
+
+---
+layout: false
+class: inverse, middle, center, mline
+# The biomass sector (add background image for agri)
+
+---
+layout: false
+# Sub-national miodelling 
+
+.center[
+  &lt;img src="./../img/brazil-soy-model.png" height="550"/&gt;
+]
+
+---
+layout: false
+# Impacts of consumption
+
+Show example of countries causing impacts in sub regions in Brazil 
+
+
+---
+layout: false
+class: inverse, middle, center, mline
+# Final remarks 
+
+--
+## Global supply chains assessment requries open data sources
+
+--
+## Eo can provide this data sources
+
+---
+layout: false
+class: inverse, middle, center, mline
+# Thank you!
+
+Some image summarizing the whole work!
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="./libs/remark-latest.min.js"></script>
+<script src="./../libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "ratio": "16:9",
 "highlightStyle": "github",
