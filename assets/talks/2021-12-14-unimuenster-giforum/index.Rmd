@@ -1,9 +1,8 @@
 ---
-title: "Linking Earth observation to global supply chains to support sustainable development"
-#title: "Linking geospatial data to global supply chains to support sustainable development"
+title: "Linking Earth observation to global supply chains to support sustainable development</div><div class='my-logo-right'></div>"
 subtitle: "<br>"
 author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
-date: ".right[.font80[May 26, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a></div>"
+date: ".right[ifgi GI-Forum, .font80[Dec 14, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
 output: 
   xaringan::moon_reader:
     chakra: ./../libs/remark-latest.min.js
@@ -65,23 +64,22 @@ class: clear
 .footnote-left[[MRIO-Viewer www.fineprint.global/visualisations/fabio-viewer](https://www.fineprint.global/visualisations/fabio-viewer) Gutschlhofer & Maus (Under review)]
 
 
-
 ---
 layout: false
 # Spatial heterogeneity
 
 .pull-left.center[
   .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
-    **Biomes**
+    **Biomes according to Ecoregions2017**
   ]
   <img src="./../img/hetereogeneity-biomes.png" height="500"/>
 ]
 
 .pull-right.center[
   .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
-    **GDP per capita 2017 .red[REDPLACE WITH IBGE OFFICIAL MAP]**
+    **GDP per capita 2018 in the Brazilian municipalities**
   ]
-  <img src="./../img/gdp-percapita-2017-brazil.png" height="500"/>
+  <img src="./../img/gdp-per-capita-2018-brazil-ibge.png" height="500"/>
 ]
 
 
@@ -98,20 +96,37 @@ background-size: cover
   **The biomass sector**
 ]
 
+
 ---
 layout: false
-# Sub-national miodelling 
+class: clear, middle, center
+background-image: url(./../img/mapbiomas.png)
+background-size: contain
+.cc-bottom-right.font-light[
+  Screenshot of [MAPBIOMAS](https://plataforma.brasil.mapbiomas.org)
+] 
+
+---
+layout: false
+class: clear
+<!-- # Sub-national miodelling  -->
 
 .center[
-  <img src="./../img/brazil-soy-model.png" height="550"/>
+  <img src="./../img/brazil-soy-model.png" height="600"/>
 ]
+
+.footnote-left[Figure: Stefan Trsek]
+
 
 ---
 layout: false
-# Impacts of consumption
+class: clear
 
-Show example of countries causing impacts in sub regions in Brazil 
+.center[
+  <img src="./../img/china-soyfootprint-in-brazil.png" height="600"/>
+]
 
+.footnote-left[Figure: Stefan Trsek]
 
 ---
 # Global data sets
@@ -274,10 +289,5 @@ class: inverse, middle, center, mline
 --
 ## Eo can provide this data sources
 
----
-layout: false
-class: inverse, middle, center, mline
-# Thank you!
-
-Some image summarizing the whole work!
-
+--
+## Thank you!

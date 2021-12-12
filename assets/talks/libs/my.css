@@ -1,3 +1,15 @@
+.my-logo-right {
+content: "";
+    position: absolute;
+    top: 15px;
+    right:  0px;
+    height: 108px;
+    width: 324px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Wirtschaftsuniversit%C3%A4t_Wien.svg);
+}
+
 .font50 {
   font-size: 50%;
 }
