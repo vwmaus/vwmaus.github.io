@@ -123,6 +123,20 @@ content: "";
   right: 16px;
 }
 
+.cc-bottom-right2 {
+  font-size: 60%;
+  position: absolute;
+  bottom: 8px;
+  right: 100px;
+}
+
+.cc-bottom-right3 {
+  font-size: 60%;
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+}
+
 .cc-bottom-left {
   font-size: 60%;
   position: absolute;

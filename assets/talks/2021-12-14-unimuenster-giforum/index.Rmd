@@ -2,7 +2,7 @@
 title: "Linking Earth observation to global supply chains to support sustainable development</div><div class='my-logo-right'></div>"
 subtitle: "<br>"
 author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
-date: ".right[ifgi GI-Forum, .font80[Dec 14, 2021]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
+date: ".right[.font80[Dec 14, 2021, Ifgi GI-Forum]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
 output: 
   xaringan::moon_reader:
     chakra: ./../libs/remark-latest.min.js
@@ -41,32 +41,33 @@ xaringanExtra::use_panelset()
 - Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)]
 
 ---
-# Global Sustainability
+class: clear
 
 .red.center[
   THE GREAT ACELERATION FIGURE
 ]
 
 ---
-# Global Sustainability
+class: clear
+background-image: url(https://www.cgdev.org/sites/default/files/perssonetalblog1.png?itok=TUj8JebP)
+background-size: cover
+.cc-bottom-right2.font-dark[
+  Figure: &copy; 2021 Center for Global Development
+] 
 
-.center[
-  <img src="https://www.cgdev.org/sites/default/files/perssonetalblog1.png?itok=TUj8JebP" height="450"/>
-]
-
-
-### **Information on the global drivers of local changes is critical to support sustainable development**
+## **Information on the global drivers of local changes is critical to support sustainable development**
 
 ---
 class: clear
-<img src="./../img/mrio-vewer-soy-brazil-20211210.png" height="600"/>
-
-.footnote-left[[MRIO-Viewer www.fineprint.global/visualisations/fabio-viewer](https://www.fineprint.global/visualisations/fabio-viewer) Gutschlhofer & Maus (Under review)]
-
+background-image: url(./../img/mrio-vewer-soy-brazil-20211210.png)
+background-size: contain
+.cc-bottom-right3.font-dark[
+  [MRIO-Viewer www.fineprint.global/visualisations/fabio-viewer](https://www.fineprint.global/visualisations/fabio-viewer) Gutschlhofer & Maus (Under review)
+] 
 
 ---
 layout: false
-# Spatial heterogeneity
+class: clear
 
 .pull-left.center[
   .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
@@ -81,6 +82,8 @@ layout: false
   ]
   <img src="./../img/gdp-per-capita-2018-brazil-ibge.png" height="500"/>
 ]
+
+### **How to link spatial heterogeneous impacts to global supply chains?**
 
 
 ---
@@ -131,7 +134,7 @@ class: clear
 ---
 # Global data sets
 
-Image of the data gap....
+Image of the data gap on biomass.... world map of land cover but missing crop types which can be link to the economy. 
 
 .center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4[
 ### **Data on production, trade, use, and reserves are commercial and treated in confidence.**
