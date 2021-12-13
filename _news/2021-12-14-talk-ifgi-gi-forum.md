@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Online talk in the Ifgi's GI-Forum
-date: 2021-12-14
+date: 2021-12-13
 inline: false
 ---
 
