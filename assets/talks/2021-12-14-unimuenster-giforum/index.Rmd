@@ -113,15 +113,6 @@ background-size: 100% 100%
 
 .footnote-right[Figure: Stefan Trsek]
 
----
-layout: false
-class: clear, middle, center
-background-image: url(./../img/mapbiomas.png)
-background-size: 100% 100%
-.cc-bottom-right.font-light[
-  Screenshot of [MAPBIOMAS](https://plataforma.brasil.mapbiomas.org)
-] 
-
 
 ---
 layout: false
@@ -132,11 +123,24 @@ background-size: 100% 100%
 .footnote-left[Figure: Stefan Trsek]
 
 ---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/mapbiomas.png)
+background-size: 100% 100%
+.cc-bottom-right.font-light[
+  Screenshot of [MAPBIOMAS](https://plataforma.brasil.mapbiomas.org)
+] 
+
+---
 class: clear, middle
 background-image: url(./../img/esa-cci-land-cover.png)
 background-size: 100% 100%
 
 .footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+.center.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4[
+  ### **How to scale agricultural commodities mapping with scarce training data?**
+]
 
 ---
 class: clear, middle
