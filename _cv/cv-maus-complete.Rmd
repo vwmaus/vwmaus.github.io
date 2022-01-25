@@ -12,6 +12,7 @@ orcid: 0000-0002-7385-4723
 scholar: wN2LseQAAAAJ&hl
 linkedin: victor-maus-083a79191
 headcolor: 2980b9
+headboxcolor: 414141
 date: "`r format(Sys.time(), '%B %Y')`"
 ---
 
@@ -23,7 +24,23 @@ library(tibble)
 library(stringr)
 ```
 
-I am a researcher in Geoinformatics and Spatial Data Science for sustainable development, in particular related to land-use changes. I am the author of Time-Weighted Dynamic Time Warping (TWDTW) algorithm, to classify Earth observation time series in data-scarce conditions. I have implemented the TWDTW as open-source in my R package [dtwSat](https://cran.r-project.org/web/packages/dtwSat/). I have also led the production of the first-ever spatially-explicit global assessment of mining land use to assess the environmental impacts and sustainability of the global mining sector.
+Victor Maus is a researcher at the Institute for Ecological Economics from Vienna University of Economics and Business (WU), Austria. He also works as a research scholar at the International Institute for Applied Systems Analysis (IIASA) in Laxenburg, Austria, since 2016. His research contributes to methodological developments in geoinformatics and spatial data science for sustainable development, particularly related to land-use changes. His main early achievements include the development of a pattern recognition algorithm called Time-Weighted Dynamic Time Warping (TWDTW) to classify satellite image time series in data-scarce conditions and the production of the first global map of mining activities. Maus has published his research in leading international journals such as Global Environmental Change, Nature Scientific Data, and the Journal of Statistical Software.
+
+# ACADEMIC CAREER
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Senior researcher in geoinformatics", "2018-Today", "Vienna University of Economics and Business (WU)", "Vienna, Austria",
+  "Research scholar in Earth observation data analytics", "2016-Today", "International Institute for Applied Systems Analysis (IIASA)", "Laxenburg, Austria",
+  "Research assistant in big geospatial data analytics", "2014-2016", "University of Münster (WWU)", "Münster, Germany",
+  "Research assistant", "Jun - Aug/2013", "International Institute for Applied Systems Analysis (IIASA), Young Scientist Summer Program (YSSP)", "Laxenburg, Austria",
+  "University lecturer in science and technology", "2012-2014", "Federal University of Pampa (UNIPAMPA)", "Itaqui, Brazil",
+  "Research assistant in remote sensing", "2011-2012", "National Institute for Space Research (INPE)", "São José dos Campos, Brazil",
+  "Research assistant computational modelling", "2009-2011", "Federal University of Juiz de Fora (UFJF)", "Juiz de Fora, Brazil"
+) |> 
+  detailed_entries(Degree, Year, Where, Institution)
+```
 
 # EDUCATION
 
@@ -37,30 +54,29 @@ tribble(
   detailed_entries(Degree, Year, Where, Institution)
 ```
 
-# CURRENT POSITIONS
-```{r}
-tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Senior Researcher", "2018-Today", "Vienna University of Economics and Business (WU)", "Vienna, Austria",
-  "Research Scholar", "2016-Today", "International Institute for Applied Systems Analysis (IIASA)", "Laxenburg, Austria",
-) |> 
-  detailed_entries(Degree, Year, Where, Institution)
-```
-
-
-# PREVIOUS POSITIONS
-```{r}
-tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Research Assistant", "2014-2016", "University of Münster (WWU)", "Münster, Germany",
-  "University Lecturer", "2012-2014", "Federal University of Pampa (UNIPAMPA)", "Itaqui, Brazil",
-  "Research Assistant", "2011-2012", "National Institute for Space Research (INPE)", "São José dos Campos, Brazil",
-  "Research Assistant", "2009-2011", "Federal University of Juiz de Fora (UFJF)", "Juiz de Fora, Brazil"
-) |> 
-  detailed_entries(Degree, Year, Where, Institution)
-```
-
 # AWARDS
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Researcher of the month award", "2022", "Vienna University of Economics and Business (WU)", "Vienna, Austria" #"\\\\url{https://www.wu.ac.at/en/research/research-portal/news/details-news/detail/mining-poses-danger-to-the-climate-and-biodiversity}"
+) |> 
+  detailed_entries(Degree, Year, Where, Institution)
+```
+
+
+# TRAINING
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Communication training -- Speaking with Confidence and Impact", "2020", "Vienna University of Economics and Business (WU)", "Vienna, Austria",
+  "Pedagogical training -- The basics of teaching and learning in higher education", "2019", "Vienna University of Economics and Business (WU)", "Vienna, Austria",
+  "Leadership training -- Setting people in motion: leading and motivating your team", "2019", "Vienna University of Economics and Business (WU)", "Vienna, Austria",
+  "Pedagogical Treating -- University teaching: methods and evaluation", "2013", "Federal University of Pampa (UNIPAMPA)", "Itaqui, Brazil"
+) |> 
+  detailed_entries(Degree, Year, Where, Institution)
+```
 
 # RESEARCH GRANTS
 

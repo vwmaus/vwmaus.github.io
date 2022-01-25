@@ -10,6 +10,7 @@ Gemfile.lock
 vendor
 *.bib.bak
 *.bib.sav
+*.sav.tmp
 .Rproj.user
 index.utf8.md
 index.knit.md
