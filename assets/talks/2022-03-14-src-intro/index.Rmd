@@ -1,5 +1,5 @@
 ---
-title: "Geoinformatics and spatial data sciecne for sustainable development</div><div class='wu-logo-right'></div><div class='iiasa-logo-right'></div>"
+title: "Geoinformatics and spatial data science<br>for sustainable development</div><div class='wu-logo-right'></div><div class='iiasa-logo-right'></div>"
 subtitle: "<br>"
 author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br1>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br1>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
 date: ".right[.font80[14 March 2022, Stockholm Resilience Centre]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
@@ -61,7 +61,7 @@ background-size: contain
 layout: false
 class: inverse, top, left
 
-## I am looking forward to exploring partnerships for proposals and collaborations on geospatial analysis
+## I look forward to exploring partnerships for proposals and collaborations on geospatial analysis
 
 <!-- geoinformatics and spatial data science for sustainable development -->
 
@@ -74,7 +74,7 @@ class: inverse, top, left
 <!-- - I am happy to help with handling and analyzing spatial datasets in different domains -->
 
 <br><br><br><br><br><br>
-Dr Victor Maus<br>.font80[<a href='https://www.victor-maus.com'>victor.maus@wu.ac.at</a>]<br1>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]
+Victor Maus<br>.font80[<a href='https://www.victor-maus.com'>victor.maus@wu.ac.at</a>]<br1>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]
 .right[
   .font80[14 March 2022, Stockholm Resilience Centre]<br>
   .font150[Thank you!]
