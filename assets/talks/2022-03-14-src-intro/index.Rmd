@@ -1,0 +1,81 @@
+---
+title: "Geoinformatics and spatial data sciecne for sustainable development</div><div class='wu-logo-right'></div><div class='iiasa-logo-right'></div>"
+subtitle: "<br>"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br1>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br1>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
+date: ".right[.font80[14 March 2022, Stockholm Resilience Centre]]<div class='footnote-right'>Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>"
+output:
+  xaringan::moon_reader:
+    chakra: ./../libs/remark-latest.min.js
+    self_contained: false
+    css: [default, metropolis, metropolis-fonts, ./../libs/my.css, ./../libs/tachyons-min.css]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+layout: false
+class: clear, middle, center
+background-image: url(./../img/global-mining-map-v2.png)
+background-size: contain
+
+.footnote-right[.font-light[Figure: Screenshot of [FINEPRINT Viewer](https://www.fineprint.global/viewer) Data sources: v1 [Maus et al. (2020)](https://www.nature.com/articles/s41597-020-00624-w) v2 Maus et al. (Under review)]]
+
+.left-column.pl1.mt0.font120.left.bottom.font-light[
+<br><br><br><br><br><br><br><br><br>
+**45,000 Polygons**
+
+**100,000 km²**
+
+]
+
+---
+
+# Time warping for land use change analysis
+
+.footnote-left[[Maus et al. (2016)](https://doi.org/10.1109/JSTARS.2016.2517118) and [Maus et al. (2019)](http://dx.doi.org/10.18637/jss.v088.i05)]
+
+.pull-left.center[
+  ### Time-weighted Dynamic Time Warping
+  <img src="./../img/sits-color.png" height="270"/>
+  #### Classify satellite image time series to produce land-use and land-cover information. 
+  - R package installation `install.package("dtwSat")`
+  - Development version [github.com/vwmaus/dtwSat](https://github.com/vwmaus/dtwSat)
+]
+<br>
+.pull-right.center[
+  ### Land use change analysis in the Brazilian Amazon
+  <img src="./../img/mt-map.png" height="400"/>
+]
+
+---
+layout: false
+class: inverse, top, left
+
+## I am looking forward to exploring partnerships for proposals and collaborations on geospatial analysis
+
+<!-- geoinformatics and spatial data science for sustainable development -->
+
+<!-- - My research focus is geoinformatics and spatial data science for sustainable development -->
+
+<!-- - I have experience with large spatial datasets, in particular satellite Earth observations -->
+
+<!-- - Looking for partnerships for proposals and collaborations on geospatial analysis -->
+
+<!-- - I am happy to help with handling and analyzing spatial datasets in different domains -->
+
+<br><br><br><br><br><br>
+Dr Victor Maus<br>.font80[<a href='https://www.victor-maus.com'>victor.maus@wu.ac.at</a>]<br1>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]
+.right[
+  .font80[14 March 2022, Stockholm Resilience Centre]<br>
+  .font150[Thank you!]
+]

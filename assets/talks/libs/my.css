@@ -1,13 +1,42 @@
+br1 {
+  display: block;
+  line-height: 80%;
+}
+
 .my-logo-right {
 content: "";
     position: absolute;
     top: 15px;
-    right:  0px;
+    right:  0;
     height: 108px;
     width: 324px;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Wirtschaftsuniversit%C3%A4t_Wien.svg);
+}
+
+.wu-logo-right {
+content: "";
+    position: absolute;
+    top: 15px;
+    right:  0;
+    height: 108px;
+    width: 324px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Wirtschaftsuniversit%C3%A4t_Wien.svg);
+}
+
+.iiasa-logo-right {
+content: "";
+    position: absolute;
+    top: 15px;
+    right:  100px;
+    height: 108px;
+    width: 324px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(https://ar16.iiasa.ac.at/wp-content/uploads/sites/2/2017/06/ii-logo-423x600.jpg);
 }
 
 .font50 {
