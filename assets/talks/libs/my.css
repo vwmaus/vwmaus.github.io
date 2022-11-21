@@ -3,6 +3,10 @@ br1 {
   line-height: 80%;
 }
 
+.hide-count .remark-slide-number {
+  display: none;
+}
+
 .my-logo-right {
 content: "";
     position: absolute;
@@ -100,6 +104,10 @@ content: "";
 }
 
 .font200 {
+  font-size: 200%;
+}
+
+.font250 {
   font-size: 200%;
 }
 
@@ -340,17 +348,12 @@ content: "";
   color: white;
 }
 
-
-.font300 {
-  font-size: 300%;
-}
-
 .footnote-left {
   opacity: 0.8;
   color: #1A292C;
   position: absolute;
   bottom: 1em;
-  padding-right: 4em;
+  padding-right: 2em;
   font-size: 80%;
 }
 
@@ -359,8 +362,8 @@ content: "";
   color: #1A292C;
   position: absolute;
   bottom: 1em;
-  right: 4em;
-  font-size: 80%;
+  right: 3em;
+  font-size: 60%;
 }
 
 .font-dark {

@@ -1,0 +1,258 @@
+---
+title: "Local vs Global: Challenges in Geoinformatics and Earth observation to support sustainable development .my-logo-right[]"
+subtitle: "<b></b>"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
+date: ".right[.font80[Nov 21, 2022, SEED KTH, Stockholm].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+output: 
+  xaringan::moon_reader:
+    chakra: ./../libs/remark-latest.min.js
+    self_contained: false
+    css: [default, metropolis, metropolis-fonts, ./../libs/my.css, ./../libs/tachyons-min.css]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+class: clear
+background-image: url(https://www.cgdev.org/sites/default/files/perssonetalblog1.png?itok=TUj8JebP)
+background-size: cover
+.cc-bottom-right2.font-dark[
+  Figure: &copy; 2021 Center for Global Development
+]
+
+## **Information on the global drivers of local changes is critical to support sustainable development**
+
+---
+class: clear
+background-image: url(./../img/scp-hat-sweden-consumption-2018.png)
+background-size: contain
+.cc-bottom-right3.font-dark[
+  Source: [SCP-HAT http://scp-hat.lifecycleinitiative.org/module-2-scp-hotspots](http://scp-hat.lifecycleinitiative.org/module-2-scp-hotspots)
+] 
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/Aerial-view-of-a-small-mine-near-Mt-Isa-Queensland-by-denisbin--CC-BY-ND-2-0.jpg)
+background-size: cover
+.cc-bottom-left.font-light[
+  Photo Aerial view of a small mine near Mt Isa Queensland" by denisbin <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>
+] 
+
+.font-dark.center.font300.font-light[
+**Geospatial information necessary for sustainability assessments is not disclosed by the mining industry**
+]
+
+---
+layout: false
+class: clear, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Brumadinho%2C_Minas_Gerais_%2847021723582%29.jpg)
+background-size: cover
+.cc-bottom-right.font-light[Photo Brumadinho, Minas Gerais by Vinícius Mendonça/Ibama <a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en">CC BY-SA 2.0</a>]
+<!-- background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/ca/Desastre_de_Brumadinho.gif) -->
+<!-- background-size: cover -->
+<!-- .cc-bottom-left.font-light[Photo <a href="https://commons.wikimedia.org/wiki/File:Desastre_de_Brumadinho.gif">NASA Earth Observatory images by Lauren Dauphin, using Landsat data from the U.S. Geological Survey. Caption by Adam Voiland. Public domain</a>] -->
+
+.font-dark.center.font250.font-light[
+**Global mineral extraction is growing fast and we lack comprehensive geospatial information to assess its impacts**
+]
+
+
+---
+layout: false
+class: clear, center
+background-image: url(https://www.esa.int/var/esa/storage/images/applications/observing_the_earth/copernicus/sentinel-2/19729272-10-eng-GB/Sentinel-2_pillars.jpg)
+background-size: cover
+.cc-bottom-left.font-light[Image: © <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2">European Space Agency (ESA)</a>]
+
+
+
+---
+layout: false
+class: clear, middle, center
+background-size: cover
+
+.font-dark.left.font150[
+**Global datasets lack local relevance**
+]
+
+<img src="./../img/esa-cci-carajas.png" height="500"/>
+
+.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+---
+layout: false
+class: clear, middle, center
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Open cut of the Carajás Iron Mine, Brazil**
+]
+<div class="copyright-container">
+  <img src="./../img/carajas-mine-satellite.png" height="450"/>
+  <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+</div>
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Urban area of the Parauapebas municipality, Brazil**
+]
+<div class="copyright-container">
+  <img src="./../img/parauapebas-city-satellite.png" height="450"/>
+  <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+</div>
+]
+
+<!-- .bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4.center[### **Why is so difficult to map mining areas?**] -->
+
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/global-mining-map.png)
+
+.footnote-right[.font-light[Figure: Screenshot of [FINEPRINT Viewer](https://www.fineprint.global/viewer)]]]
+.footnote-left[[Maus et al. (2020, 2022)](http://doi.org/10.1038/s41597-022-01547-4)]
+
+.left-column.pl1.mt0.font120.left.bottom.font-light[
+<br><br><br><br><br><br><br><br><br>
+**45,000 Polygons**
+
+**100,000 km²**
+
+]
+
+---
+layout: false
+class: clear, center
+
+<img src="./../img/mine-time-tag.png" height="500"/>
+
+.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4.center.font170[**How to automatically monitor the expansion of mining?**]
+
+---
+layout: false
+class: clear, middle, center
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Regular spatial patterns**
+]
+<div class="copyright-container">
+  <img src="./../img/dog-by-Tiina-Hayha-CC-BY-SA-4-0.jpg" height="450"/>
+  <div class="copyright-bottom-left2 font-light">Photo by Tiina Häyhä <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a></div>
+</div>
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Irregular spatial patterns**
+]
+<div class="copyright-container">
+  <img src="./../img/carajas-mine-satellite-dog.png" height="450"/>
+  <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://goo.gl/maps/xDkqyGdMAn8ZJTZJ7">Google Maps</a></div>
+</div>
+]
+
+
+---
+layout: false
+class: clear, middle, center
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Small scale mining in Itaituba National Forest, Brazil**
+]
+<div class="copyright-container">
+  <img src="./../img/small-scale-mining-brazil.png" height="450"/>
+</div>
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Super pit gold mine, Australia**
+]
+<div class="copyright-container">
+  <img src="./../img/large-scale-mining-australia.png" height="450"/>
+</div>
+]
+
+.font-dark.left.font150.center[
+  <br>**How to cope with the heterogeneity of mining areas**
+]
+
+---
+layout: false
+class: clear, middle
+
+.center[
+  <img src="./../img/example-cnn-coal-mine-classification.png" height="300"/>
+]
+
+<br><br>
+
+.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4.center[
+  ### **Deep neural networks show promising results in delineating mining areas**
+]
+
+
+
+---
+layout: false
+class: clear, middle, center
+.pull-left[
+.font-dark.left.font160.left[
+Machine learning algorithms trained with non-representative spatial distribution samples produce unreliable results!
+]]
+
+.pull-right.center[
+<div class="copyright-container">
+  <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-022-29838-9/MediaObjects/41467_2022_29838_Fig1_HTML.png?as=webp" height="600"/>
+  <div class="copyright-bottom-left2 font-light"><a href="https://www.nature.com/articles/s41467-022-29838-9">Meyer & Pebesma, 2022</a></div>
+</div>
+]
+
+---
+layout: false
+class: clear, middle, center, font-dark
+background-size: cover
+
+.font-dark.left.font150.center[
+## Geoinformatics and Earth observation for sustainable development
+]
+
+<img src="./../img/big-EO.png" height="350"/>
+
+.font-dark.left.font150.center[
+**EO data and processing infrastructure are available. However, it is still challenging to produce trustworthy global information that is at the same time locally relevant**
+]
+
+
+---
+layout: false
+class: clear, hide-count, middle, left
+
+.pull-left.left[
+Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]<br>
+<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
+]
+
+.pull-right.right[
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Wirtschaftsuniversit%C3%A4t_Wien.svg" height="150"/>
+]
+
+.right[
+  .font80[Nov 21, 2022, SEED KTH, Stockholm]<br>
+  .font150[Thank you!]
+]
