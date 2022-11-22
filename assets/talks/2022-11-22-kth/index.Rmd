@@ -29,21 +29,21 @@ The overarch aim of GRU is to quantifying society's use of natural resources and
 
 ### Develop methods and data for the spatially explicit assessment of resource flows
 
-- Global Material Flows Database url(https://www.resourcepanel.org/global-material-flows-database)
+- Global Material Flows Database https://www.resourcepanel.org/global-material-flows-database
 
-- Global mining land use url(https://www.nature.com/articles/s41597-022-01547-4)
+- Global mining land use https://www.nature.com/articles/s41597-022-01547-4
 
-- Food and Agriculture Biomass Input-Output Database (FABIO) url(https://pubs.acs.org/doi/10.1021/acs.est.9b03554)
+- Food and Agriculture Biomass Input-Output Database (FABIO) https://pubs.acs.org/doi/10.1021/acs.est.9b03554
 
 ### State-of-the-art visualization tools to support UN SDGs monitoring 
 
-- Material flow Analysis Portal url(www.materialflows.net) 
+- Material flow Analysis Portal https://www.materialflows.net
 
-- Sustainable Consumption and Production Hotspot Analysis Tool (SCP-HAT) url(http://scp-hat.lifecycleinitiative.org/)
+- Sustainable Consumption and Production Hotspot Analysis Tool (SCP-HAT) http://scp-hat.lifecycleinitiative.org
 
-- FINEPRINT geospatial data portal url(https://www.fineprint.global/visualisations)
+- FINEPRINT geospatial data portal https://www.fineprint.global/visualisations
 
-- And more url(https://www.fineprint.global)
+- And more https://www.fineprint.global
 
 
 ---
@@ -54,7 +54,7 @@ background-size: cover
   Figure: &copy; 2021 Center for Global Development
 ]
 
-## **Information on the global drivers of local changes is critical to support sustainable development**
+## **Linking global economic drivers of local changes is critical to support sustainable development**
 
 ---
 class: clear,center,top
@@ -118,7 +118,7 @@ background-size: cover
 
 <img src="./../img/esa-cci-carajas.png" height="550"/>
 
-.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+.footnote-right[[Map from ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
 
 ---
 layout: false
@@ -133,7 +133,7 @@ class: clear, middle, center
 ]
 <div class="copyright-container">
   <img src="./../img/carajas-mine-satellite.png" height="450"/>
-  <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
 </div>
 ]
 
@@ -143,7 +143,7 @@ class: clear, middle, center
 ]
 <div class="copyright-container">
   <img src="./../img/parauapebas-city-satellite.png" height="450"/>
-  <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
 </div>
 ]
 
@@ -152,7 +152,7 @@ layout: false
 class: clear, middle, center
 background-image: url(./../img/global-mining-map.png)
 
-.footnote-right[.font-light[Figure: Screenshot of [FINEPRINT Viewer](https://www.fineprint.global/viewer)]]]
+.footnote-right[.font-light[Figure: [FINEPRINT Viewer](https://www.fineprint.global/viewer)]]]
 .footnote-left[[Maus et al. (2020, 2022)](http://doi.org/10.1038/s41597-022-01547-4)]
 
 .left-column.pl1.mt0.font120.left.bottom.font-light[
@@ -172,6 +172,22 @@ class: clear, center
 <img src="./../img/mine-time-tag.png" height="500"/>
 
 .footnote-left[Luckeneder & Maus (Under review)]
+
+
+---
+layout: false
+class: clear, middle
+
+.center[
+  <img src="./../img/example-cnn-coal-mine-classification.png" height="300"/>
+]
+
+<br><br>
+
+.center.font190[**Deep neural networks show promising results in delineating coal mining open pit with overall accuracy between 85% and 90%**]
+
+.footnote-left[Maus et al. (Ongoing)]
+
 
 ---
 layout: false
@@ -193,7 +209,7 @@ class: clear, middle, center
 ]
 <div class="copyright-container">
   <img src="./../img/carajas-mine-satellite-dog.png" height="450"/>
-  <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://goo.gl/maps/xDkqyGdMAn8ZJTZJ7">Google Maps</a></div>
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://goo.gl/maps/xDkqyGdMAn8ZJTZJ7">Google Maps</a></div>
 </div>
 ]
 
@@ -223,20 +239,6 @@ class: clear, middle, center
 </div>
 ]
 
-
----
-layout: false
-class: clear, middle
-
-.center[
-  <img src="./../img/example-cnn-coal-mine-classification.png" height="300"/>
-]
-
-<br><br>
-
-.center.font190[**Deep neural networks show promising results in delineating coal mining open pit with overall accuracy between 85% and 90%**]
-
-.footnote-left[Maus et al. (Ongoing)]
 
 ---
 layout: false
