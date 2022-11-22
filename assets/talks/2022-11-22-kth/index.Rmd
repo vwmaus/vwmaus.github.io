@@ -124,6 +124,9 @@ background-size: cover
 layout: false
 class: clear, middle, center
 
+.center.font150[**With little training, humans can distinguish urban from mines in satellite images**]
+
+
 .pull-left.center[
 .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
 **Open cut of the Carajás Iron Mine, Brazil**
@@ -143,9 +146,6 @@ class: clear, middle, center
   <div class="copyright-bottom-left2 font-light">Screenshots of <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
 </div>
 ]
-
-<!-- .bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4.center[### **Why is so difficult to map mining areas?**] -->
-
 
 ---
 layout: false
@@ -167,9 +167,11 @@ background-image: url(./../img/global-mining-map.png)
 layout: false
 class: clear, center
 
+.center.font170[**How to automatically monitor the expansion of mining?**]
+
 <img src="./../img/mine-time-tag.png" height="500"/>
 
-.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4.center.font170[**How to automatically monitor the expansion of mining?**]
+.footnote-left[Luckeneder & Maus (Under review)]
 
 ---
 layout: false
@@ -195,10 +197,13 @@ class: clear, middle, center
 </div>
 ]
 
+.center.font160[**Mapping mining areas requires spatial context, e.g. edges and relative size of objects. However, the spatial context of mines is highly heterogeneous**]
 
 ---
 layout: false
 class: clear, middle, center
+
+.font-dark.left.font150.center[**How to cope with different types of mining areas, e.g. small-scale mining and large-scale industrial mining?**]
 
 .pull-left.center[
 .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
@@ -218,9 +223,6 @@ class: clear, middle, center
 </div>
 ]
 
-.font-dark.left.font150.center[
-  <br>**How to cope with the heterogeneity of mining areas**
-]
 
 ---
 layout: false
@@ -232,11 +234,9 @@ class: clear, middle
 
 <br><br>
 
-.bg-washed-blue.b--dark-red.ba.bw0.br3.shadow-5.ph4.mt1.ma0.pb4.center[
-  ### **Deep neural networks show promising results in delineating mining areas**
-]
+.center.font190[**Deep neural networks show promising results in delineating coal mining open pit with overall accuracy between 85% and 90%**]
 
-
+.footnote-left[Maus et al. (Ongoing)]
 
 ---
 layout: false
