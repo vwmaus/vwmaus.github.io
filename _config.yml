@@ -3,13 +3,13 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-fields: Geoinformatics and Spatial Data Science for sustainable development
+fields: Spatial Data Science for Sustainable Development
 first_name: Victor
 #middle_name: 
 last_name: Maus
 email: victor.maus@wu.ac.at
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Geoinformatics and Spatial Data Science for sustainable development
+  Spatial Data Science for Sustainable Development
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
