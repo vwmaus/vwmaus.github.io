@@ -316,7 +316,7 @@ class: clear, middle
 ]
 
 .cc-bottom-left.font-dark[
-  Figure: Figure: Knoth & Appel
+  Figure: Knoth, Appel, & Maus
 ] 
 
 ---
