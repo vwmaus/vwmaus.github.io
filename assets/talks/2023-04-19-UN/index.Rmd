@@ -1,0 +1,208 @@
+---
+title: "Mapping global mining activities using <br>open Earth observation data .my-logo-right[]"
+subtitle: "<b></b>"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
+date: ".right[.font80[UNODC and UNEP, Apr 19, 2023, Vienna].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+output: 
+  xaringan::moon_reader:
+    chakra: ./../libs/remark-latest.min.js
+    self_contained: false
+    css: [default, metropolis, metropolis-fonts, ./../libs/my.css, ./../libs/tachyons-min.css]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+editor_options:
+  chunk_output_type: console
+
+---
+layout: false
+class: clear, center
+background-image: url(./../img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)
+
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+
+.cc-bottom-right.font-light[Illegal gold mine in the Kayapo indigenous territory in Brazil by IBAMA via Wikimedia Commons
+<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en">CC BY-SA 2.0</a>]
+.font-dark.center.font250.font-light[**Currently, there is not enough geospatial information available to conduct comprehensive sustainability assessments for mining**]
+
+???
+
+- A link to the slides will be provided at the end of the talk, so you don't need to bother taking notes
+
+- Companies and governments do not disclose sufficient geospatial information
+
+- This hinders comprehensive sustainability and risk assessments of the sectors activities, particularly at global scale
+
+---
+layout: false
+class: clear, center
+background-image: url(https://www.esa.int/var/esa/storage/images/applications/observing_the_earth/copernicus/sentinel-2/19729272-10-eng-GB/Sentinel-2_pillars.jpg)
+background-size: cover
+.cc-bottom-left.font-light[Image: © <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2">European Space Agency (ESA)</a>]
+
+.center.font150.font-light[**Earth observation is the only viable data source for monitoring mining areas**]
+
+???
+
+- Earth observation satellites are the only viable data source to close this information gap
+
+- And the open data policy by several space agencies makes it easy to access and use satellite images for a range of applications, including mapping mines
+
+---
+layout: false
+class: clear, middle, center
+
+.center.font180[**With little training, humans can identify mining in satellite images**]
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Open cut of the Carajás Iron Mine, Brazil**
+]
+<div class="copyright-container">
+  <img src="./../img/carajas-mine-satellite.png" height="450"/>
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+</div>
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Gold mining in Kayapo indigenous territory, Brazil**
+]
+<div class="copyright-container">
+  <img src="./../img/mining-Kayapo-indigenous-territory-brazil.png" height="450"/>
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+</div>
+]
+
+???
+
+- My research team has been exploring this rich open satellite data archives to map mines
+
+- As currently there are no automated algorithms that can map mines globally
+
+- We have mapped small-scale and industrial mines via visual interpretation of satellite images
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/global-mining-map.png)
+
+.footnote-right[.font-light[Figure: [FINEPRINT Viewer www.fineprint.global/viewer](https://www.fineprint.global/viewer)]]]
+.footnote-left[[Maus et al. (2020, 2022)](http://doi.org/10.1038/s41597-022-01547-4)]
+
+.left-column.pl1.mt0.font120.left.bottom.font-light[
+<br><br><br><br><br><br><br><br><br>
+**45,000 Polygons**
+
+**100,000 km²**
+
+]
+
+???
+
+- As a result we constructed a database including about 45,000 polygons covering about 100,000 km² of mines globally
+
+- In this map you can see the spatial distribution of the polygons
+
+- This database untapped a range of global land use and ecological assessments
+
+---
+layout: false
+class: clear, middle, center
+
+### Country distribution (Add figure)
+
+---
+layout: false
+class: clear, middle, center
+
+### Biomes distribution (Add figure)
+
+---
+layout: false
+class: clear, middle, center
+
+### Deforestation (Add figure)
+
+---
+layout: false
+class: clear, middle, center
+
+### Illegal mining (Add figure)
+
+
+---
+layout: false
+class: clear
+
+.font-dark.font180.center.bd[Moving from snapshot of mining land use to monitoring mining]
+
+
+.middle.center[
+  <img src="./../img/example-cnn-coal-mine-classification.png" height="300"/>
+  <br>.font180[**Deep neural networks show promising results in delineating coal mining open pit with overall accuracy between 85% and 90%**]
+]
+
+
+.footnote-left[Maus et al. (Ongoing)]
+
+???
+
+- Automatizing mining monitoring shows promising results using a class of algorithms called, Convolutional Neural Networks
+
+- This automated approaches are not scalable yet
+
+- However, there are several research papers showing that this methods work well in small homogeneous regions
+
+---
+layout: false
+class: inverse, top, let
+
+# Monitoring legal/illegal mining
+
+- Automated monitoring of mines using AI works for small homogeneous areas
+
+--
+- Cloud cover in tropical regions can substantially delay the detection
+
+--
+- Local expert knowledge is critical
+
+--
+- Open Earth observation images (Sentinel-2) provide sufficient spatial and temporal resolution for near real time monitoring
+
+--
+- However, higher spatial resolution is very useful, e.g. openly available for the tropics from Norway's International Climate and Forests Initiative Satellite Data Program
+
+<div class="copyright-container">
+  <video height="320" autoplay muted loop>
+    <source src="https://assets.planet.com/web/videos/nicfi/nicfi_tropics_basemap_map_large_video_d2-1.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="copyright-bottom-left2 font-light">Video: <a href="https://www.planet.com/nicfi">NICFI https://www.planet.com/nicfi</a></div>
+
+---
+layout: false
+class: clear, hide-count, middle, left
+
+.pull-left.left[
+Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]<br>
+<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
+]
+
+.pull-right.right[
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Wirtschaftsuniversit%C3%A4t_Wien.svg" height="150"/>
+]
+
+.right[
+  .font80[UNODC and UNEP, Apr 19, 2023, Vienna]<br>
+  .font150[Thank you!]
+]

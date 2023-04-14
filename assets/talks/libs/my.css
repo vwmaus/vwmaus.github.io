@@ -157,7 +157,7 @@ content: "";
   font-size: 60%;
   position: absolute;
   bottom: 8px;
-  right: 16px;
+  right: 46px;
 }
 
 .cc-bottom-right2 {
@@ -258,6 +258,10 @@ content: "";
   padding: 1em;
   padding-top: 1;
   padding-bottom: 0;
+}
+
+.bd {
+	font-weight: bold;
 }
 
 .extension-tile {
