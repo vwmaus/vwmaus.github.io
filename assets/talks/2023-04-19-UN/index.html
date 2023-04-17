@@ -124,53 +124,154 @@ background-image: url(./../img/global-mining-map.png)
 
 - This database untapped a range of global land use and ecological assessments
 
----
-layout: false
-class: clear, middle, center
 
-### Country distribution (Add figure)
 
 ---
 layout: false
 class: clear, middle, center
 
-### Biomes distribution (Add figure)
+.center.font180[**Mining land use distribution across countries**]
 
----
-layout: false
-class: clear, middle, center
-
-### Deforestation (Add figure)
-
----
-layout: false
-class: clear, middle, center
-
-### Illegal mining (Add figure)
-
-
----
-layout: false
-class: clear
-
-.font-dark.font180.center.bd[Moving from snapshot of mining land use to monitoring mining]
-
-
-.middle.center[
-  &lt;img src="./../img/example-cnn-coal-mine-classification.png" height="300"/&gt;
-  &lt;br&gt;.font180[**Deep neural networks show promising results in delineating coal mining open pit with overall accuracy between 85% and 90%**]
-]
-
-
-.footnote-left[Maus et al. (Ongoing)]
+&lt;div class="copyright-container"&gt;
+  &lt;img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-022-01547-4/MediaObjects/41597_2022_1547_Fig3_HTML.png?as=webp" height="500"/&gt;
+  &lt;div class="copyright-bottom-left font-dark"&gt;&lt;a href=http://doi.org/10.1038/s41597-022-01547-4&gt;Maus et al., 2022&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
 
 ???
 
-- Automatizing mining monitoring shows promising results using a class of algorithms called, Convolutional Neural Networks
+- The polygons are distributed across 145 countries
 
-- This automated approaches are not scalable yet
+- And the area is unevenly distributed, 6 countries account for more than 50% of the mapped mining area
 
-- However, there are several research papers showing that this methods work well in small homogeneous regions
+- This includes, Russia, China, Australia, United States, Indonesia, and Brazil
+
+- It is important to note that, the database covers LSM and SAM globally
+
+
+---
+layout: false
+class: clear, middle, center
+
+.center.font120[**The database includes industrial mining as well as small-scale artisanal mining globally**]
+
+&lt;div class="copyright-container"&gt;
+  &lt;img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-022-01547-4/MediaObjects/41597_2022_1547_Fig1_HTML.png?as=webp" height="500"/&gt;
+  &lt;div class="copyright-bottom-left font-dark"&gt;&lt;a href=http://doi.org/10.1038/s41597-022-01547-4&gt;Maus et al., 2022&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+???
+
+- In this slide we see the examples from South America, in Chile and Brazil
+
+- And it also may include illegal mining
+
+---
+layout: false
+class: clear, middle, center
+
+.center.font180[**Mining in indigenous land in Brazil**]
+
+.pull-left.center[
+&lt;div class="copyright-container"&gt;
+  &lt;img src="./../img/illegal-mining-munduruku.png" height="450"/&gt;
+  &lt;div class="copyright-bottom-left font-dark"&gt;Map by Matthias Humer&lt;/div&gt;
+&lt;/div&gt;
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Munduruku indigenous territory, Brazil**
+]
+]
+
+.pull-right.center[
+&lt;div class="copyright-container"&gt;
+  &lt;img src="./../img/illegal-mining-kayapo.png" height="450"/&gt;
+  &lt;div class="copyright-bottom-left font-dark"&gt;Map by Matthias Humer&lt;/div&gt;
+&lt;/div&gt;
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Kayapó indigenous territory, Brazil**
+]
+]
+
+???
+
+- As we can see the mining areas in red in this slide are within protected areas, outside the consecrations in orange
+
+- Although, we have not check this areas with Brazilian authorities, they are likely illegal activities
+
+- My team is currently conducting a more comprehensive study to check how much mining is outside concession
+
+- But this is still challenging for several countries as we do not always have open information about concessions
+
+- Our database has also served as bassis for other studies, for example
+
+---
+layout: false
+class: clear, middle, center
+
+.center.font180[**Mining-related forest loss by country accumulated from 2001 to 2019**]
+
+&lt;div class="copyright-container"&gt;
+  &lt;img src="./../img/top-10-contry-mrd.png" height="500"/&gt;
+  &lt;div class="copyright-bottom-left font-dark"&gt;&lt;a href=https://www.wwf.de/fileadmin/fm-wwf/Publikationen-PDF/Wald/WWF-Studie-Extracted-Forests.pdf&gt;Kramer et al., 2023&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+???
+
+- Based on this database, we have published last week a new study together with WWF Germany
+
+- Where we have quantified the mining related deforestation globally
+
+- Some main highlights of this study are shown in this map
+
+- Showing the countries contribution to mining related deforestation from 2001 to 2019
+
+- In this study we have also linked deforestation to individual commodities
+
+
+---
+layout: false
+class: clear, middle, center
+
+.center.font180[**Mining-related forest loss by commodity, 2001-2019**]
+
+&lt;div class="copyright-container"&gt;
+  &lt;img src="./../img/mineral-commodity-deforestation-wwf.png" height="500"/&gt;
+  &lt;div class="copyright-bottom-left font-dark"&gt;&lt;a href=https://www.wwf.de/fileadmin/fm-wwf/Publikationen-PDF/Wald/WWF-Studie-Extracted-Forests.pdf&gt;Kramer et al., 2023&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+layout: false
+class: inverse, middle, center
+
+.font-light.font200.center.bd[How can we transition from snapshots of mining land use to monitoring mining activities over time?]
+
+???
+
+- Our global mining database was very useful to calculate some ecological footprints 
+
+- However, can only provide snapshots of land use, as it is very time-consuming
+
+- Monitoring mining activities requires automation
+
+???
+
+&lt;!-- --- --&gt;
+&lt;!-- layout: false --&gt;
+&lt;!-- class: clear --&gt;
+
+&lt;!-- .font-light.font200.center.bd[Monitoring mining requires] --&gt;
+
+&lt;!-- .middle.center[ --&gt;
+&lt;!--   &lt;img src="./../img/example-cnn-coal-mine-classification.png" height="300"/&gt; --&gt;
+&lt;!--   &lt;br&gt;.font180[**Deep neural networks show promising results in delineating coal mining open pit with overall accuracy between 85% and 90%**] --&gt;
+&lt;!-- ] --&gt;
+
+&lt;!-- .footnote-left[Maus et al. (Ongoing)] --&gt;
+
+&lt;!-- ??? --&gt;
+
+&lt;!-- - Automatizing mining monitoring shows promising results using a class of algorithms called, Convolution Neural Networks --&gt;
 
 ---
 layout: false
