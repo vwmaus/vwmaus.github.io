@@ -89,6 +89,36 @@ class: clear, middle, center
 
 - We have mapped small-scale and industrial mines via visual interpretation of satellite images
 
+- Automated global scale mapping mines is an open scientific challenge
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/mine-app-gui.png)
+background-size: contain
+
+.footnote-right[.font-light[[User interface of the open-source mine mapping tool](https://doi.org/10.5281/zenodo.3580739)]]
+
+???
+
+- We then develop a tool to support systematic visual interpretation of mining regions
+
+- The tool brings several layers together to support experts interpretation of images
+
+---
+layout: false
+class: clear, middle, center
+background-image: url(./../img/mine-app-data-sources.png)
+background-size: contain
+
+.footnote-right[.font-light[[User interface of the open-source mine mapping tool](https://doi.org/10.5281/zenodo.3580739)]]
+
+???
+
+- We then develop a tool to support systematic visual interpretation of mining regions
+
+- The tool brings several layers together to support experts interpretation of images
+
 ---
 layout: false
 class: clear, middle, center
@@ -115,6 +145,24 @@ background-image: url(./../img/global-mining-map.png)
 
 
 
+
+---
+layout: false
+class: clear, middle, center
+
+.center.font120[**The database includes industrial mining as well as small-scale artisanal mining globally**]
+
+<div class="copyright-container">
+  <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-022-01547-4/MediaObjects/41597_2022_1547_Fig1_HTML.png?as=webp" height="500"/>
+  <div class="copyright-bottom-left font-dark"><a href=http://doi.org/10.1038/s41597-022-01547-4>Maus et al., 2022</a></div>
+</div>
+
+???
+
+- In this slide we see the examples from South America, in Chile and Brazil
+
+- And it also may include illegal mining
+
 ---
 layout: false
 class: clear, middle, center
@@ -136,23 +184,6 @@ class: clear, middle, center
 
 - It is important to note that, the database covers LSM and SAM globally
 
-
----
-layout: false
-class: clear, middle, center
-
-.center.font120[**The database includes industrial mining as well as small-scale artisanal mining globally**]
-
-<div class="copyright-container">
-  <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-022-01547-4/MediaObjects/41597_2022_1547_Fig1_HTML.png?as=webp" height="500"/>
-  <div class="copyright-bottom-left font-dark"><a href=http://doi.org/10.1038/s41597-022-01547-4>Maus et al., 2022</a></div>
-</div>
-
-???
-
-- In this slide we see the examples from South America, in Chile and Brazil
-
-- And it also may include illegal mining
 
 ---
 layout: false
@@ -228,21 +259,6 @@ class: clear, middle, center
 </div>
 
 
-
----
-layout: false
-class: inverse, middle, center
-
-.font-light.font200.center.bd[How can we transition from snapshots of mining land use to monitoring mining activities over time?]
-
-???
-
-- Our global mining database was very useful to calculate some ecological footprints 
-
-- However, can only provide snapshots of land use, as it is very time-consuming
-
-- Monitoring mining activities requires automation
-
 ???
 
 <!-- --- -->
@@ -264,30 +280,42 @@ class: inverse, middle, center
 
 ---
 layout: false
-class: inverse, top, let
+class: clear, center, middle
+background-image: url(./../img/towards-automated-mining-monitoring.png)
+background-size: contain
 
-# Monitoring legal/illegal mining
+.font.dark.font120[**Towards monitoring legal/illegal mining**<br><br><br><br>]
 
-- Automated monitoring of mines using AI works for small homogeneous areas
 
---
+???
+
+- Sentinel-2 images provide sufficient spatial and temporal resolution for near real time monitoring, but supporting information with higher spatial resolution is critical
+
+- Current automated approaches work well for homogeneous regions and mining types but not for large scales applications
+
 - Cloud cover in tropical regions can substantially delay the detection
 
---
 - Local expert knowledge is critical
 
---
 - Open Earth observation images (Sentinel-2) provide sufficient spatial and temporal resolution for near real time monitoring
 
---
 - However, higher spatial resolution is very useful, e.g. openly available for the tropics from Norway's International Climate and Forests Initiative Satellite Data Program
 
-<div class="copyright-container">
-  <video height="320" autoplay muted loop>
-    <source src="https://assets.planet.com/web/videos/nicfi/nicfi_tropics_basemap_map_large_video_d2-1.mp4" type="video/mp4">
-  </video>
-</div>
-<div class="copyright-bottom-left2 font-light">Video: <a href="https://www.planet.com/nicfi">NICFI https://www.planet.com/nicfi</a></div>
+- How can we transition from snapshots of mining land use to monitoring mining activities over time?
+
+- Our global mining database was very useful to calculate some ecological footprints 
+
+- However, can only provide snapshots of land use, as it is very time-consuming
+
+- Monitoring mining activities requires automation
+
+
+<!-- <div class="copyright-container"> -->
+<!--   <video height="320" autoplay muted loop> -->
+<!--     <source src="https://assets.planet.com/web/videos/nicfi/nicfi_tropics_basemap_map_large_video_d2-1.mp4" type="video/mp4"> -->
+<!--   </video> -->
+<!-- </div> -->
+<!-- <div class="copyright-bottom-left2 font-light">Video: <a href="https://www.planet.com/nicfi">NICFI https://www.planet.com/nicfi</a></div> -->
 
 ---
 layout: false
