@@ -1,7 +1,7 @@
 ---
 title: "Mapping global mining activities using <br>open Earth observation data .my-logo-right[]"
 subtitle: "<b></b>"
-author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
 date: ".right[.font80[UNODC and UNEP, Apr 19, 2023, Vienna].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
 output: 
   xaringan::moon_reader:
@@ -322,7 +322,7 @@ layout: false
 class: clear, hide-count, middle, left
 
 .pull-left.left[
-Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://www.victor-maus.com'>www.victor-maus.com</a>]<br>
+Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
 <img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
 ]
 
