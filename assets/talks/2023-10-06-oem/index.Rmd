@@ -1,0 +1,62 @@
+---
+title: "Overcoming Data Scarcity in Land Use Monitoring <br>with Time-Weighted Dynamic Time Warping .wu-logo-right[]"
+subtitle: "<b></b>"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
+date: ".right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+output: 
+  xaringan::moon_reader:
+    chakra: ./libs/remark-latest.min.js
+    self_contained: false
+    css: [default, metropolis, metropolis-fonts, ./libs/my.css, ./libs/tachyons-min.css]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+editor_options:
+  chunk_output_type: console
+---
+layout: false
+class: clear, center
+background-image: url(./../img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)
+
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+
+.cc-bottom-right.font-light[Illegal gold mine in the Kayapo indigenous territory in Brazil by IBAMA via Wikimedia Commons
+<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en">CC BY-SA 2.0</a>]
+.font-dark.center.font250.font-light[**Currently, there is not enough geospatial information available to conduct comprehensive sustainability assessments for mining**]
+
+???
+
+- A link to the slides will be provided at the end of the talk, so you don't need to bother taking notes
+
+- Companies and governments do not disclose sufficient geospatial information
+
+- This hinders comprehensive sustainability and risk assessments of the sectors activities, particularly at global scale
+
+
+
+
+---
+layout: false
+class: clear, hide-count, middle, left
+
+.erc-logo-left[] .fineprint-logo-left[] .wu-logo-right[]
+
+<br><br><br><br><br>
+.pull-left.left[
+Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
+<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
+]
+
+
+.right[
+  .font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano]<br>
+  .font150[Thank you!]
+]
