@@ -267,23 +267,13 @@ knitr::include_graphics("https://www.victor-maus.com/assets/img/literature-patte
 ```
 ]
 .pull-right[
-```{r, echo=FALSE, out.width="100%"}
+```{r, echo=FALSE, out.width="70%"}
 knitr::include_graphics("https://www.victor-maus.com/assets/img/literature-patterns-maps.png")
 ```
 ]
 
 .footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
 
----
-layout: false
-
-# Software
-
-### dwtSat (≥ 1.0-0)
-
-Interface to satllite image time series
-
-### twdtw 
 
 ---
 layout: false
@@ -337,29 +327,34 @@ knitr::include_graphics("https://media.springernature.com/full/springer-static/i
 
 .footnote-left[[Peng et al., 2023](https://doi.org/10.1038/s41597-023-02573-6)]
 
----
-layout: false
-
-# Future versions
-
-### `gdalcubes` for 
-
-### 
 
 ---
 layout: false
-class: clear, hide-count, middle, left
 
-.erc-logo-left[] .fineprint-logo-left[] .wu-logo-right[]
+# CRAN
 
-<br><br><br><br><br>
-.pull-left.left[
-Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
-<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
+.pull-left[
+## dwtSat (≥ 1.0-0)
+
+### Land use mapping useing `stars`
+```{r,echo=TRUE,eval=FALSE}
+install.packages("dtwSat")
+
+vignette("landuse-mapping", "dtwSat")
+```
+
+### Future versions:
+
+- `gdalcubes`
+- `sits`
+]
+
+--
+
+.pull-right[
+<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/><br>
+.font100[victor.maus@wu.ac.at]<br>
+.font100[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]
 ]
 
 
-.right[
-  .font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano]<br>
-  .font150[Thank you!]
-]
