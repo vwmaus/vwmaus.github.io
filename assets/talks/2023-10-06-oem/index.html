@@ -50,9 +50,12 @@ layout: false
 
 # Time Series Classification
 
-.center[&lt;img src="https://www.mdpi.com/remotesensing/remotesensing-13-02428/article_deploy/html/images/remotesensing-13-02428-g003-550.jpg"&gt;]
+&lt;br&gt;
+.center[
+&lt;img src="https://www.victor-maus.com/assets/talks/img/source_petitjean_2012.png" width="80%" /&gt;
+]
 
-.footnote-right[Figure: [Petitjean et al., 2012](https://doi.org/10.1109/TGRS.2011.2179050)]
+.footnote-right[Figure: [Tan et al., 2017](https://doi.org/10.1137/1.9781611974973.32)]
 
 ???
 
@@ -69,7 +72,7 @@ layout: false
 # Dimensionality
 
 .pull-left[
-## 1-D Array
+## 2-D Array
 &lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -121,7 +124,7 @@ layout: false
 ]
 
 .pul-right[
-## 2-D Array
+## 1-D Array
 &lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -154,57 +157,86 @@ layout: false
 ---
 layout: false
 
-# DTW problem
+# Dynamic Time Warping (DTW)
 
----
-layout: false
-
-# TWDTW
-
-.pull-left[
-![](index_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
-]
-
----
-layout: false
-
-# Samples
-
+&lt;br&gt;
 .center[
-![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+&lt;img src="https://www.tandfonline.com/cms/asset/5a80ca23-5dec-4da6-99db-69972a37c2dc/tcag_a_890071_f0006_c.jpg" width="80%" /&gt;
 ]
+
+.center.font-huw-red-dark.font150[
+  **Allows out-of-season alignments**
+]
+
+
+.footnote-right[Figure: [Ranacher &amp; Tzavella, 2014](https://doi.org/10.1080/15230406.2014.890071)]
 
 ---
 layout: false
 
-# Patterns
+# Time-Weighted-DTW
 
-.center[
-![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+.pull-left.font180[
+  &lt;br&gt;
+  `\(\omega(t_i,t_j) = \frac{1}{1 + e^{-{\alpha} (g(t_i,t_j){i,j} - {\beta})}}\)`
+  &lt;br&gt;&lt;br&gt;
+  .font-huw-red-dark.font100[**Keep alignments within the correct season**]
 ]
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="90%" /&gt;
+]
+
+.footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
 
 
 ---
 layout: false
 
-# Density plot of overall accuracy
+# Some advantages
 
+### Irregular time series
+
+### Time series with different length
+
+### No need for gap-filling
+
+### Reuires small a set of training samples
+
+---
+layout: false
+
+# Leave-all but one out cross-validation
+&lt;br&gt;
 .center[
 ![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
 ]
 
-### The classification uses a single sample per class
+---
+layout: false
+
+# Sample generation
+
+.pull-left[
+&lt;img src="https://ars.els-cdn.com/content/image/1-s2.0-S0303243420309077-gr1_lrg.jpg" width="100%" /&gt;
+]
+.pull-right[
+&lt;img src="https://ars.els-cdn.com/content/image/1-s2.0-S0303243420309077-gr4_lrg.jpg" width="90%" /&gt;
+]
+
+.footnote-left[[Belgiu et al., 2021](https://doi.org/10.1016/j.jag.2020.102264)]
 
 ---
 layout: false
 
-# Transfering samples
+# Patterns from literature
 
+&lt;br&gt;
+.center[
+&lt;img src="https://www.victor-maus.com/assets/talks/img/literature-patterns.png" width="80%" /&gt;
+]
 
----
-layout: false
-
-# China Corn
+.footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
 
 ---
 layout: false
@@ -217,7 +249,37 @@ Interface to satllite image time series
 
 ### twdtw 
 
+---
+layout: false
 
+# Samples
+
+.center[
+![](index_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+]
+
+---
+layout: false
+
+# Patterns
+
+.center[
+![](index_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+]
+
+.footnote-left[[Maus et al., 2019](http://doi.org/10.18637/jss.v088.i05)]
+
+
+---
+layout: false
+
+# Twenty-year maize distribution in China
+
+.center[
+&lt;img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-023-02573-6/MediaObjects/41597_2023_2573_Fig8_HTML.png?as=webp" width="60%" /&gt;
+]
+
+.footnote-left[[Peng et al., 2023](https://doi.org/10.1038/s41597-023-02573-6)]
 
 ---
 layout: false

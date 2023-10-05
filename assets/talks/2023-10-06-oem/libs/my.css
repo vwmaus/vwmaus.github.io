@@ -570,3 +570,37 @@ content: "";
   color: #FAFAFA;
   text-shadow: none;
 }
+
+.font-huw-green-dark {
+  color: #0a332b;
+  text-shadow: none;
+}
+
+.font-huw-green-light {
+  color: #306056;
+  text-shadow: none;
+}
+
+.font-huw-red-light {
+  color: #cc3e5b;
+  text-shadow: none;
+}
+
+.font-huw-red-dark {
+  color: #80021b;
+  text-shadow: none;
+}
+
+.font-huw-red-light {
+  text-shadow: none;
+}
+
+.font-huw-yellow-light {
+  color: #f6ae2d;
+  text-shadow: none;
+}
+
+.font-huw-yellow-dark {
+  color: #996c1c;
+  text-shadow: none;
+}
