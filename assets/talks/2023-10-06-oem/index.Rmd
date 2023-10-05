@@ -261,10 +261,14 @@ layout: false
 
 # Patterns from literature
 
-<br>
-.center[
-```{r, echo=FALSE, out.width="80%"}
-knitr::include_graphics("https://www.victor-maus.com/assets/talks/img/literature-patterns.png")
+.pull-left[
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("https://www.victor-maus.com/assets/img/literature-patterns.png")
+```
+]
+.pull-right[
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("https://www.victor-maus.com/assets/img/literature-patterns-maps.png")
 ```
 ]
 
