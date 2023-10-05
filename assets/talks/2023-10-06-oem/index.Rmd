@@ -1,47 +1,272 @@
 ---
-title: "Overcoming Data Scarcity in Land Use Monitoring <br>with Time-Weighted Dynamic Time Warping .wu-logo-right[]"
-subtitle: "<b></b>"
+title: "Overcoming Data Scarcity in Land Use Monitoring with Time-Weighted Dynamic Time Warping .wu-logo-right[]"
+subtitle: "<b><br></b>"
 author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
-date: ".right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+date: ".right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+notes: |
+  <ul>
+  <li>XXXXXXXXX</li>
+  <br>
+  <li>XXXXXX</li>
+  </ul>
 output: 
   xaringan::moon_reader:
     chakra: ./libs/remark-latest.min.js
     self_contained: false
-    css: [default, metropolis, metropolis-fonts, ./libs/my.css, ./libs/tachyons-min.css]
+    css: [default, ./libs/huw.css, ./libs/huw-fonts.css, ./libs/my.css, ./libs/tachyons-min.css]
     nature:
       ratio: '16:9'
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      titleSlideClass: [top, left]
       slideNumberFormat: "%current%"
+template: ./libs/default.html
 editor_options:
   chunk_output_type: console
 ---
 layout: false
-class: clear, center
-background-image: url(./../img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)
-
 ```{r setup, include=FALSE, echo=FALSE}
 library(xaringanExtra)
+library(kableExtra)
+library(dtwSat)
+library(tibble)
+library(dplyr)
+library(tidyr)
+library(RColorBrewer)
+
 options(htmltools.dir.version = FALSE)
 xaringanExtra::use_panelset()
+
+# Read training samples
+samples <- st_read(system.file("mato_grosso_brazil/samples.gpkg", package = "dtwSat"), quiet = TRUE)
+
+# Satellite image time sereis files
+tif_files <- dir(system.file("mato_grosso_brazil", package = "dtwSat"), pattern = "\\.tif$", full.names = TRUE)
+
+# The acquisition date is in the file name are not the true acquisition date
+# of each pixel. MOD13Q1 is a 16-day composite product, so the acquisition date
+# is the first day of the 16-day period
+acquisition_date <- as.Date(regmatches(tif_files, regexpr("[0-9]{8}", tif_files)), format = "%Y%m%d")
+
+# Read the data as a stars object setting the time/date for each observation
+# using along. This will prodcue a 4D array (data-cube) which will then be converted
+# to a 3D array by spliting the 'band' dimension
+dc <- read_stars(tif_files,
+                 proxy = FALSE,
+                 along = list(time = acquisition_date),
+                 RasterIO = list(bands = 1:6))
+
+dc <- st_set_dimensions(dc, 3, c("EVI", "NDVI", "RED", "BLUE", "NIR", "MIR"))
+dc <- split(dc, c("band"))
+
+# TWDTW function
+# Create a knn1-twdtw model
+m_p <- twdtw_knn1(x = dc,
+                y = samples,
+                cycle_length = 'year',
+                time_scale = 'day',
+                time_weight = c(steepness = 0.1, midpoint = 50),
+                formula = band ~ s(time))
+
+m_s <- twdtw_knn1(x = dc,
+                y = samples,
+                cycle_length = 'year',
+                time_scale = 'day',
+                time_weight = c(steepness = 0.1, midpoint = 50))
+
+class_results <- readRDS("./class_results_dtwsat.rdf")
+
+oa <- do.call('rbind', lapply(class_results, function(x){
+  twdtw_err <- table("pred" = x$twdtw_pred, "ref" = x$ref)
+  rf_err <- table("pred" = x$rf_pred, "ref" = x$ref)
+  tibble(
+    twdtw_oa = sum(diag(twdtw_err)) / sum(twdtw_err) * 100,
+    rf_oa = sum(diag(rf_err)) / sum(rf_err) * 100)
+})) |>
+  pivot_longer(cols = c(twdtw_oa, rf_oa)) |>
+  rename(`Overall accuracy` = value, Method = name) |>
+  mutate(Method = factor(Method, c("twdtw_oa", "rf_oa"), c("TWDTW-1NN", "RF")))
+
+oa_summary <- oa |>
+  group_by(Method) |>
+  summarise(
+    sd = sd(`Overall accuracy`, na.rm = TRUE),
+    `Overall accuracy` = mean(`Overall accuracy`)
+  )
+
 ```
 
+# Time Series Classification
 
-.cc-bottom-right.font-light[Illegal gold mine in the Kayapo indigenous territory in Brazil by IBAMA via Wikimedia Commons
-<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en">CC BY-SA 2.0</a>]
-.font-dark.center.font250.font-light[**Currently, there is not enough geospatial information available to conduct comprehensive sustainability assessments for mining**]
+.center[<img src="https://www.mdpi.com/remotesensing/remotesensing-13-02428/article_deploy/html/images/remotesensing-13-02428-g003-550.jpg">]
+
+.footnote-right[Figure: [Petitjean et al., 2012](https://doi.org/10.1109/TGRS.2011.2179050)]
 
 ???
 
-- A link to the slides will be provided at the end of the talk, so you don't need to bother taking notes
+- Higher accuracy
 
-- Companies and governments do not disclose sufficient geospatial information
+- Higher dimentionality
 
-- This hinders comprehensive sustainability and risk assessments of the sectors activities, particularly at global scale
+- Higher demand for quality training samples
+
+
+---
+layout: false
+
+# Dimensionality
+
+.pull-left[
+## 1-D Array
+```{r, echo=FALSE, eval=TRUE}
+data.frame(
+  band_1 = c(time_1 = ".", time_2 = ".", time_3 = ".", "[...]" = ".", time_m = "."),
+  band_2 = c(time_1 = ".", time_2 = ".", time_3 = ".", "[...]" = ".", time_m = "."),
+  band_3 = c(time_1 = ".", time_2 = ".", time_3 = ".", "[...]" = ".", time_m = "."),
+  band_n = c(time_1 = ".", time_2 = ".", time_3 = ".", "[...]" = ".", time_m = ".")) |>
+  kbl() |>
+  kable_styling()
+```
+]
+
+.pul-right[
+## 2-D Array
+```{r, echo=FALSE, eval=TRUE}
+data.frame(
+  b1_t1 = ".",
+  b1_t2 = ".",
+  b1_tm = ".",
+  b2_t1 = ".",
+  b2_t2 = ".",
+  b2_tm = ".",
+  bn_tm = ".") |>
+  kbl() |>
+  kable_styling()
+```
+]
+
+<!-- ### Why: we can use the time dimension to reduce the variability in the samples measurments -->
+
+
+---
+layout: false
+
+# DTW problem
+
+---
+layout: false
+
+# TWDTW
+
+.pull-left[
+```{r, eval=T, echo=F, dev='png', dev.args=list(bg='transparent')}
+tw <- function(x) 1 / (1 + exp(-0.1 * (x - 50)))
+tibble(`Elapsed time` = 1:100, `Time-weight` = tw(`Elapsed time`)) |>
+  ggplot(aes(x = `Elapsed time`, y = `Time-weight`)) +
+  theme_bw() +
+  theme(
+    panel.background = element_rect(fill = 'transparent'),
+    plot.background = element_rect(fill = 'transparent'),
+    axis.title = element_text(size = rel(2.0), face = "bold"),
+    axis.text = element_text(size = rel(1.7)),
+    legend.title = element_text(size = rel(2.0), face = "bold"),
+    legend.text = element_text(size = rel(1.7))) +
+  geom_line()
+```
+]
+
+---
+layout: false
+
+# Samples
+
+.center[
+```{r, eval=T, echo=F, dev='png', dev.args=list(bg='transparent'), fig.width=13, fig.height=6}
+plot(m_s) +
+  theme_bw() +
+  theme(
+    axis.title = element_text(size = rel(2.0), face = "bold"),
+    axis.text = element_text(size = rel(0.7)),
+    legend.title = element_text(size = rel(2.0), face = "bold"),
+    legend.text = element_text(size = rel(1.7))) 
+    #scale_colour_manual(values = brewer.pal(n = 7, name = "Dark2")[-4])
+```
+]
+
+---
+layout: false
+
+# Patterns
+
+.center[
+```{r, eval=T, echo=F, dev='png', dev.args=list(bg='transparent'), fig.width=13, fig.height=6}
+plot(m_p) +
+  theme_bw() +
+  theme(
+    axis.title = element_text(size = rel(2.0), face = "bold"),
+    axis.text = element_text(size = rel(0.7)),
+    legend.title = element_text(size = rel(2.0), face = "bold"),
+    legend.text = element_text(size = rel(1.7))) 
+    #scale_colour_manual(values = brewer.pal(n = 7, name = "Dark2")[-4])
+```
+]
+
+
+---
+layout: false
+
+# Density plot of overall accuracy
+
+.center[
+```{r, eval=T, echo=F, dev='png', dev.args=list(bg='transparent'), fig.width=10, fig.height=6}
+ggplot(oa, aes(x = `Overall accuracy`, fill = Method)) +
+  geom_density(alpha=0.6, adjust = 2) +
+  theme_bw() +
+  theme(
+    axis.title = element_text(size = rel(2.0), face = "bold"),
+    axis.text = element_text(size = rel(1.7)),
+    legend.title = element_text(size = rel(2.0), face = "bold"),
+    legend.text = element_text(size = rel(1.7))) +
+  ylab("Density") + 
+  scale_fill_brewer(palette = "Dark2")
+```
+]
+
+### The classification uses a single sample per class
+
+---
+layout: false
+
+# Transfering samples
+
+
+---
+layout: false
+
+# China Corn
+
+---
+layout: false
+
+# Software
+
+### dwtSat (≥ 1.0-0)
+
+Interface to satllite image time series
+
+### twdtw 
 
 
 
+---
+layout: false
+
+# Future versions
+
+### `gdalcubes` for 
+
+### 
 
 ---
 layout: false

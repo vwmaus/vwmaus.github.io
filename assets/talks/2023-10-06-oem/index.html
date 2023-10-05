@@ -1,59 +1,232 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Overcoming Data Scarcity in Land Use Monitoring  with Time-Weighted Dynamic Time Warping .wu-logo-right[]</title>
+    <title>Overcoming Data Scarcity in Land Use Monitoring with Time-Weighted Dynamic Time Warping .wu-logo-right[]</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr Victor Maus .font80[Institute for Ecological Economics Vienna University of Economics and Business] .font80[victor.maus@wu.ac.at] .font80[vwmaus.github.io]" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
     <link href="index_files/remark-css/default.css" rel="stylesheet" />
-    <link href="index_files/remark-css/metropolis.css" rel="stylesheet" />
-    <link href="index_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link href="index_files/panelset/panelset.css" rel="stylesheet" />
     <script src="index_files/panelset/panelset.js"></script>
+    <script src="index_files/kePrint/kePrint.js"></script>
+    <link href="index_files/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="libs/huw.css" type="text/css" />
+    <link rel="stylesheet" href="libs/huw-fonts.css" type="text/css" />
     <link rel="stylesheet" href="libs/my.css" type="text/css" />
     <link rel="stylesheet" href="libs/tachyons-min.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+class: top, left, title-slide
 
 .title[
-# Overcoming Data Scarcity in Land Use Monitoring <br>with Time-Weighted Dynamic Time Warping .wu-logo-right[]
+# Overcoming Data Scarcity in Land Use Monitoring with Time-Weighted Dynamic Time Warping .wu-logo-right[]
 ]
 .subtitle[
-## <b></b>
+## <b><br></b>
 ]
 .author[
 ### Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a>]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]
 ]
 .date[
-### .right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]
+### .right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]
 ]
 
+???
+<ul>
+<li>
+XXXXXXXXX
+</li>
+<br>
+<li>
+XXXXXX
+</li>
+</ul>
 
 ---
 
 layout: false
-class: clear, center
-background-image: url(./../img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)
 
 
+# Time Series Classification
 
+.center[&lt;img src="https://www.mdpi.com/remotesensing/remotesensing-13-02428/article_deploy/html/images/remotesensing-13-02428-g003-550.jpg"&gt;]
 
-.cc-bottom-right.font-light[Illegal gold mine in the Kayapo indigenous territory in Brazil by IBAMA via Wikimedia Commons
-&lt;a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en"&gt;CC BY-SA 2.0&lt;/a&gt;]
-.font-dark.center.font250.font-light[**Currently, there is not enough geospatial information available to conduct comprehensive sustainability assessments for mining**]
+.footnote-right[Figure: [Petitjean et al., 2012](https://doi.org/10.1109/TGRS.2011.2179050)]
 
 ???
 
-- A link to the slides will be provided at the end of the talk, so you don't need to bother taking notes
+- Higher accuracy
 
-- Companies and governments do not disclose sufficient geospatial information
+- Higher dimentionality
 
-- This hinders comprehensive sustainability and risk assessments of the sectors activities, particularly at global scale
+- Higher demand for quality training samples
+
+
+---
+layout: false
+
+# Dimensionality
+
+.pull-left[
+## 1-D Array
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; band_1 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; band_2 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; band_3 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; band_n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; time_1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; time_2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; time_3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; [...] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; time_m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pul-right[
+## 2-D Array
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; b1_t1 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b1_t2 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b1_tm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b2_t1 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b2_t2 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b2_tm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; bn_tm &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;!-- ### Why: we can use the time dimension to reduce the variability in the samples measurments --&gt;
+
+
+---
+layout: false
+
+# DTW problem
+
+---
+layout: false
+
+# TWDTW
+
+.pull-left[
+![](index_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+]
+
+---
+layout: false
+
+# Samples
+
+.center[
+![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+]
+
+---
+layout: false
+
+# Patterns
+
+.center[
+![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+
+
+---
+layout: false
+
+# Density plot of overall accuracy
+
+.center[
+![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+]
+
+### The classification uses a single sample per class
+
+---
+layout: false
+
+# Transfering samples
+
+
+---
+layout: false
+
+# China Corn
+
+---
+layout: false
+
+# Software
+
+### dwtSat (≥ 1.0-0)
+
+Interface to satllite image time series
+
+### twdtw 
 
 
 
+---
+layout: false
+
+# Future versions
+
+### `gdalcubes` for 
+
+### 
 
 ---
 layout: false
