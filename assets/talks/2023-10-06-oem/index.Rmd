@@ -2,7 +2,7 @@
 title: "Overcoming Data Scarcity in Land Use Monitoring with Time-Weighted Dynamic Time Warping .wu-logo-right[]"
 subtitle: "<b><br></b>"
 author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
-date: ".right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+date: ".right[.font80[Open Earth Monitor, Global Workshop, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
 notes: |
   <ul>
   <li>XXXXXXXXX</li>
@@ -26,6 +26,10 @@ editor_options:
   chunk_output_type: console
 ---
 layout: false
+background-image: url("https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg")
+background-size: contain
+
+
 ```{r setup, include=FALSE, echo=FALSE}
 library(xaringanExtra)
 library(kableExtra)
@@ -96,6 +100,10 @@ oa_summary <- oa |>
   )
 
 ```
+
+
+
+---
 
 # Time Series Classification
 
@@ -187,7 +195,7 @@ layout: false
 
 # Time-Weighted-DTW
 
-.pull-left.font180[
+.pull-left.font200[
   <br>
   $\omega(t_i,t_j) = \frac{1}{1 + e^{-{\alpha} (g(t_i,t_j){i,j} - {\beta})}}$
   <br><br>
@@ -219,6 +227,7 @@ layout: false
 
 # Advantages
 
+.pull-left[
 - ### Irregularly sampled time series
 
 - ### Time series with different length
@@ -226,6 +235,13 @@ layout: false
 - ### No need for gap-filling
 
 - ### .font-huw-red-dark.font100[Requires a small set of training samples]
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="120%"}
+knitr::include_graphics("dtw-advnatages.png")
+```
+]
 
 ---
 layout: false
@@ -247,6 +263,8 @@ ggplot(oa, aes(x = `Overall accuracy`, fill = Method)) +
 ```
 ]
 
+---
+
 # Patterns from literature
 
 .pull-left[
@@ -261,7 +279,6 @@ knitr::include_graphics("https://www.victor-maus.com/assets/img/literature-patte
 ]
 
 .footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
-
 
 
 ---
@@ -281,9 +298,6 @@ knitr::include_graphics("https://ars.els-cdn.com/content/image/1-s2.0-S030324342
 ]
 
 .footnote-left[[Belgiu et al., 2021](https://doi.org/10.1016/j.jag.2020.102264)]
-
----
-layout: false
 
 
 ---

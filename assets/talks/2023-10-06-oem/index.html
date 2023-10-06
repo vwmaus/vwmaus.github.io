@@ -29,7 +29,7 @@ class: top, left, title-slide
 ### Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[<a href="mailto:victor.maus@wu.ac.at" class="email">victor.maus@wu.ac.at</a>]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]
 ]
 .date[
-### .right[.font80[Open Earth Monitor, Global Workshop 2023, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]
+### .right[.font80[Open Earth Monitor, Global Workshop, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]
 ]
 
 ???
@@ -46,7 +46,15 @@ XXXXXX
 ---
 
 layout: false
+background-image: url("https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg")
+background-size: contain
 
+
+
+
+
+
+---
 
 # Time Series Classification
 
@@ -185,7 +193,7 @@ layout: false
 
 # Time-Weighted-DTW
 
-.pull-left.font180[
+.pull-left.font200[
   &lt;br&gt;
   `\(\omega(t_i,t_j) = \frac{1}{1 + e^{-{\alpha} (g(t_i,t_j){i,j} - {\beta})}}\)`
   &lt;br&gt;&lt;br&gt;
@@ -204,6 +212,7 @@ layout: false
 
 # Advantages
 
+.pull-left[
 - ### Irregularly sampled time series
 
 - ### Time series with different length
@@ -211,6 +220,11 @@ layout: false
 - ### No need for gap-filling
 
 - ### .font-huw-red-dark.font100[Requires a small set of training samples]
+]
+
+.pull-right[
+&lt;img src="dtw-advnatages.png" width="120%" /&gt;
+]
 
 ---
 layout: false
@@ -218,8 +232,10 @@ layout: false
 # Leave-all but one out cross-validation
 
 .center[
-![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
 ]
+
+---
 
 # Patterns from literature
 
@@ -231,7 +247,6 @@ layout: false
 ]
 
 .footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
-
 
 
 ---
@@ -248,9 +263,6 @@ layout: false
 
 .footnote-left[[Belgiu et al., 2021](https://doi.org/10.1016/j.jag.2020.102264)]
 
----
-layout: false
-
 
 ---
 layout: false
@@ -258,7 +270,7 @@ layout: false
 # Samples
 
 .center[
-![](index_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
 ]
 
 .font-huw-red-dark.font150.center[
@@ -271,7 +283,7 @@ layout: false
 # Patterns
 
 .center[
-![](index_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
 ]
 
 .footnote-left[[Maus et al., 2019](http://doi.org/10.18637/jss.v088.i05)]
