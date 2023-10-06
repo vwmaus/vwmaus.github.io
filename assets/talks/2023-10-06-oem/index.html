@@ -72,6 +72,34 @@ layout: false
 # Dimensionality
 
 .pull-left[
+## 1-D Array
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; b1_t1 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b1_t2 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b1_tm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b2_t1 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b2_t2 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; b2_tm &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; bn_tm &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
 ## 2-D Array
 &lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -123,33 +151,14 @@ layout: false
 &lt;/table&gt;
 ]
 
-.pul-right[
-## 1-D Array
-&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; b1_t1 &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; b1_t2 &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; b1_tm &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; b2_t1 &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; b2_t2 &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; b2_tm &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; bn_tm &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; . &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+--
+
+&lt;br&gt;&lt;br&gt;
+.font-huw-red-dark.font150[
+  **Dynamic Time Warping (DTW) and 1-Nearest Neighbor (1NN)**
 ]
+
+
 
 &lt;!-- ### Why: we can use the time dimension to reduce the variability in the samples measurments --&gt;
 
@@ -193,24 +202,37 @@ layout: false
 ---
 layout: false
 
-# Some advantages
+# Advantages
 
-### Irregular time series
+- ### Irregularly sampled time series
 
-### Time series with different length
+- ### Time series with different length
 
-### No need for gap-filling
+- ### No need for gap-filling
 
-### Reuires small a set of training samples
+- ### .font-huw-red-dark.font100[Requires a small set of training samples]
 
 ---
 layout: false
 
 # Leave-all but one out cross-validation
-&lt;br&gt;
+
 .center[
 ![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
 ]
+
+# Patterns from literature
+
+.pull-left[
+&lt;img src="https://www.victor-maus.com/assets/img/literature-patterns.png" width="100%" /&gt;
+]
+.pull-right[
+&lt;img src="https://www.victor-maus.com/assets/img/literature-patterns-maps.png" width="70%" /&gt;
+]
+
+.footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
+
+
 
 ---
 layout: false
@@ -229,17 +251,6 @@ layout: false
 ---
 layout: false
 
-# Patterns from literature
-
-.pull-left[
-&lt;img src="https://www.victor-maus.com/assets/img/literature-patterns.png" width="100%" /&gt;
-]
-.pull-right[
-&lt;img src="https://www.victor-maus.com/assets/img/literature-patterns-maps.png" width="70%" /&gt;
-]
-
-.footnote-left[[Maus et al., 2016](http://doi.org/10.1109/JSTARS.2016.2517118)]
-
 
 ---
 layout: false
@@ -248,6 +259,10 @@ layout: false
 
 .center[
 ![](index_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+]
+
+.font-huw-red-dark.font150.center[
+  **High computational cost**
 ]
 
 ---
