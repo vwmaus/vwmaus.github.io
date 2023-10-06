@@ -65,14 +65,6 @@ background-size: contain
 
 .footnote-right[Figure: [Tan et al., 2017](https://doi.org/10.1137/1.9781611974973.32)]
 
-???
-
-- Higher accuracy
-
-- Higher dimentionality
-
-- Higher demand for quality training samples
-
 
 ---
 layout: false
@@ -159,17 +151,6 @@ layout: false
 &lt;/table&gt;
 ]
 
---
-
-&lt;br&gt;&lt;br&gt;
-.font-huw-red-dark.font150[
-  **Dynamic Time Warping (DTW) and 1-Nearest Neighbor (1NN)**
-]
-
-
-
-&lt;!-- ### Why: we can use the time dimension to reduce the variability in the samples measurments --&gt;
-
 
 ---
 layout: false
@@ -226,11 +207,18 @@ layout: false
 &lt;img src="dtw-advnatages.png" width="120%" /&gt;
 ]
 
+--
+.font-huw-red-dark.font150[
+  **Dynamic Time Warping (DTW) and 1-Nearest Neighbor (1NN)**
+]
+
+
 ---
 layout: false
 
 # Leave-all but one out cross-validation
 
+&lt;br&gt;
 .center[
 ![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
 ]
@@ -288,6 +276,9 @@ layout: false
 
 .footnote-left[[Maus et al., 2019](http://doi.org/10.18637/jss.v088.i05)]
 
+.font-huw-red-dark.font150.center[
+  **Reduced number of comparisons**
+]
 
 ---
 layout: false
@@ -307,7 +298,9 @@ layout: false
 # CRAN
 
 .pull-left[
-## dwtSat (≥ 1.0-0)
+## R package `dwtSat (≥ 1.0-0)`
+
+- Fortran 90 and C++ versions
 
 ### Land use mapping useing `stars`
 

@@ -116,14 +116,6 @@ knitr::include_graphics("https://www.victor-maus.com/assets/talks/img/source_pet
 
 .footnote-right[Figure: [Tan et al., 2017](https://doi.org/10.1137/1.9781611974973.32)]
 
-???
-
-- Higher accuracy
-
-- Higher dimentionality
-
-- Higher demand for quality training samples
-
 
 ---
 layout: false
@@ -158,17 +150,6 @@ data.frame(
   kable_styling()
 ```
 ]
-
---
-
-<br><br>
-.font-huw-red-dark.font150[
-  **Dynamic Time Warping (DTW) and 1-Nearest Neighbor (1NN)**
-]
-
-
-
-<!-- ### Why: we can use the time dimension to reduce the variability in the samples measurments -->
 
 
 ---
@@ -243,11 +224,18 @@ knitr::include_graphics("dtw-advnatages.png")
 ```
 ]
 
+--
+.font-huw-red-dark.font150[
+  **Dynamic Time Warping (DTW) and 1-Nearest Neighbor (1NN)**
+]
+
+
 ---
 layout: false
 
 # Leave-all but one out cross-validation
 
+<br>
 .center[
 ```{r, eval=T, echo=F, dev='png', dev.args=list(bg='transparent'), fig.width=10, fig.height=6}
 ggplot(oa, aes(x = `Overall accuracy`, fill = Method)) +
@@ -342,6 +330,9 @@ plot(m_p) +
 
 .footnote-left[[Maus et al., 2019](http://doi.org/10.18637/jss.v088.i05)]
 
+.font-huw-red-dark.font150.center[
+  **Reduced number of comparisons**
+]
 
 ---
 layout: false
@@ -363,7 +354,9 @@ layout: false
 # CRAN
 
 .pull-left[
-## dwtSat (≥ 1.0-0)
+## R package `dwtSat (≥ 1.0-0)`
+
+- Fortran 90 and C++ versions
 
 ### Land use mapping useing `stars`
 ```{r,echo=TRUE,eval=FALSE}
