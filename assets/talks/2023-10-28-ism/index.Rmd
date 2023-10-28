@@ -1,0 +1,268 @@
+---
+title: "Challenges in Big-Earth Observation Data Analytics for Global-Scale Mining Land Use Surveying .wu-logo-right[]"
+subtitle: "<b><br></b>"
+author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
+date: ".right[.font80[XVIII International Congress for Mine Surveying, Oct 28, 2023, Xuzhou, China].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
+notes: |
+  <ul>
+  <li>My name is Victor Maus</li>
+  <br>
+  <li>I'm a researcher at the Vienna University of Economics and Business (WU)</li>
+  <br>
+  <li>And I will talk about the challenges to scale mining land use mapping</li>
+  <br>
+  <li>But first, I want to tell you why we need reseach on global mining land use</li>
+  <br>
+  <li>And also why this is an important topic for IMS</li>
+  </ul>
+output: 
+  xaringan::moon_reader:
+    chakra: ./libs/remark-latest.min.js
+    self_contained: false
+    css: [default, ./libs/huw.css, ./libs/huw-fonts.css, ./libs/my.css, ./libs/tachyons-min.css]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: [top, left]
+      slideNumberFormat: "%current%"
+template: ./libs/default.html
+editor_options:
+  chunk_output_type: console
+---
+layout: false
+class: clear
+
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+
+.center[
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("./pnas-sonter2023-paths.png")
+knitr::include_graphics("./pnas-sonter2023.png")
+```
+]
+
+
+???
+
+- To start with, I invite you to think of mining as a global process embedded in our economy
+
+- Mining footprint spread globally
+
+- Some nations have more of it -- some have less
+
+- But in fact, mining present everywhere 
+
+- And assessing global impacts of mining is critical
+
+- In particularly for energy traistion as impacts from nations will happend across their borders
+
+- And I can ensure you, actors across supply value chains will require compliance
+
+
+
+???
+
+- So, if you are a research trying to understand the impact of energy transition
+
+- A policy maker or even an investor that wants to make environmentally and sicially consious choses 
+
+- What you do?
+
+
+---
+layout: false
+class: clear, middle, center
+background-image: url("https://www.victor-maus.com/assets/talks/img/esa-cci-land-cover.png")
+background-size: 100% 105%environmnt
+.footnote-right[Screenshot of [ESA CCI Land cover viewer](http://maps.elie.ucl.ac.be/CCI/viewer/)]
+
+
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.center.font-huw-red-dark.font200[**Global data sets do not address mining land use**]
+
+???
+
+- Well one would probably start with global data sets
+
+- But they do not address mining land use
+
+- Actually, it is worse than that, global maps commision mining land use into other land covewr types
+
+---
+background-size: contain
+background-size: 95% 95%
+background-image: url("https://www.victor-maus.com/assets/talks/img/esa-cci-carajas.png")
+
+???
+
+- Particularly, urban areas
+
+- As we can see in this map, one of the largest iron ore mine globally
+
+- Located in Brazil
+
+- Is mapped as urban area
+
+- We will probably agree that, anyo of us would correctly label satellite images of this two areas
+
+
+---
+layout: false
+class: clear, middle, center
+
+# Identifying mining activities in satellite images <br>requires minimal training
+
+.pull-left.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Open cut of the Carajás Iron Mine, Brazil**
+]
+<div class="copyright-container">
+  <img src="https://www.victor-maus.com/assets/talks/img/carajas-mine-satellite.png" height="350">
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+</div>
+]
+
+.pull-right.center[
+.bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.font100[
+**Parauapebas municipality, Brazil**
+]
+<div class="copyright-container">
+  <img src="https://www.victor-maus.com/assets/talks/img/parauapebas-city-satellite.png" height="350"/>
+  <div class="copyright-bottom-left2 font-light">Figure: <a href="https://www.fineprint.global/viewer">FINEPRINT Viewer</a></div>
+</div>
+]
+
+.center.font-huw-red-dark.font150[
+  **However, delineating mine areas is extremelly time-consuming**
+]
+
+
+???
+
+- That is because we are pre-trained to this task
+
+- Nevertheless, 
+
+
+---
+layout: false
+class: clear, middle, center
+background-image: url("https://www.victor-maus.com/assets/talks/img/global-mining-map.png")
+
+
+.footnote-right.font-light[[Maus et al. (2020, 2022)](http://doi.org/10.1038/s41597-022-01547-4) *Nature Scientific Data*]
+
+<!-- .bg-washed-blue.b--dark-blue.ba.bw0.br3.shadow-5.mh1.mt0.center.font-huw-red-dark.font200[**How to keep track of existing mines and new ones?**] -->
+
+
+---
+layout: false
+class: clear
+
+<img src="https://www.victor-maus.com/assets/talks/img/mine-time-tag.png" height="550"/>
+
+<!-- .footnote-right[Maus & Luckeneder (Ongoing)] -->
+
+## How to keep track of existing mines and new ones? AI
+
+
+---
+layout: false
+
+# What is a mine?
+
+.pull-left.center[
+<div class="copyright-container">
+  <img src="https://images.saymedia-content.com/.image/t_share/MTc0MTExODE4NDE4MzAwNDgy/key-concepts-of-the-philosophy-of-plato.jpg" height="450">
+</div>
+**Plato**
+]
+
+.pull-right.center[
+<div class="copyright-container">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Ludwig_Wittgenstein_1929.jpg/220px-Ludwig_Wittgenstein_1929.jpg" height="450"/>
+</div>
+**Ludwig Wittgenstein**
+]
+
+---
+layout: false
+
+# Mine
+
+<br>
+<br>
+<br>
+.font150["*An excavation or system of excavations made underground for the extraction of metals or metallic ores, coal, salt, precious stones, (less commonly) building stone, clay, etc.; an open-air excavation for the extraction of such substances. Also: a place where such excavations are conducted. Source: Oxford English Dictionay*"]
+
+---
+layout: false
+
+## Mine land use composed of various land cover types
+
+.center[<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0959378019305023-gr3.jpg" height="450"/>]
+
+.footnote-right.font-light[[Werner et al. (2020)](https://doi.org/10.1016/j.gloenvcha.2019.102007)]
+
+.center.font-huw-red-dark.font150[
+  **High intra-class variability *VS* inter-class separability**
+]
+
+---
+layout: false
+class: clear, middle, center
+.pull-left[
+.font-dark.left.font160.left[
+AI algorithms trained with non-representative spatial distribution samples produce unreliable results!
+]]
+
+.pull-right.center[
+<div class="copyright-container">
+  <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-022-29838-9/MediaObjects/41467_2022_29838_Fig1_HTML.png?as=webp" height="600"/>
+  <div class="copyright-bottom-left2 font-light"><a href="https://www.nature.com/articles/s41467-022-29838-9">Meyer & Pebesma, 2022</a></div>
+</div>
+]
+
+
+---
+layout: false
+
+# Summary
+
+## What is mine land use?
+
+## What is the separability limit for mine land use?
+
+## How to unbias training and validation of models?
+
+
+---
+layout: false
+
+### Can AI (computer vision) treat mines like dogs?
+.pull-left.center[
+<div class="copyright-container">
+  <img src="https://www.victor-maus.com/assets/talks/img/dog-by-Tiina-Hayha-CC-BY-SA-4-0.jpg" height="350"/>
+  <div class="copyright-bottom-left2">Photo by Tiina Häyhä <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a></div>
+</div>
+# Thank you!
+.font100[victor.maus@wu.ac.at]<br>
+.font100[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]
+]
+
+.pull-right.center[
+<div class="copyright-container">
+  <img src="https://www.victor-maus.com/assets/talks/img/carajas-mine-satellite-dog.png" height="350"/>
+  <div class="copyright-bottom-left2">Screenshots of <a href="https://goo.gl/maps/xDkqyGdMAn8ZJTZJ7">Google Maps</a></div>
+</div>
+<img src="https://www.victor-maus.com/assets/talks/img/qrcode_www.victor-maus.com.png" height="190"/><br>
+]
+
+
+
