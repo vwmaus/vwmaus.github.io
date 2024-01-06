@@ -4,7 +4,6 @@ title: Pão de queijo (Brazilian cheese bread)
 description: Pão de queijo is simple to make and delicious
 img: /assets/img/pao-de-queijo.jpg
 importance: 1
-category: fun
 ---
 
 ### Ingredients

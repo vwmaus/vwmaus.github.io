@@ -4,7 +4,6 @@ title: Arroz de leite (milk rice)
 description: My grandmother's (Almida) milk rice recipe 
 img: /assets/img/arroz-de-leite.jpg
 importance: 1
-category: fun
 ---
 
 ### Ingredients

@@ -92,6 +92,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  recipes:
+    output: true
+    permalink: /recipes/:path/
 
 news_limit: 3
 
@@ -145,7 +148,7 @@ scholar:
 
   sort_by: year
   order: descending
-  
+
   last_name: Maus
   first_name: [Victor]
 
