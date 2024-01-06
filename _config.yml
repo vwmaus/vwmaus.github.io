@@ -143,6 +143,9 @@ github: [metadata]
 
 scholar:
 
+  sort_by: year
+  order: descending
+  
   last_name: Maus
   first_name: [Victor]
 
