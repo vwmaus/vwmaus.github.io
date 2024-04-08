@@ -1,0 +1,82 @@
+---
+title: ".font70[**GIS Applications in Planning and Environmental Analysis**]"
+subtitle: ".font80[Excerpt from lecture: Data Cubes for Environmental Analysis]"
+author: "<br>Dr Victor Maus"
+institute: ".font70[Institute for Ecological Economics<br>
+  <span style='display:block; margin-top:-10px;'>Vienna University of Economics and Business</span><br>
+  <span style='display:block; margin-top:-44px;'>victor.maus@wu.ac.at</span><br>
+  <span style='display:block; margin-top:-45px;'><a href='https://www.victor-maus.com'>www.victor-maus.com</a><br>]</span>"
+date: ".lecture-illustration[].wu-logo-mtg[].copyright-bottom-right[Södertörn University, April 9<sup>th</sup>, 2024]"
+output: 
+  xaringan::moon_reader:
+    chakra: ./libs/remark-latest.min.js
+    self_contained: false
+    css: [default, ./libs/huw.css, ./libs/huw-fonts.css, ./libs/my.css, ./libs/tachyons-min.css]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: [top, left]
+      slideNumberFormat: "%current%"
+editor_options:
+  chunk_output_type: console
+---
+layout: false
+class: 
+count: false
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+# Learning Outcome
+
+.font150[Recall the concept of space-time data cubes in geographic information systems (GIS).]
+
+# Requirements
+
+.font150[Basic knowledge of GIS data models for representing geographic information as vector and raster formats.]
+
+---
+layout: false
+class: 
+
+.pull-left[
+# Data Layers
+<div class="left">
+  <img src="./img/gis.png" height="400"/>
+  .font60[Figure: [U.S. Government Accountability Office](https://education.nationalgeographic.org/resource/geographic-information-system-gis/#undefined)]
+</div>
+]
+
+.pull-right[
+# Data Cube Structure
+### Dimensions and Attributes
+<div class="left">
+  <img src="./img/space-time-cube.png" height="330"/>
+  .font60[Figure: [ArcGIS Pro Space Time Cube](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/space-time-pattern-mining/learnmorecreatecube.htm)]
+</div>
+]
+
+---
+layout: false
+class:
+
+# Summary
+
+.font150[
+- Data cubes are a data structure where data is stored in multidimensional arrays (n-D arrays).
+- Data cubes are discrete and regularly sampled.
+- Enable effective scalability of environmental analysis.
+]
+
+# Next session
+
+.font150[
+- Construct data cubes using a GIS environment.
+- Perform basic operations with data cubes: filter, apply, reduce, and redimension.
+]
+
+
