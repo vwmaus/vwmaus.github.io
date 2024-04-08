@@ -24,7 +24,6 @@ editor_options:
 ---
 layout: false
 class: 
-count: false
 ```{r setup, include=FALSE, echo=FALSE}
 library(xaringanExtra)
 options(htmltools.dir.version = FALSE)
