@@ -17,9 +17,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Setup Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.7'
+        ruby-version: '3.0'  # Updated Ruby version
     - name: Enable bundler cache
       uses: actions/cache@v2
       with:
@@ -37,18 +37,18 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then # pull request
+        if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then
           echo "::set-output name=SRC_BRANCH::${GITHUB_HEAD_REF}"
           echo "::set-output name=NO_PUSH::--no-push"
-        elif [[ ${GITHUB_REF} = refs/heads/* ]]; then # branch, e.g. master, source etc
+        elif [[ ${GITHUB_REF} = refs/heads/* ]]; then
           echo "::set-output name=SRC_BRANCH::${GITHUB_REF#refs/heads/}"
         fi
-        if [[ ${{ github.repository }} = *.github.io ]]; then # user/org repo
+        if [[ ${{ github.repository }} = *.github.io ]]; then
           echo "::set-output name=DEPLOY_BRANCH::master"
         else
           echo "::set-output name=DEPLOY_BRANCH::gh-pages"
         fi
     - name: Deploy website 
-      run:  yes | bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
-                    --src ${{ steps.setup.outputs.SRC_BRANCH }} 
-                    --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }} 
+      run: yes | bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
+                            --src ${{ steps.setup.outputs.SRC_BRANCH }} 
+                            --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }} 
