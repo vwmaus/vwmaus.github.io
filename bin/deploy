@@ -92,6 +92,8 @@ git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
 
 # Move back to SRC_BRANCH
 git checkout $SRC_BRANCH
+git reset --hard HEAD
+git clean -fdx
 
 echo "Deployed successfully!"
 
