@@ -90,8 +90,11 @@ git reset -- $(find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.R
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
 [[ ${NO_PUSH} ]] || git push -f -q origin $DEPLOY_BRANCH
 
-# Move back to SRC_BRANCH
+# Clean up before switching back
 git checkout $SRC_BRANCH
+git branch -D $DEPLOY_BRANCH  # Optionally delete the local branch if not needed
+git reset --hard HEAD
+git clean -fdx
 
 echo "Deployed successfully!"
 
