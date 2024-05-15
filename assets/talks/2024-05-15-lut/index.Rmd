@@ -168,6 +168,16 @@ layout: false
 ]
 
 ---
+layout: false
+
+# Mine
+
+<br>
+<br>
+<br>
+.font150["*An excavation or system of excavations made underground for the extraction of metals or metallic ores, coal, salt, precious stones, (less commonly) building stone, clay, etc.; an open-air excavation for the extraction of such substances. Also: a place where such excavations are conducted. Source: Oxford English Dictionay*"]
+
+---
 
 # Semantic Segmentation Using AI
 
@@ -193,6 +203,8 @@ knitr::include_graphics("./img/gap_grid_map.png")
 ```
 ]
 
+.footnote-left[Source: [Maus & Werner, 2024](http://doi.org/10.1038/d41586-023-04090-3)]
+
 --
 
 .pull-right[
@@ -200,6 +212,7 @@ knitr::include_graphics("./img/gap_grid_map.png")
 knitr::include_graphics("https://media.nature.com/lw767/magazine-assets/d41586-023-04090-3/d41586-023-04090-3_26550018.png?as=webp")
 ```
 ]
+
 
 
 ---
@@ -210,7 +223,7 @@ class: title, no-number
 
 
 .pull-left.left[
-Dr Victor Maus<br>.font100[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font100[victor.maus@wu.ac.at]<br>.font100[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
+Dr Victor Maus<br>.font90[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font90[victor.maus@wu.ac.at]<br>.font90[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
 <img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
 ]
 
