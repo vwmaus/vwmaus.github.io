@@ -6,7 +6,7 @@ permalink: /
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   address: >
     <p style="font-size:80%;"><a href="https://campus.wu.ac.at/de/?campus=1&q=D1.2.030#map">D1/D1.2.030</a></p>
     <p style="font-size:80%;">Welthandelsplatz 1</p>
