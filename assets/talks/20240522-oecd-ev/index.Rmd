@@ -5,7 +5,7 @@ institute: ".font70[Institute for Ecological Economics<br>
   <span style='display:block; margin-top:-10px;'>Vienna University of Economics and Business</span><br>
   <span style='display:block; margin-top:-44px;'>victor.maus@wu.ac.at</span><br>
   <span style='display:block; margin-top:-45px;'><a href='https://www.victor-maus.com'>www.victor-maus.com</a><br>]</span>"
-date: ".lut-illustration[].wu-logo-mtg[].copyright-bottom-right.font60[OECD Forum on Responsible Mineral Supply Chains, Paris, May 22<sup>th</sup>, 2024]"
+date: ".lut-illustration[].wu-logo-mtg[].copyright-bottom-right.font60[OECD Forum on Responsible Mineral Supply Chains, Paris, May 22<sup>nd</sup>, 2024]"
 output: 
   xaringan::moon_reader:
     chakra: ./libs/remark-latest.min.js
