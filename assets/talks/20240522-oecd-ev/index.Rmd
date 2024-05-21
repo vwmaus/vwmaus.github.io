@@ -33,13 +33,26 @@ knitr::include_graphics("./img/slide-barplot-top-three-countries.png")
 ```
 ]
 
---
+---
+layout: false
+class: clear
+
+.footnote-left[Source: Maus et al., (Under Review)]
+
+
+.center[
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("./img/slide-barplot-top-three-countries.png")
+```
+]
+
 
 .center[
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("./img/slide-barplot-commodities.png")
 ```
 ]
+
 
 ---
 
