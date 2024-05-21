@@ -20,9 +20,9 @@ output:
       slideNumberFormat: "%current%"
 editor_options:
   chunk_output_type: console
+---
 layout: false
 class: clear
----
 
 ```{r setup, include=FALSE, echo=FALSE}
 library(xaringanExtra)
@@ -86,7 +86,6 @@ background-size: cover
 <img src="https://www.victor-maus.com/assets/talks/img/mine-time-tag.png" height="550"/>
 
 ## How to keep track of existing mines and new ones?
-
 
 ---
 layout: false
