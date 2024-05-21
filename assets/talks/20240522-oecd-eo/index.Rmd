@@ -91,7 +91,7 @@ background-size: cover
 ---
 layout: false
 
-### Can AI (computer vision) detect mines like other more regular objects?
+## AI Algorithms Excel at Detecting Regular Patterns
 .pull-left.center[
 <div class="copyright-container">
   <img src="https://www.victor-maus.com/assets/talks/img/dog-by-Tiina-Hayha-CC-BY-SA-4-0.jpg" height="500"/>
