@@ -87,7 +87,7 @@ background-size: cover
 <br><br><br><br><br><br><br>
 - .font120[**National and International Awards**]
 - .font120[**Collaboration across \>15 countries \>20 organizations**]
-- .font120[**Invited expert at the OECD Forum on Responsible Mineral Supply Chains 2024**]
+- .font120[**OECD Forum on Responsible Mineral Supply Chains 2024**]
 
 ---
 ## Research funding
