@@ -28,7 +28,7 @@ editor_options:
   .bg_map::before {    
         content: "";
         background-image: url('./img/outreach.png');
-        background-size: contain;
+        background-size: cover;
         position: absolute;
         top: 0px;
         right: 0px;
@@ -247,12 +247,17 @@ class: title, no-number
 # Summary
 .lut-illustration[].copyright-bottom-right.font60[June 27<sup>th</sup>, 2024]
 
-- **PI has demonstrated independent, high-quality research and international influence**
-- **Addresses urgent need for global spatial mining data**
-- **Proposes an innovative approach**
-- **High gains, low risk due to extensive experience of PI and CUMT researchers**
+- .font90[**PI demonstrated** independent, high-quality research and international influence]
+- .font90[**Project addresses the urgent need** for spatial data on global mining regions]
+- .font90[**Innovative synthesis** combining multimodal imagery and large AI training datasets]
+- .font90[**High gains and low risk** due to the extensive experience of PI and CUMT researchers]
 
+<br>
 .pull-left.left[
-Dr Victor Maus<br>.font90[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font90[victor.maus@wu.ac.at]<br>.font90[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
-<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
+**Dr Victor Wegner Maus**
+.font70[Institute for Ecological Economics<br>
+  <span style='display:block; margin-top:-2px;'>Vienna University of Economics and Business</span><br>
+  <span style='display:block; margin-top:-22px;'>victor.maus@wu.ac.at</span><br>
+  <span style='display:block; margin-top:-22px;'><a href='https://vwmaus.github.io'>vwmaus.github.io</a><br>]</span>
+  <img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
 ]
