@@ -225,8 +225,8 @@ knitr::include_graphics("./img/nsfc-project-overview.png")
 <div style="position: relative; height: 100%;">
   <img src="./img/cumt-meeting-yang-victor.png" 
        style="position: absolute; top: -500px; right: 5px; width: 45%;" />
-  <div class="font-huw-red-light" style="position: absolute; top: -500px; right: 0px; width: 45%; font-size: 130%; font-weight: bold">
-    Research visit to the CUMT
+  <div class="font-huw-red-light" style="position: absolute; top: -500px; right: 0px; width: 45%; font-size: 150%; font-weight: bold">
+    Research visit to CUMT
   </div>
   <div class="font-dark" style="position: absolute; top: -285px; left: 660px; width: 45%; font-size: 60%; font-weight: bold">
     Nov 2023, Xuzhou, China
@@ -244,9 +244,13 @@ knitr::include_graphics("./img/nsfc-project-overview.png")
 ---
 class: title, no-number
 
-# Thank you!
-.lut-illustration-large[].wu-logo-mtg[].copyright-bottom-right.font60[June 27<sup>th</sup>, 2024]
+# Summary
+.lut-illustration[].copyright-bottom-right.font60[June 27<sup>th</sup>, 2024]
 
+- **PI has demonstrated independent, high-quality research and international influence**
+- **Addresses urgent need for global spatial mining data**
+- **Proposes an innovative approach**
+- **High gains, low risk due to extensive experience of PI and CUMT researchers**
 
 .pull-left.left[
 Dr Victor Maus<br>.font90[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font90[victor.maus@wu.ac.at]<br>.font90[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
