@@ -111,7 +111,7 @@ remark-slide-number, .title-slide {
 }
 
 .title-slide::after {
-  content: "Dr. Victor Wegner Maus";
+  content: "Dr Victor Wegner Maus";
   font-weight: bold;
   color: #1A292C;
   font-size: 20pt;
