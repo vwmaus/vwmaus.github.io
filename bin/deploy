@@ -7,7 +7,6 @@ SRC_BRANCH="master"
 DEPLOY_BRANCH="gh-pages"
 BUILD_DIR="_site"
 DEPLOY_DIR="../_deploy_tmp"
-MAIN_REPO=$(git rev-parse --show-toplevel)
 
 echo "🔁 Checking out source branch: $SRC_BRANCH"
 git checkout $SRC_BRANCH
