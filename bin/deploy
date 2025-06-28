@@ -25,6 +25,11 @@ if git worktree list | grep -q "$DEPLOY_DIR"; then
     git worktree remove "$DEPLOY_DIR" --force
 fi
 
+# Ensure the deploy branch exists locally
+echo "📥 Fetching $DEPLOY_BRANCH from origin..."
+git fetch origin "$DEPLOY_BRANCH":"$DEPLOY_BRANCH"
+
+echo "🌿 Adding worktree for $DEPLOY_BRANCH..."
 git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
 
 echo "📦 Copying site contents to deploy directory..."
@@ -42,7 +47,7 @@ R_PATTERNS="-name index_cache -o -name index_data -o -name .Rhistory -o -name '*
 # Stage all changes
 git -C "$DEPLOY_DIR" add -A
 
-# Unstage R-related files (give git *relative* paths!)
+# Unstage R-related files (use relative paths)
 find "$DEPLOY_DIR" \( $R_PATTERNS \) -print0 2>/dev/null | while IFS= read -r -d '' file; do
     rel_path="${file#$DEPLOY_DIR/}"
     git -C "$DEPLOY_DIR" reset -- "$rel_path" || true
