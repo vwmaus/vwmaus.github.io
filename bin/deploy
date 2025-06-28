@@ -29,6 +29,8 @@ echo "📄 Creating .nojekyll..."
 touch "$DEPLOY_DIR/.nojekyll"
 
 echo "🧼 Filtering out R-related files before commit..."
+MAIN_REPO=$(pwd)
+
 cd "$DEPLOY_DIR"
 git add -A
 
