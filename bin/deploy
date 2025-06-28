@@ -19,7 +19,16 @@ bundle exec jekyll build
 echo "📁 Preparing deploy directory..."
 rm -rf "$DEPLOY_DIR"
 git worktree prune
+
+# Remove stale worktree reference if exists
+if git worktree list | grep -q "$DEPLOY_DIR"; then
+    git worktree remove "$DEPLOY_DIR" --force
+fi
+
 git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
+echo "Contents of $DEPLOY_DIR:"
+ls -al "$DEPLOY_DIR"
+cat "$DEPLOY_DIR/.git" || echo ".git file not found"
 
 echo "📦 Copying site contents to deploy directory..."
 rsync -a --delete "$BUILD_DIR/" "$DEPLOY_DIR/"
