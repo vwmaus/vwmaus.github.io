@@ -1,22 +1,3 @@
----
-title: "Mapping global mining activities using <br>open Earth observation data .erc-logo-left[] .fineprint-logo-left[] .wu-logo-right[]"
-subtitle: "<b></b>"
-author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
-date: ".right[.font80[UNODC and UNEP, Apr 19, 2023, Vienna].footnote-right[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
-output: 
-  xaringan::moon_reader:
-    chakra: ./../libs/remark-latest.min.js
-    self_contained: false
-    css: [default, metropolis, metropolis-fonts, ./../libs/my.css, ./../libs/tachyons-min.css]
-    nature:
-      ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      slideNumberFormat: "%current%"
-editor_options:
-  chunk_output_type: console
----
 layout: false
 class: clear, center
 background-image: url(./../img/kayapo_gold_mining-Ibama-via-Wikimedia-CC-BY-SA-2-0.jpg)

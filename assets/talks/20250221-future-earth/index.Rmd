@@ -1,0 +1,61 @@
+layout: false
+class: clear
+
+```{r setup, include=FALSE, echo=FALSE}
+library(xaringanExtra)
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+.pull-left[
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./img/maus2024-nature.png")
+```
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./img/gap_grid_map.png")
+```
+]
+
+.footnote-left[Source: [Maus & Werner, 2024](http://doi.org/10.1038/d41586-023-04090-3)]
+
+
+.pull-right[
+```{r, echo=FALSE, out.width="85%"}
+knitr::include_graphics("https://media.nature.com/lw767/magazine-assets/d41586-023-04090-3/d41586-023-04090-3_26550018.png?as=webp")
+```
+]
+
+---
+layout: false
+class: clear
+background-image: url(./img/global-mining-map.png)
+background-size: cover
+
+# .font-light[Global Mining Land Use]
+
+.footnote-right[.font-light.font120[[Maus et al. (2020, 2022) Nature Sci. Data](http://doi.org/10.1038/s41597-022-01547-4)]]
+
+
+
+---
+layout: false
+class: 
+count: false
+# .font-huw-yellow-light[MINE-THE-GAP]
+### .font-dark.op80[Mine-level indicators using EO and AI]
+<img src="./img/erc.jpg" height="200" style="position: absolute; top: 1em; left: 47em;">
+<!-- <img src="./img/outcome4.png" height="400" style="position: absolute; top: 8em; left: 6em;"> -->
+<img src="./img/MINE-THE-GAP-aim.png"   height="150" style="position: absolute; top: 10em; left: 50%; transform: translate(-50%, 0%);">
+<img src="./img/MINE-THE-GAP-innovation.png" height="190" style="position: absolute; top: 20em; left: 50%; transform: translate(-50%, 0%);">
+
+---
+class: title, no-number
+
+# Thank you!
+.lut-illustration-large[].wu-logo-mtg[].copyright-bottom-right.font60[Sustainability Science Summit, Berlin, Feb 21<sup>st</sup>, 2025]
+
+
+.pull-left.left[
+Dr Victor Maus<br>.font90[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font90[victor.maus@wu.ac.at]<br>.font90[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]<br>
+<img src="./../img/qrcode_www.victor-maus.com.png" height="190"/>
+]

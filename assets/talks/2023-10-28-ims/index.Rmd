@@ -1,36 +1,3 @@
----
-title: "Challenges in Big-Earth Observation Data Analytics for Global-Scale Mining Land Use Surveying .wu-logo-right[]"
-subtitle: "<b><br></b>"
-author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
-date: ".right[.font80[XVIII International Congress for Mine Surveying, Oct 28, 2023, Xuzhou, China].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
-notes: |
-  <ul>
-  <li>My name is Victor Maus</li>
-  <br>
-  <li>I'm a researcher at the Vienna University of Economics and Business (WU)</li>
-  <br>
-  <li>And I will talk about the challenges to scale mining land use mapping</li>
-  <br>
-  <li>But first, I want to tell you why we need reseach on global mining land use</li>
-  <br>
-  <li>And also why this is an important topic for IMS</li>
-  </ul>
-output: 
-  xaringan::moon_reader:
-    chakra: ./libs/remark-latest.min.js
-    self_contained: false
-    css: [default, ./libs/huw.css, ./libs/huw-fonts.css, ./libs/my.css, ./libs/tachyons-min.css]
-    nature:
-      ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      titleSlideClass: [top, left]
-      slideNumberFormat: "%current%"
-template: ./libs/default.html
-editor_options:
-  chunk_output_type: console
----
 layout: false
 class: clear
 

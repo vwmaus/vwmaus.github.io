@@ -1,30 +1,3 @@
----
-title: "Overcoming Data Scarcity in Land Use Monitoring with Time-Weighted Dynamic Time Warping .wu-logo-right[]"
-subtitle: "<b><br></b>"
-author: "Dr Victor Maus<br>.font80[Institute for Ecological Economics<br>Vienna University of Economics and Business]<br>.font80[victor.maus@wu.ac.at]<br>.font80[<a href='https://vwmaus.github.io'>vwmaus.github.io</a>]"
-date: ".right[.font80[Open Earth Monitor, Global Workshop, Oct 6, 2023, Bolzano].footnote-right-title[Except where otherwise noted, content on these slides is licensed under <a href='https://creativecommons.org/licenses/by-sa/4.0'>CC BY-SA 4.0 license</a>]]"
-notes: |
-  <ul>
-  <li>XXXXXXXXX</li>
-  <br>
-  <li>XXXXXX</li>
-  </ul>
-output: 
-  xaringan::moon_reader:
-    chakra: ./libs/remark-latest.min.js
-    self_contained: false
-    css: [default, ./libs/huw.css, ./libs/huw-fonts.css, ./libs/my.css, ./libs/tachyons-min.css]
-    nature:
-      ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      titleSlideClass: [top, left]
-      slideNumberFormat: "%current%"
-template: ./libs/default.html
-editor_options:
-  chunk_output_type: console
----
 layout: false
 background-image: url("https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg")
 background-size: contain
