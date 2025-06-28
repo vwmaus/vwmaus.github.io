@@ -17,14 +17,13 @@ rm -rf "$BUILD_DIR"
 bundle exec jekyll build
 
 echo "📁 Preparing deploy directory..."
-
 # Ensure the deploy dir is completely gone before worktree add
 if [ -d "$DEPLOY_DIR" ]; then
     rm -rf "$DEPLOY_DIR"
 fi
 git worktree prune
 
-# Remove stale worktree reference if it exists
+# Remove any stale worktree reference
 if git worktree list | grep -q "$DEPLOY_DIR"; then
     git worktree remove "$DEPLOY_DIR" --force
 fi
@@ -37,13 +36,19 @@ echo "🌿 Adding worktree for $DEPLOY_BRANCH..."
 git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
 
 # Defensive check!
+echo "DEBUG: After worktree add, .git in deploy dir:"
+ls -l "$DEPLOY_DIR/.git" || { echo "ERROR: .git file missing!"; exit 1; }
+git -C "$DEPLOY_DIR" status || { echo "ERROR: Not a git repo!"; exit 1; }
+
+echo "📦 Copying site contents to deploy directory (excluding .git)..."
+# THIS IS THE FIX: prevent accidental overwrite of .git worktree file
+rsync -a --delete --exclude .git "$BUILD_DIR/" "$DEPLOY_DIR/"
+
+# Double-check .git file still exists after rsync
 if [ ! -f "$DEPLOY_DIR/.git" ]; then
-    echo "ERROR: Worktree was not properly created!"
+    echo "ERROR: .git file missing after rsync! Aborting."
     exit 1
 fi
-
-echo "📦 Copying site contents to deploy directory..."
-rsync -a --delete "$BUILD_DIR/" "$DEPLOY_DIR/"
 
 echo "📄 Creating .nojekyll..."
 touch "$DEPLOY_DIR/.nojekyll"
