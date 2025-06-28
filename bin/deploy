@@ -80,8 +80,10 @@ bundle exec jekyll build
 
 # Delete and move files
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
-mv _site/* .
-rm -R _site/
+rsync -av --remove-source-files _site/ .
+rm -r _site/
+#mv _site/* .
+#rm -R _site/
 
 # Push to DEPLOY_BRANCH
 git add -fA
