@@ -39,6 +39,9 @@ touch "$DEPLOY_DIR/.nojekyll"
 echo "🧼 Filtering out R-related files before commit..."
 MAIN_REPO=$(pwd)
 
+# Define R-related patterns
+R_PATTERNS="-name index_cache -o -name index_data -o -name .Rhistory -o -name '*.RData' -o -name .Rproj.user"
+
 git -C "$DEPLOY_DIR" add -A
 
 # Remove R-related files from staging
@@ -52,12 +55,10 @@ COMMIT_MSG=$(git -C "$MAIN_REPO" log -1 --pretty=%B)
 
 git -C "$DEPLOY_DIR" commit -m "$COMMIT_MSG [ci skip]" || echo "Nothing to commit"
 
-
 echo "🚀 Pushing to $DEPLOY_BRANCH"
 git push origin "$DEPLOY_BRANCH"
 
 echo "✅ Deployment complete."
 
 # Cleanup
-cd ..
 git worktree remove "$DEPLOY_DIR" --force
