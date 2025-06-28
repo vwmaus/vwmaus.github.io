@@ -9,8 +9,8 @@ BUILD_DIR="_site"
 DEPLOY_DIR="../_deploy_tmp"
 
 echo "🔁 Checking out source branch: $SRC_BRANCH"
-git checkout $SRC_BRANCH
-git pull origin $SRC_BRANCH
+git checkout "$SRC_BRANCH"
+git pull origin "$SRC_BRANCH"
 
 echo "🧹 Cleaning previous build..."
 rm -rf "$BUILD_DIR"
@@ -20,15 +20,12 @@ echo "📁 Preparing deploy directory..."
 rm -rf "$DEPLOY_DIR"
 git worktree prune
 
-# Remove stale worktree reference if exists
+# Remove stale worktree reference if it exists
 if git worktree list | grep -q "$DEPLOY_DIR"; then
     git worktree remove "$DEPLOY_DIR" --force
 fi
 
 git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
-echo "Contents of $DEPLOY_DIR:"
-ls -al "$DEPLOY_DIR"
-cat "$DEPLOY_DIR/.git" || echo ".git file not found"
 
 echo "📦 Copying site contents to deploy directory..."
 rsync -a --delete "$BUILD_DIR/" "$DEPLOY_DIR/"
@@ -39,20 +36,21 @@ touch "$DEPLOY_DIR/.nojekyll"
 echo "🧼 Filtering out R-related files before commit..."
 MAIN_REPO=$(pwd)
 
-# Define R-related patterns
+# Define R-related file patterns
 R_PATTERNS="-name index_cache -o -name index_data -o -name .Rhistory -o -name '*.RData' -o -name .Rproj.user"
 
+# Stage all changes
 git -C "$DEPLOY_DIR" add -A
 
-# Remove R-related files from staging
-RESET_FILES=$(find "$DEPLOY_DIR" \( $R_PATTERNS \) 2>/dev/null || true)
-if [[ -n "$RESET_FILES" ]]; then
-    git -C "$DEPLOY_DIR" reset -- $RESET_FILES || true
-fi
+# Remove R-related files from staging, safely
+find "$DEPLOY_DIR" \( $R_PATTERNS \) -print0 2>/dev/null | while IFS= read -r -d '' file; do
+    git -C "$DEPLOY_DIR" reset -- "$file" || true
+done
 
 # Get last commit message from source branch
 COMMIT_MSG=$(git -C "$MAIN_REPO" log -1 --pretty=%B)
 
+# Commit the deploy (if needed)
 git -C "$DEPLOY_DIR" commit -m "$COMMIT_MSG [ci skip]" || echo "Nothing to commit"
 
 echo "🚀 Pushing to $DEPLOY_BRANCH"
