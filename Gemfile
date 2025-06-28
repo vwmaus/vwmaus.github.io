@@ -10,3 +10,5 @@ group :jekyll_plugins do
     gem 'unicode_utils'
     gem 'webrick'
 end
+
+gem "faraday-retry", "~> 2.3"
