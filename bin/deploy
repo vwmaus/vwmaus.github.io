@@ -17,7 +17,11 @@ rm -rf "$BUILD_DIR"
 bundle exec jekyll build
 
 echo "📁 Preparing deploy directory..."
-rm -rf "$DEPLOY_DIR"
+
+# Ensure the deploy dir is completely gone before worktree add
+if [ -d "$DEPLOY_DIR" ]; then
+    rm -rf "$DEPLOY_DIR"
+fi
 git worktree prune
 
 # Remove stale worktree reference if it exists
@@ -31,6 +35,12 @@ git fetch origin "$DEPLOY_BRANCH":"$DEPLOY_BRANCH"
 
 echo "🌿 Adding worktree for $DEPLOY_BRANCH..."
 git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
+
+# Defensive check!
+if [ ! -f "$DEPLOY_DIR/.git" ]; then
+    echo "ERROR: Worktree was not properly created!"
+    exit 1
+fi
 
 echo "📦 Copying site contents to deploy directory..."
 rsync -a --delete "$BUILD_DIR/" "$DEPLOY_DIR/"
