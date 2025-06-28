@@ -42,9 +42,10 @@ R_PATTERNS="-name index_cache -o -name index_data -o -name .Rhistory -o -name '*
 # Stage all changes
 git -C "$DEPLOY_DIR" add -A
 
-# Remove R-related files from staging, safely
+# Unstage R-related files (give git *relative* paths!)
 find "$DEPLOY_DIR" \( $R_PATTERNS \) -print0 2>/dev/null | while IFS= read -r -d '' file; do
-    git -C "$DEPLOY_DIR" reset -- "$file" || true
+    rel_path="${file#$DEPLOY_DIR/}"
+    git -C "$DEPLOY_DIR" reset -- "$rel_path" || true
 done
 
 # Get last commit message from source branch
