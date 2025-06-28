@@ -7,6 +7,7 @@ SRC_BRANCH="master"
 DEPLOY_BRANCH="gh-pages"
 BUILD_DIR="_site"
 DEPLOY_DIR="../_deploy_tmp"
+MAIN_REPO=$(git rev-parse --show-toplevel)
 
 echo "🔁 Checking out source branch: $SRC_BRANCH"
 git checkout $SRC_BRANCH
@@ -39,7 +40,6 @@ if [[ -n "$RESET_FILES" ]]; then
 fi
 
 # Get last commit message from source branch
-MAIN_REPO=$(git rev-parse --show-toplevel)
 COMMIT_MSG=$(git -C "$MAIN_REPO" log -1 --pretty=%B)
 
 git commit -m "$COMMIT_MSG [ci skip]" || echo "Nothing to commit"
