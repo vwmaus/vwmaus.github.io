@@ -38,8 +38,10 @@ if [[ -n "$RESET_FILES" ]]; then
     git reset -- $RESET_FILES || true
 fi
 
-# Use message from last commit on source branch
-COMMIT_MSG=$(git -C ../$(basename "$PWD") log -1 --pretty=%B)
+# Get last commit message from source branch
+MAIN_REPO=$(git rev-parse --show-toplevel)
+COMMIT_MSG=$(git -C "$MAIN_REPO" log -1 --pretty=%B)
+
 git commit -m "$COMMIT_MSG [ci skip]" || echo "Nothing to commit"
 
 echo "🚀 Pushing to $DEPLOY_BRANCH"
