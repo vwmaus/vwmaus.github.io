@@ -1,103 +1,52 @@
 #!/usr/bin/env bash
 
-# Run this script to deploy the app to Github Pages
-
-# Parse cmd arguments
+set -e  # Exit on any error
+set -u  # Treat unset variables as errors
 
 SRC_BRANCH="master"
 DEPLOY_BRANCH="gh-pages"
+BUILD_DIR="_site"
+DEPLOY_DIR="../_deploy_tmp"
 
-USAGE_MSG="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] [-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
+echo "🔁 Checking out source branch: $SRC_BRANCH"
+git checkout $SRC_BRANCH
+git pull origin $SRC_BRANCH
 
-while [[ $# > 0 ]]; do
-    key="$1"
-
-    case $key in
-        -h|--help)
-        echo $USAGE_MSG
-        exit 0
-        ;;
-        -u|--user)
-        SRC_BRANCH="source"
-        DEPLOY_BRANCH="master"
-        ;;
-        -s|--src)
-        SRC_BRANCH="$2"
-        shift
-        ;;
-        -d|--deploy)
-        DEPLOY_BRANCH="$2"
-        shift
-        ;;
-        --verbose)
-        set -x
-        ;;
-        --no-push)
-        NO_PUSH="--no-push"
-        ;;
-        *)
-        echo "Option $1 is unknown." >&2
-        echo $USAGE_MSG >&2
-        exit 1
-        ;;
-    esac
-    shift
-done
-
-# Exit if any subcommand fails
-set -e
-
-echo "Deploying..."
-echo "Source branch: $SRC_BRANCH"
-echo "Deploy branch: $DEPLOY_BRANCH"
-
-# Check if there are any uncommitted changes
-if ! git diff-index --quiet HEAD --; then
-    echo "Changes to the following files are uncommitted:"
-    git diff-index --name-only HEAD --
-    echo "Please commit the changes before proceeding."
-    echo "Aborting."
-    exit 1
-fi
-
-# Check if there are any untracked files
-if ! test -z "$(git ls-files --exclude-standard --others)"; then
-    echo "There are untracked files:"
-    git ls-files --exclude-standard --others
-    echo "Please commit those files or stash them before proceeding."
-    echo "Aborting."
-    exit 1
-fi
-
-# Switch to source branch (creates it if necessary from the current branch)
-git checkout $SRC_BRANCH || git checkout -b $SRC_BRANCH
-
-# Checkout DEPLOY_BRANCH branch
-git checkout $DEPLOY_BRANCH || git checkout -b $DEPLOY_BRANCH
-
-# Build site
+echo "🧹 Cleaning previous build..."
+rm -rf "$BUILD_DIR"
 bundle exec jekyll build
 
-# Delete and move files
-find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
-rsync -av --remove-source-files _site/ .
-rm -r _site/
-#mv _site/* .
-#rm -R _site/
+echo "📁 Preparing deploy directory..."
+rm -rf "$DEPLOY_DIR"
+git worktree prune
+git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
 
-# Push to DEPLOY_BRANCH
-git add -fA
-# Remove R files before commit
-git reset -- $(find ./ \( -name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user' \))
-git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-[[ ${NO_PUSH} ]] || git push -f -q origin $DEPLOY_BRANCH
+echo "📦 Copying site contents to deploy directory..."
+rsync -a --delete "$BUILD_DIR/" "$DEPLOY_DIR/"
 
-# Move back to SRC_BRANCH
-git checkout $SRC_BRANCH
-git reset --hard HEAD
-git clean -fdx
-git pull origin $SRC_BRANCH  # Pull to sync with remote changes
+echo "📄 Creating .nojekyll..."
+touch "$DEPLOY_DIR/.nojekyll"
 
-echo "Deployed successfully!"
+echo "🧼 Filtering out R-related files before commit..."
+cd "$DEPLOY_DIR"
+git add -A
 
-exit 0
+# Remove R-related files from staging
+R_PATTERNS="-name 'index_cache' -o -name 'index_data' -o -name '.Rhistory' -o -name '*.RData' -o -name '.Rproj.user'"
+RESET_FILES=$(find . \( $R_PATTERNS \) 2>/dev/null || true)
+if [[ -n "$RESET_FILES" ]]; then
+    git reset -- $RESET_FILES || true
+fi
+
+# Use message from last commit on source branch
+COMMIT_MSG=$(git -C ../$(basename "$PWD") log -1 --pretty=%B)
+git commit -m "$COMMIT_MSG [ci skip]" || echo "Nothing to commit"
+
+echo "🚀 Pushing to $DEPLOY_BRANCH"
+git push origin "$DEPLOY_BRANCH"
+
+echo "✅ Deployment complete."
+
+# Cleanup
+cd ..
+git worktree remove "$DEPLOY_DIR" --force
